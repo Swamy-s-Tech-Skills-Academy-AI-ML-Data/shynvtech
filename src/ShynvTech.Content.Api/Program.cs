@@ -1,3 +1,5 @@
+using ShynvTech.ServiceDefaults;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Aspire service defaults
