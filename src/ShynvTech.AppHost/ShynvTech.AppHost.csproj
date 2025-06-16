@@ -13,6 +13,7 @@
     <ProjectReference Include="..\ShynvTech.Events.Api\ShynvTech.Events.Api.csproj" />
     <ProjectReference Include="..\ShynvTech.Lms.Api\ShynvTech.Lms.Api.csproj" />
     <ProjectReference Include="..\ShynvTech.Content.Api\ShynvTech.Content.Api.csproj" />
+    <ProjectReference Include="..\ShynvTech.Web\ShynvTech.Web.csproj" />
   </ItemGroup>
   
   <ItemGroup>

@@ -12,14 +12,12 @@ var lmsApi = builder.AddProject<Projects.ShynvTech_Lms_Api>("lms-api");
 var contentApi = builder.AddProject<Projects.ShynvTech_Content_Api>("content-api");
 
 // Add web frontend with references to all API services
-//builder.AddProject<Projects.ShynvTech_Web>("webfrontend")
-//    .WithExternalHttpEndpoints()
-//    .WithReference(apiService)
-//    .WithReference(magazineApi)
-//    .WithReference(eventsApi)
-//    .WithReference(lmsApi)
-//    .WithReference(contentApi);
-
-//builder.AddProject<Projects.BlazorApp1>("blazorapp1");
+builder.AddProject<Projects.ShynvTech_Web>("webfrontend")
+    .WithExternalHttpEndpoints()
+    .WithReference(apiService)
+    .WithReference(magazineApi)
+    .WithReference(eventsApi)
+    .WithReference(lmsApi)
+    .WithReference(contentApi);
 
 builder.Build().Run();
