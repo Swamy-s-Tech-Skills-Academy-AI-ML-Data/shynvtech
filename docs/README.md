@@ -7,12 +7,13 @@ Welcome to the ShynvTech platform documentation. This distributed application is
 ShynvTech is founded by **Swamy**, an Azure Cloud Architect and community leader who specializes in:
 
 - **Azure Cloud Architecture** – Virtual networks, storage, NSGs, Bastion, private links
-- **Deployment & Automation** – GitHub Actions & Azure Container Apps integration  
+- **Deployment & Automation** – GitHub Actions & Azure Container Apps integration
 - **AI & Machine Learning** – LangChain, Azure OpenAI, and AI-driven solutions
 - **Community Leadership** – Mentorship, public speaking, and technical advocacy
 - **Technical Innovation** – Algorithm refinement, project structuring, and best practices
 
 ### Community Impact
+
 - **Microsoft Build 2025 Proctor** – Assisting attendees in technical labs
 - **AWS Community Builder** – Sharing expertise and fostering collaboration
 - **Global AI Secunderabad** – Branding and community leadership
@@ -36,14 +37,14 @@ ShynvTech is founded by **Swamy**, an Azure Cloud Architect and community leader
 
 ## 🎯 Platform Services
 
-| Service          | Purpose                                  | Target Audience        |
-| ---------------- | ---------------------------------------- | ---------------------- |
-| **Web Frontend** | Professional showcase and landing page  | Tech professionals     |
-| **Magazine API** | Technical articles and insights          | Software community     |
-| **Events API**   | Meetups, conferences, and workshops     | Event organizers       |
-| **LMS API**      | Professional development and training   | Continuous learners    |
-| **Content API**  | Professional profiles and resources     | Community builders     |
-| **ApiService**   | AI integration and shared utilities     | Developers & architects |
+| Service          | Purpose                                | Target Audience         |
+| ---------------- | -------------------------------------- | ----------------------- |
+| **Web Frontend** | Professional showcase and landing page | Tech professionals      |
+| **Magazine API** | Technical articles and insights        | Software community      |
+| **Events API**   | Meetups, conferences, and workshops    | Event organizers        |
+| **LMS API**      | Professional development and training  | Continuous learners     |
+| **Content API**  | Professional profiles and resources    | Community builders      |
+| **ApiService**   | AI integration and shared utilities    | Developers & architects |
 
 ## 🛠️ Technology Stack
 
@@ -58,6 +59,7 @@ ShynvTech is founded by **Swamy**, an Azure Cloud Architect and community leader
 ## 📊 Platform Features
 
 ### Professional Showcase
+
 - ✅ Modern, responsive professional portfolio
 - ✅ Community leadership highlights
 - ✅ Technical expertise showcase
@@ -65,6 +67,7 @@ ShynvTech is founded by **Swamy**, an Azure Cloud Architect and community leader
 - ✅ AI-driven content recommendations
 
 ### Community Building Tools
+
 - ✅ Event planning and registration system
 - ✅ Technical article and insights platform
 - ✅ Mentorship program management
@@ -72,6 +75,7 @@ ShynvTech is founded by **Swamy**, an Azure Cloud Architect and community leader
 - ✅ Spotlight session coordination
 
 ### Technical Architecture
+
 - ✅ Microservices architecture with .NET Aspire 9
 - ✅ Azure Cloud-native deployment ready
 - ✅ GitHub Actions integration
@@ -79,6 +83,7 @@ ShynvTech is founded by **Swamy**, an Azure Cloud Architect and community leader
 - ✅ AI/ML integration capabilities
 
 ### Development Excellence
+
 - ✅ Centralized package management (Directory.Packages.props)
 - ✅ Centralized build configuration (Directory.Build.props)
 - ✅ Hot reload support
