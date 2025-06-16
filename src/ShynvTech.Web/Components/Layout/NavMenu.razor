@@ -1,41 +1,104 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ShynvTech</a>
+﻿@namespace ShynvTech.Web.Components.Layout
+
+<nav class="navbar-glass fixed top-0 w-full z-50">
+    <div class="container-custom px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="/" class="text-2xl font-bold text-gradient">
+                    ShynvTech
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <NavLink class="nav-link-custom" href="" Match="NavLinkMatch.All">
+                    <i class="fas fa-home mr-2"></i>
+                    Home
+                </NavLink>
+
+                <NavLink class="nav-link-custom" href="magazines">
+                    <i class="fas fa-book-open mr-2"></i>
+                    Magazines
+                </NavLink>
+
+                <NavLink class="nav-link-custom" href="events">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Events
+                </NavLink>
+
+                <NavLink class="nav-link-custom" href="learning">
+                    <i class="fas fa-graduation-cap mr-2"></i>
+                    Learning
+                </NavLink>
+
+                <NavLink class="nav-link-custom" href="about">
+                    <i class="fas fa-user-circle mr-2"></i>
+                    About
+                </NavLink>
+
+                <NavLink class="nav-link-custom" href="contact">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Contact
+                </NavLink>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button @onclick="ToggleMobileMenu"
+                    class="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition duration-200">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="@(_mobileMenuOpen ? "block" : "hidden") md:hidden mt-4 pb-4">
+            <div class="flex flex-col space-y-2">
+                <NavLink class="mobile-nav-link" href="" Match="NavLinkMatch.All" @onclick="CloseMobileMenu">
+                    <i class="fas fa-home mr-3"></i>
+                    Home
+                </NavLink>
+
+                <NavLink class="mobile-nav-link" href="magazines" @onclick="CloseMobileMenu">
+                    <i class="fas fa-book-open mr-3"></i>
+                    Magazines
+                </NavLink>
+
+                <NavLink class="mobile-nav-link" href="events" @onclick="CloseMobileMenu">
+                    <i class="fas fa-calendar-alt mr-3"></i>
+                    Events
+                </NavLink>
+
+                <NavLink class="mobile-nav-link" href="learning" @onclick="CloseMobileMenu">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    Learning
+                </NavLink>
+
+                <NavLink class="mobile-nav-link" href="about" @onclick="CloseMobileMenu">
+                    <i class="fas fa-user-circle mr-3"></i>
+                    About
+                </NavLink>
+
+                <NavLink class="mobile-nav-link" href="contact" @onclick="CloseMobileMenu">
+                    <i class="fas fa-envelope mr-3"></i>
+                    Contact
+                </NavLink>
+            </div>
+        </div>
     </div>
-</div>
+</nav>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@code {
+    private bool _mobileMenuOpen = false;
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
+    private void ToggleMobileMenu()
+    {
+        _mobileMenuOpen = !_mobileMenuOpen;
+    }
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="articles">
-                <span class="bi bi-journal-code" aria-hidden="true"></span> Articles
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="events">
-                <span class="bi bi-calendar-event" aria-hidden="true"></span> Events
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="learning">
-                <span class="bi bi-mortarboard" aria-hidden="true"></span> Learning
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="about">
-                <span class="bi bi-person-badge" aria-hidden="true"></span> About
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    private void CloseMobileMenu()
+    {
+        _mobileMenuOpen = false;
+    }
+}
