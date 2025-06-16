@@ -1,0 +1,6 @@
+@ShynvTech.Events.Api_HostAddress = http://localhost:5170
+
+GET {{ShynvTech.Events.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
