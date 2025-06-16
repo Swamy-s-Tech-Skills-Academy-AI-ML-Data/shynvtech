@@ -9,10 +9,12 @@ Before you begin, ensure you have the following installed:
 ### Required Software
 
 - **.NET 9 SDK** (Preview or later)
+
   - Download from: https://dotnet.microsoft.com/download/dotnet/9.0
   - Verify installation: `dotnet --version`
 
 - **Visual Studio 2025** (recommended) or **Visual Studio Code**
+
   - Visual Studio 2025 with .NET Aspire workload
   - VS Code with C# Dev Kit extension
 
@@ -53,6 +55,7 @@ dotnet run --project src/ShynvTech.AppHost
 ```
 
 The Aspire dashboard will automatically open in your browser, typically at:
+
 - **Dashboard**: `https://localhost:17123` (or similar)
 - **Web Frontend**: Auto-assigned port (check dashboard)
 
@@ -84,11 +87,13 @@ The application supports hot reload for both frontend and backend changes:
 ### Debugging
 
 #### Visual Studio 2025
+
 1. Open `ShynvTech.sln`
 2. Set `ShynvTech.AppHost` as startup project
 3. Press F5 to start debugging
 
 #### Visual Studio Code
+
 1. Open the project folder
 2. Use the built-in terminal: `dotnet run --project src/ShynvTech.AppHost`
 3. Attach debugger as needed
@@ -117,16 +122,19 @@ shynvtech/
 ### Adding a New Service
 
 1. Create new Web API project:
+
    ```bash
    dotnet new webapi -n ShynvTech.NewService.Api -o src/ShynvTech.NewService.Api
    ```
 
 2. Add to solution:
+
    ```bash
    dotnet sln add src/ShynvTech.NewService.Api
    ```
 
 3. Add ServiceDefaults reference:
+
    ```bash
    cd src/ShynvTech.NewService.Api
    dotnet add reference ../ShynvTech.ServiceDefaults
@@ -153,16 +161,19 @@ Then reference in project files without version:
 ### Common Issues
 
 **Build Errors**
+
 - Ensure .NET 9 SDK is installed
 - Run `dotnet clean` followed by `dotnet restore`
 - Check for conflicting package versions
 
 **Port Conflicts**
+
 - Aspire automatically assigns ports
 - Check the dashboard for actual port assignments
 - Close other applications using common ports
 
 **Service Discovery Issues**
+
 - Ensure all services reference ServiceDefaults
 - Check service names in AppHost configuration
 - Verify services are registered correctly

@@ -49,6 +49,7 @@ dotnet run --project src/ShynvTech.AppHost
 Create environment-specific configuration files:
 
 **appsettings.Development.json** (already exists)
+
 ```json
 {
   "Logging": {
@@ -85,6 +86,7 @@ az group create --name rg-shynvtech-prod --location eastus2
 #### 2. Create Infrastructure
 
 Create **infra/main.bicep**:
+
 ```bicep
 @description('Primary location for all resources')
 param location string = resourceGroup().location
@@ -201,6 +203,7 @@ az deployment group create \
 Create **Dockerfile** for each service:
 
 **src/ShynvTech.Web/Dockerfile**:
+
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
@@ -227,6 +230,7 @@ ENTRYPOINT ["dotnet", "ShynvTech.Web.dll"]
 ```
 
 Build and push images:
+
 ```bash
 # Get the container registry login server
 ACR_LOGIN_SERVER=$(az acr show --name crshynvtech --resource-group rg-shynvtech-prod --query loginServer --output tsv)
@@ -286,45 +290,45 @@ name: Deploy to Azure
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 env:
   AZURE_WEBAPP_NAME: app-shynvtech-web-prod
-  AZURE_WEBAPP_PACKAGE_PATH: './publish'
-  DOTNET_VERSION: '9.0.x'
+  AZURE_WEBAPP_PACKAGE_PATH: "./publish"
+  DOTNET_VERSION: "9.0.x"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
-    
-    - name: Restore dependencies
-      run: dotnet restore
-    
-    - name: Build
-      run: dotnet build --no-restore --configuration Release
-    
-    - name: Test
-      run: dotnet test --no-build --configuration Release --verbosity normal
-    
-    - name: Publish Web App
-      run: dotnet publish src/ShynvTech.Web -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-    
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Test
+        run: dotnet test --no-build --configuration Release --verbosity normal
+
+      - name: Publish Web App
+        run: dotnet publish src/ShynvTech.Web -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 ```
 
 ### Setup Secrets
@@ -344,7 +348,7 @@ Add these secrets to your GitHub repository:
 Create **docker-compose.yml**:
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   web:
@@ -416,6 +420,7 @@ volumes:
 ```
 
 Run with Docker Compose:
+
 ```bash
 # Build and run all services
 docker-compose up --build
@@ -432,6 +437,7 @@ docker-compose down
 ### Kubernetes Manifests
 
 Create **k8s/namespace.yaml**:
+
 ```yaml
 apiVersion: v1
 kind: Namespace
@@ -440,6 +446,7 @@ metadata:
 ```
 
 Create **k8s/web-deployment.yaml**:
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -457,22 +464,22 @@ spec:
         app: shynvtech-web
     spec:
       containers:
-      - name: web
-        image: your-registry/shynvtech/web:latest
-        ports:
-        - containerPort: 8080
-        env:
-        - name: ASPNETCORE_ENVIRONMENT
-          value: "Production"
-        - name: ASPNETCORE_URLS
-          value: "http://+:8080"
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
+        - name: web
+          image: your-registry/shynvtech/web:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Production"
+            - name: ASPNETCORE_URLS
+              value: "http://+:8080"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -483,12 +490,13 @@ spec:
   selector:
     app: shynvtech-web
   ports:
-  - port: 80
-    targetPort: 8080
+    - port: 80
+      targetPort: 8080
   type: LoadBalancer
 ```
 
 Deploy to Kubernetes:
+
 ```bash
 # Apply manifests
 kubectl apply -f k8s/
@@ -503,6 +511,7 @@ kubectl get services -n shynvtech
 ### Production Configuration
 
 Create **appsettings.Production.json**:
+
 ```json
 {
   "Logging": {
@@ -552,6 +561,7 @@ Events__MaxAttendees=1000
 ### Application Insights
 
 Configure Application Insights in **Program.cs**:
+
 ```csharp
 builder.Services.AddApplicationInsightsTelemetry();
 
@@ -562,6 +572,7 @@ builder.Services.AddSingleton<ITelemetryInitializer, CustomTelemetryInitializer>
 ### Health Checks
 
 Add health checks for monitoring:
+
 ```csharp
 builder.Services.AddHealthChecks()
     .AddSqlServer(connectionString)
@@ -574,6 +585,7 @@ app.MapHealthChecks("/health");
 ### Logging
 
 Configure structured logging:
+
 ```csharp
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration)
@@ -650,7 +662,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         sqlOptions.EnableRetryOnFailure();
         sqlOptions.CommandTimeout(30);
     });
-    
+
     // Only in development
     if (builder.Environment.IsDevelopment())
     {
@@ -688,6 +700,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 ### Common Issues
 
 1. **Service Discovery Problems**
+
    ```bash
    # Check service registration
    kubectl get services
@@ -696,6 +709,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
    ```
 
 2. **Database Connection Issues**
+
    ```bash
    # Test connection
    sqlcmd -S server -U user -P password -Q "SELECT 1"
@@ -712,11 +726,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 ### Performance Issues
 
 1. **High Memory Usage**
+
    - Check for memory leaks
    - Review object disposal
    - Monitor garbage collection
 
 2. **Slow Response Times**
+
    - Enable Application Insights
    - Profile database queries
    - Check network latency

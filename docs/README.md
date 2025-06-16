@@ -20,14 +20,14 @@ Welcome to the ShynvTech platform documentation. This distributed application is
 
 ## 🎯 Services Overview
 
-| Service | Purpose | Port |
-|---------|---------|------|
+| Service          | Purpose                       | Port          |
+| ---------------- | ----------------------------- | ------------- |
 | **Web Frontend** | Main website and landing page | Auto-assigned |
-| **Magazine API** | Monthly magazine management | Auto-assigned |
-| **Events API** | Event planning and management | Auto-assigned |
-| **LMS API** | Learning Management System | Auto-assigned |
-| **Content API** | About Us, Contact Us content | Auto-assigned |
-| **ApiService** | General API services | Auto-assigned |
+| **Magazine API** | Monthly magazine management   | Auto-assigned |
+| **Events API**   | Event planning and management | Auto-assigned |
+| **LMS API**      | Learning Management System    | Auto-assigned |
+| **Content API**  | About Us, Contact Us content  | Auto-assigned |
+| **ApiService**   | General API services          | Auto-assigned |
 
 ## 🛠️ Technology Stack
 
@@ -42,6 +42,7 @@ Welcome to the ShynvTech platform documentation. This distributed application is
 ## 📊 Features
 
 ### Frontend
+
 - ✅ Modern, responsive landing page
 - ✅ Tailwind CSS integration
 - ✅ Google Fonts (Inter & Poppins)
@@ -49,6 +50,7 @@ Welcome to the ShynvTech platform documentation. This distributed application is
 - ✅ Beautiful hero section with animations
 
 ### Backend Services
+
 - ✅ Microservices architecture
 - ✅ .NET Aspire orchestration
 - ✅ Service discovery
@@ -57,6 +59,7 @@ Welcome to the ShynvTech platform documentation. This distributed application is
 - ✅ OpenTelemetry integration
 
 ### Development Features
+
 - ✅ Centralized package management (Directory.Packages.props)
 - ✅ Centralized build configuration (Directory.Build.props)
 - ✅ Hot reload support

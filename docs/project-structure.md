@@ -68,6 +68,7 @@ ShynvTech.AppHost/
 ```
 
 **Key Responsibilities:**
+
 - Service discovery and registration
 - Configuration management
 - Health monitoring
@@ -84,6 +85,7 @@ ShynvTech.ServiceDefaults/
 ```
 
 **Key Features:**
+
 - Common logging configuration
 - Health checks setup
 - Service discovery configuration
@@ -122,6 +124,7 @@ ShynvTech.Web/
 ```
 
 **Key Features:**
+
 - Responsive web design with Tailwind CSS
 - Server-side Blazor components
 - API integration with backend services
@@ -155,6 +158,7 @@ ShynvTech.Magazine.Api/
 ```
 
 **Key Responsibilities:**
+
 - Magazine CRUD operations
 - Article management
 - File upload and storage
@@ -190,6 +194,7 @@ ShynvTech.Events.Api/
 ```
 
 **Key Responsibilities:**
+
 - Event creation and management
 - Registration handling
 - Capacity management
@@ -230,6 +235,7 @@ ShynvTech.Lms.Api/
 ```
 
 **Key Responsibilities:**
+
 - Course catalog management
 - Student enrollment tracking
 - Assignment and submission handling
@@ -266,6 +272,7 @@ ShynvTech.Content.Api/
 ```
 
 **Key Responsibilities:**
+
 - Static content management
 - Contact form processing
 - Media file handling
@@ -295,6 +302,7 @@ ShynvTech.ApiService/
 ```
 
 **Key Responsibilities:**
+
 - Cross-platform search functionality
 - Platform-wide statistics
 - Shared utilities and helpers
@@ -441,6 +449,7 @@ scripts/
 ## File Naming Conventions
 
 ### C# Files
+
 - **Controllers**: `{Entity}Controller.cs` (e.g., `MagazinesController.cs`)
 - **Services**: `{Entity}Service.cs` and `I{Entity}Service.cs`
 - **Models**: `{Entity}.cs` (e.g., `Magazine.cs`)
@@ -448,11 +457,13 @@ scripts/
 - **Extensions**: `{Context}Extensions.cs`
 
 ### Blazor Components
+
 - **Pages**: `{PageName}.razor` (e.g., `Home.razor`)
 - **Components**: `{ComponentName}.razor` (e.g., `NavMenu.razor`)
 - **Layouts**: `{LayoutName}Layout.razor` (e.g., `MainLayout.razor`)
 
 ### Configuration Files
+
 - **Settings**: `appsettings.{Environment}.json`
 - **Launch**: `launchSettings.json`
 - **HTTP Tests**: `{ServiceName}.http`
@@ -506,6 +517,7 @@ Key external packages used across the platform:
 ## Best Practices
 
 ### Code Organization
+
 1. Group related functionality in folders
 2. Use consistent naming conventions
 3. Separate concerns with interfaces
@@ -513,6 +525,7 @@ Key external packages used across the platform:
 5. Use dependency injection consistently
 
 ### Project Structure
+
 1. Follow single responsibility principle for projects
 2. Keep shared code in ServiceDefaults
 3. Use configuration over code where possible
@@ -520,6 +533,7 @@ Key external packages used across the platform:
 5. Document architectural decisions
 
 ### File Organization
+
 1. Group similar files in folders
 2. Use descriptive file names
 3. Keep file sizes reasonable

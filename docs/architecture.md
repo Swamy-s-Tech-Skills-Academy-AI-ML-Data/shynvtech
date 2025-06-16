@@ -12,15 +12,15 @@ graph TB
         Browser[Web Browser]
         Mobile[Mobile App - Future]
     end
-    
+
     subgraph "Presentation Layer"
         Web[ShynvTech.Web<br/>Blazor Server]
     end
-    
+
     subgraph "API Gateway Layer"
         Gateway[API Gateway - Future]
     end
-    
+
     subgraph "Service Layer"
         MagAPI[Magazine API<br/>ShynvTech.Magazine.Api]
         EventAPI[Events API<br/>ShynvTech.Events.Api]
@@ -28,7 +28,7 @@ graph TB
         ContentAPI[Content API<br/>ShynvTech.Content.Api]
         GeneralAPI[General API<br/>ShynvTech.ApiService]
     end
-    
+
     subgraph "Data Layer"
         MagDB[(Magazine DB)]
         EventDB[(Events DB)]
@@ -36,12 +36,12 @@ graph TB
         ContentDB[(Content DB)]
         SharedDB[(Shared DB)]
     end
-    
+
     subgraph "Infrastructure"
         Aspire[.NET Aspire Host<br/>ShynvTech.AppHost]
         Defaults[Service Defaults<br/>ShynvTech.ServiceDefaults]
     end
-    
+
     Browser --> Web
     Mobile --> Gateway
     Web --> MagAPI
@@ -49,20 +49,20 @@ graph TB
     Web --> LMSAPI
     Web --> ContentAPI
     Web --> GeneralAPI
-    
+
     MagAPI --> MagDB
     EventAPI --> EventDB
     LMSAPI --> LMSDB
     ContentAPI --> ContentDB
     GeneralAPI --> SharedDB
-    
+
     Aspire --> Web
     Aspire --> MagAPI
     Aspire --> EventAPI
     Aspire --> LMSAPI
     Aspire --> ContentAPI
     Aspire --> GeneralAPI
-    
+
     Defaults --> Web
     Defaults --> MagAPI
     Defaults --> EventAPI

@@ -4,15 +4,15 @@ This document provides comprehensive documentation for all ShynvTech platform AP
 
 ## Base URLs
 
-| Service | Local Development | Production |
-|---------|------------------|------------|
-| Magazine API | `https://localhost:7xxx` | TBD |
-| Events API | `https://localhost:7xxx` | TBD |
-| LMS API | `https://localhost:7xxx` | TBD |
-| Content API | `https://localhost:7xxx` | TBD |
-| General API | `https://localhost:7xxx` | TBD |
+| Service      | Local Development        | Production |
+| ------------ | ------------------------ | ---------- |
+| Magazine API | `https://localhost:7xxx` | TBD        |
+| Events API   | `https://localhost:7xxx` | TBD        |
+| LMS API      | `https://localhost:7xxx` | TBD        |
+| Content API  | `https://localhost:7xxx` | TBD        |
+| General API  | `https://localhost:7xxx` | TBD        |
 
-*Note: Actual ports are assigned dynamically by .NET Aspire. Check the Aspire dashboard for current URLs.*
+_Note: Actual ports are assigned dynamically by .NET Aspire. Check the Aspire dashboard for current URLs._
 
 ## Authentication
 
@@ -86,6 +86,7 @@ GET /api/magazines
 ```
 
 **Query Parameters:**
+
 - `page` (integer, optional): Page number (default: 1)
 - `pageSize` (integer, optional): Items per page (default: 20, max: 100)
 - `search` (string, optional): Search term for magazine title or description
@@ -93,6 +94,7 @@ GET /api/magazines
 - `status` (string, optional): Filter by status (draft, published, archived)
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -125,9 +127,11 @@ GET /api/magazines/{id}
 ```
 
 **Path Parameters:**
+
 - `id` (integer, required): Magazine ID
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -165,6 +169,7 @@ POST /api/magazines
 ```
 
 **Request Body:**
+
 ```json
 {
   "title": "New Magazine Title",
@@ -178,12 +183,13 @@ POST /api/magazines
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
   "data": {
     "id": 2,
-    "title": "New Magazine Title",
+    "title": "New Magazine Title"
     // ... other fields
   },
   "message": "Magazine created successfully"
@@ -197,6 +203,7 @@ PUT /api/magazines/{id}
 ```
 
 **Path Parameters:**
+
 - `id` (integer, required): Magazine ID
 
 **Request Body:** Same as Create Magazine
@@ -208,9 +215,11 @@ DELETE /api/magazines/{id}
 ```
 
 **Path Parameters:**
+
 - `id` (integer, required): Magazine ID
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -239,6 +248,7 @@ GET /api/events
 ```
 
 **Query Parameters:**
+
 - `page` (integer, optional): Page number
 - `pageSize` (integer, optional): Items per page
 - `category` (string, optional): Event category
@@ -248,6 +258,7 @@ GET /api/events
 - `search` (string, optional): Search term
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -289,6 +300,7 @@ POST /api/events
 ```
 
 **Request Body:**
+
 ```json
 {
   "title": "New Event",
@@ -317,6 +329,7 @@ POST /api/events/{id}/register
 ```
 
 **Request Body:**
+
 ```json
 {
   "attendeeName": "John Doe",
@@ -346,6 +359,7 @@ GET /api/lms/courses
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -412,9 +426,11 @@ GET /api/content/pages/{slug}
 ```
 
 **Path Parameters:**
+
 - `slug` (string, required): Page slug (e.g., "about-us", "contact-us")
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -444,6 +460,7 @@ GET /api/content/contact
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -475,6 +492,7 @@ POST /api/content/contact/submit
 ```
 
 **Request Body:**
+
 ```json
 {
   "name": "John Doe",
@@ -498,6 +516,7 @@ GET /api/health
 ```
 
 **Response:**
+
 ```json
 {
   "status": "healthy",
@@ -518,6 +537,7 @@ GET /api/general/stats
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -539,12 +559,14 @@ GET /api/general/search
 ```
 
 **Query Parameters:**
+
 - `q` (string, required): Search query
 - `type` (string, optional): Search type (all, magazines, events, courses)
 - `page` (integer, optional): Page number
 - `pageSize` (integer, optional): Items per page
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -570,16 +592,16 @@ GET /api/general/search
 
 ## Error Codes
 
-| Code | Description |
-|------|-------------|
-| `VALIDATION_ERROR` | Request data validation failed |
-| `NOT_FOUND` | Requested resource not found |
-| `UNAUTHORIZED` | Authentication required |
-| `FORBIDDEN` | Insufficient permissions |
-| `DUPLICATE_ENTRY` | Resource already exists |
-| `SERVER_ERROR` | Internal server error |
+| Code                  | Description                     |
+| --------------------- | ------------------------------- |
+| `VALIDATION_ERROR`    | Request data validation failed  |
+| `NOT_FOUND`           | Requested resource not found    |
+| `UNAUTHORIZED`        | Authentication required         |
+| `FORBIDDEN`           | Insufficient permissions        |
+| `DUPLICATE_ENTRY`     | Resource already exists         |
+| `SERVER_ERROR`        | Internal server error           |
 | `SERVICE_UNAVAILABLE` | Service temporarily unavailable |
-| `RATE_LIMIT_EXCEEDED` | Too many requests |
+| `RATE_LIMIT_EXCEEDED` | Too many requests               |
 
 ## Rate Limiting
 
@@ -590,6 +612,7 @@ All APIs implement rate limiting:
 - **API key users**: 5000 requests per hour
 
 Rate limit headers:
+
 ```http
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 999
@@ -601,6 +624,7 @@ X-RateLimit-Reset: 1640995200
 The platform will support webhooks for real-time notifications:
 
 ### Available Events
+
 - `magazine.published`
 - `event.created`
 - `event.registration.new`
@@ -608,6 +632,7 @@ The platform will support webhooks for real-time notifications:
 - `assignment.submitted`
 
 ### Webhook Format
+
 ```json
 {
   "event": "magazine.published",
@@ -668,6 +693,7 @@ Each API service includes `.http` files for testing:
 ## OpenAPI/Swagger Documentation
 
 Each service exposes interactive API documentation at:
+
 - `/swagger` - Swagger UI
 - `/swagger/v1/swagger.json` - OpenAPI specification
 
@@ -675,4 +701,4 @@ Access these endpoints when the services are running to explore the APIs interac
 
 ---
 
-*This documentation is automatically updated as the APIs evolve. For the most current information, refer to the Swagger documentation of each running service.*
+_This documentation is automatically updated as the APIs evolve. For the most current information, refer to the Swagger documentation of each running service._
