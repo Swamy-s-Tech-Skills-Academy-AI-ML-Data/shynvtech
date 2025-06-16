@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorApp1\BlazorApp1.csproj" />
     <ProjectReference Include="..\ShynvTech.ApiService\ShynvTech.ApiService.csproj" />
-    <ProjectReference Include="..\ShynvTech.Web\ShynvTech.Web.csproj" />
     <ProjectReference Include="..\ShynvTech.Magazine.Api\ShynvTech.Magazine.Api.csproj" />
     <ProjectReference Include="..\ShynvTech.Events.Api\ShynvTech.Events.Api.csproj" />
     <ProjectReference Include="..\ShynvTech.Lms.Api\ShynvTech.Lms.Api.csproj" />
