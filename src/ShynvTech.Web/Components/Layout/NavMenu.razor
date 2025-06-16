@@ -1,30 +1,130 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ShynvTech.Web</a>
+﻿<!-- Tailwind CSS Navbar -->
+<nav class="bg-gray-900 border-b border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand Logo -->
+            <div class="flex items-center">
+                <a href="/" class="text-white text-xl font-bold hover:text-gray-300 transition-colors duration-200">
+                    ShynvTech.Web
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="/"
+                        class="@GetNavLinkClass("/") px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                            </path>
+                        </svg>
+                        Home
+                    </a>
+
+                    <a href="/counter"
+                        class="@GetNavLinkClass("/counter") px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Counter
+                    </a>
+
+                    <a href="/weather"
+                        class="@GetNavLinkClass("/weather") px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Weather
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button @onclick="ToggleMobileMenu" type="button"
+                    class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition-colors duration-200">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Menu icon -->
+                    <svg class="@(mobileMenuOpen ? "hidden" : "block") h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Close icon -->
+                    <svg class="@(mobileMenuOpen ? "block" : "hidden") h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
-</div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+    <!-- Mobile menu -->
+    <div class="@(mobileMenuOpen ? "block" : "hidden") md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800">
+            <a href="/" @onclick="CloseMobileMenu"
+                class="@GetNavLinkClass("/") block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                    </path>
+                </svg>
+                Home
+            </a>
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
+            <a href="/counter" @onclick="CloseMobileMenu"
+                class="@GetNavLinkClass("/counter") block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                Counter
+            </a>
+
+            <a href="/weather" @onclick="CloseMobileMenu"
+                class="@GetNavLinkClass("/weather") block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                Weather
+            </a>
         </div>
+    </div>
+</nav>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
+@code {
+    private bool mobileMenuOpen = false;
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+
+    private void ToggleMobileMenu()
+    {
+        mobileMenuOpen = !mobileMenuOpen;
+    }
+
+    private void CloseMobileMenu()
+    {
+        mobileMenuOpen = false;
+    }
+
+    private string GetNavLinkClass(string href)
+    {
+        var currentUrl = Navigation.ToBaseRelativePath(Navigation.Uri);
+        var isActive = href == "/" ? currentUrl == "" : currentUrl.StartsWith(href.TrimStart('/'));
+
+        return isActive
+        ? "bg-gray-700 text-white"
+        : "text-gray-300 hover:bg-gray-700 hover:text-white";
+    }
+}
 
