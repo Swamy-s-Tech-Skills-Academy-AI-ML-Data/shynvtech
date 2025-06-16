@@ -16,4 +16,6 @@ builder.AddProject<Projects.ShynvTech_Web>("webfrontend")
     .WithReference(lmsApi)
     .WithReference(contentApi);
 
+builder.AddProject<Projects.BlazorApp1>("blazorapp1");
+
 builder.Build().Run();
