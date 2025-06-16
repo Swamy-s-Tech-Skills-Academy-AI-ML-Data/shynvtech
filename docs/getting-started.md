@@ -1,6 +1,15 @@
 # Getting Started with ShynvTech Platform
 
-This guide will help you set up and run the ShynvTech platform on your local development environment.
+This guide will help you set up and run the ShynvTech platform - a **tech innovation collective** designed for software professionals, community builders, and continuous learners who want to showcase their expertise and build meaningful connections.
+
+## Who This Platform Is For
+
+- **Azure Cloud Architects** and **DevOps Engineers**
+- **Community Leaders** organizing meetups and events
+- **Mentors** running spotlight sessions and learning programs
+- **Technical Speakers** sharing knowledge and expertise
+- **AI/ML Enthusiasts** exploring LangChain and Azure OpenAI
+- **Software Professionals** building personal brands and networks
 
 ## Prerequisites
 

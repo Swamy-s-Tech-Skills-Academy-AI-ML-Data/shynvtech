@@ -1,10 +1,16 @@
 # ShynvTech Architecture Documentation
 
-This document describes the architecture of the ShynvTech platform, a distributed application built with .NET Aspire 9.
+This document describes the architecture of the ShynvTech platform, a distributed application built with .NET Aspire 9 that serves as a **tech innovation collective** for software professionals, community builders, and continuous learners.
 
 ## Architecture Overview
 
-The ShynvTech platform follows a **microservices architecture** pattern, with each service responsible for a specific domain area. All services are orchestrated using **.NET Aspire 9**, which provides service discovery, configuration management, and observability.
+The ShynvTech platform follows a **microservices architecture** pattern, designed to support professional showcase, community building, and knowledge sharing. Each service responsible for a specific domain area, orchestrated using **.NET Aspire 9** with Azure Cloud-native capabilities.
+
+### Core Platform Principles
+- **Community-First Design**: Supporting mentorship, events, and professional networking
+- **AI-Enhanced Experience**: Leveraging Azure OpenAI and LangChain integration
+- **Professional Excellence**: Showcasing technical expertise and leadership impact
+- **Scalable Architecture**: Built for growth from local communities to global reach
 
 ```mermaid
 graph TB
