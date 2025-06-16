@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        @apply bg-gray-50 text-gray-900;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-shynv-600 hover:bg-shynv-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-105;
+    }
+
+    .btn-secondary {
+        @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out;
+    }
+
+    .btn-outline {
+        @apply border-2 border-shynv-600 text-shynv-600 hover:bg-shynv-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out;
+    }
+
+    .card {
+        @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1;
+    }
+
+    .card-hover {
+        @apply hover:shadow-2xl hover:-translate-y-2 transition-all duration-300;
+    }
+
+    .gradient-bg {
+        background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-shynv-600 to-shynv-800 bg-clip-text text-transparent;
+    }
+
+    .navbar-glass {
+        @apply bg-white/80 backdrop-blur-md border-b border-gray-200/50;
+    }
+
+    .hero-pattern {
+        background-image:
+            radial-gradient(circle at 1px 1px, rgba(14, 165, 233, 0.1) 1px, transparent 0);
+        background-size: 20px 20px;
+    }
+
+    .section-padding {
+        @apply py-16 px-4 sm:px-6 lg:px-8;
+    }
+
+    .container-custom {
+        @apply max-w-7xl mx-auto;
+    }
+
+    .feature-icon {
+        @apply w-12 h-12 bg-shynv-100 text-shynv-600 rounded-lg flex items-center justify-center text-xl;
+    }
+
+    .social-icon {
+        @apply w-10 h-10 bg-gray-100 hover:bg-shynv-100 text-gray-600 hover:text-shynv-600 rounded-full flex items-center justify-center transition duration-200;
+    }
+}
+
+@layer utilities {
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
+
+    .animation-delay-600 {
+        animation-delay: 600ms;
+    }
+
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
