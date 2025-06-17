@@ -1,4 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+  
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <IsAspireHost>true</IsAspireHost>
@@ -7,11 +9,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShynvTech.ApiService\ShynvTech.ApiService.csproj" />
-    <ProjectReference Include="..\ShynvTech.Web\ShynvTech.Web.csproj" />
     <ProjectReference Include="..\ShynvTech.Magazine.Api\ShynvTech.Magazine.Api.csproj" />
     <ProjectReference Include="..\ShynvTech.Events.Api\ShynvTech.Events.Api.csproj" />
     <ProjectReference Include="..\ShynvTech.Lms.Api\ShynvTech.Lms.Api.csproj" />
     <ProjectReference Include="..\ShynvTech.Content.Api\ShynvTech.Content.Api.csproj" />
+    <ProjectReference Include="..\ShynvTech.Web\ShynvTech.Web.csproj" />
   </ItemGroup>
   
   <ItemGroup>

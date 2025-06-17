@@ -1,29 +1,75 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ShynvTech</a>
+﻿<!-- Modern Glass Navbar with FontAwesome Icons -->
+<nav class="navbar-glass">
+    <div class="container-custom px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand Logo with Gradient Text -->
+            <div class="flex items-center">
+                <a href="/" class="text-2xl font-bold text-gradient">
+                    ShynvTech
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a class="nav-link-custom" href="/">
+                    <i class="fas fa-home mr-2"></i>
+                    Home
+                </a>
+
+                <a class="nav-link-custom" href="/counter">
+                    <i class="fas fa-plus-square mr-2"></i>
+                    Counter
+                </a>
+
+                <a class="nav-link-custom" href="/weather">
+                    <i class="fas fa-cloud-sun mr-2"></i>
+                    Weather
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button @onclick="ToggleMobileMenu" type="button"
+                    class="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition duration-200">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="@(mobileMenuOpen ? "block" : "hidden") md:hidden mt-4 pb-4">
+            <div class="flex flex-col space-y-2">
+                <a class="mobile-nav-link" href="/" @onclick="CloseMobileMenu">
+                    <i class="fas fa-home mr-3"></i>
+                    Home
+                </a>
+
+                <a class="mobile-nav-link" href="/counter" @onclick="CloseMobileMenu">
+                    <i class="fas fa-plus-square mr-3"></i>
+                    Counter
+                </a>
+
+                <a class="mobile-nav-link" href="/weather" @onclick="CloseMobileMenu">
+                    <i class="fas fa-cloud-sun mr-3"></i>
+                    Weather
+                </a>
+            </div>
+        </div>
     </div>
-</div>
+</nav>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@code {
+    private bool mobileMenuOpen = false;
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
+    private void ToggleMobileMenu()
+    {
+        mobileMenuOpen = !mobileMenuOpen;
+    }
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    private void CloseMobileMenu()
+    {
+        mobileMenuOpen = false;
+    }
+}

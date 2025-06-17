@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web"><Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
   </PropertyGroup>
   
@@ -9,13 +9,4 @@
   <ItemGroup>
     <ProjectReference Include="..\ShynvTech.ServiceDefaults\ShynvTech.ServiceDefaults.csproj" />
   </ItemGroup>
-</Project>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ShynvTech.ServiceDefaults\ShynvTech.ServiceDefaults.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,0 +1,252 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.Web
+
+<PageTitle>ShynvTech - Tech Innovation Collective</PageTitle>
+
+<!-- Hero Section -->
+<section
+    class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-shynv-600 via-shynv-700 to-shynv-800 overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 opacity-10">
+        <div class="w-full h-full bg-repeat"
+            style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 20px 20px;">
+        </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="animate-fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold font-poppins text-white mb-6 leading-tight">
+                Tech Innovation
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                    Collective
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                A platform for software professionals, community builders, and continuous learners.
+                Showcasing expertise, mentorship, and technical innovation powered by Azure Cloud architecture.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#features"
+                    class="bg-white text-shynv-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Explore Platform
+                </a>
+                <a href="#about"
+                    class="border-2 border-white text-white hover:bg-white hover:text-shynv-600 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                    About Swamy
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">Azure</div>
+                    <div class="text-gray-300">Cloud Architect</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">Build 2025</div>
+                    <div class="text-gray-300">Microsoft Proctor</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">AWS</div>
+                    <div class="text-gray-300">Community Builder</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">AI/ML</div>
+                    <div class="text-gray-300">Innovation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-white text-2xl"></i>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-4">
+                Platform Capabilities
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Comprehensive tools for software professionals, community builders, and technical leaders
+                to showcase expertise and foster meaningful connections.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Technical Content -->
+            <div class="group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Technical Articles</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Share insights on Azure architecture, AI/ML solutions, deployment automation,
+                        and emerging technologies with the software community.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Community Events -->
+            <div class="group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Community Events</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Organize meetups, spotlight sessions, technical workshops, and mentorship programs
+                        for professional growth and networking.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Professional Development -->
+            <div class="group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="bg-gradient-to-br from-purple-50 to-violet-100 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Learning Programs</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Structured learning plans, mentorship tracks, skill development courses,
+                        and continuous learning resources for software professionals.
+                    </p>
+                </div>
+            </div>
+
+            <!-- AI Innovation -->
+            <div class="group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="bg-gradient-to-br from-orange-50 to-red-100 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Innovation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Explore LangChain, Azure OpenAI integration, AI-driven solutions,
+                        and cutting-edge machine learning applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-6">
+                    About Swamy
+                </h2>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Azure Cloud Architect and community leader with expertise in virtual networks, storage, NSGs,
+                    Bastion, private links, and deployment automation using GitHub Actions & Azure Container Apps.
+                </p>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Passionate about AI & Machine Learning, exploring LangChain, Azure OpenAI, and AI-driven solutions.
+                    Active in community building through mentorship programs, spotlight sessions, and technical
+                    advocacy.
+                </p>
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span>Microsoft Build 2025 Proctor</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span>AWS Community Builder</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span>Global AI Secunderabad Leader</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span>Aspire AI Stack Repository Maintainer</span>
+                    </div>
+                </div>
+                <a href="#contact"
+                    class="inline-flex items-center bg-shynv-600 hover:bg-shynv-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+                    Connect & Collaborate
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="relative">
+                <div
+                    class="aspect-square bg-gradient-to-br from-shynv-400 to-shynv-600 rounded-3xl flex items-center justify-center">
+                    <i class="fas fa-cloud text-white text-8xl"></i>
+                </div>
+                <div
+                    class="absolute -top-6 -right-6 w-24 h-24 bg-blue-400 rounded-full flex items-center justify-center">
+                    <i class="fab fa-microsoft text-white text-2xl"></i>
+                </div>
+                <div
+                    class="absolute -bottom-6 -left-6 w-20 h-20 bg-orange-400 rounded-full flex items-center justify-center">
+                    <i class="fab fa-aws text-white text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-shynv-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold font-poppins text-white mb-6">
+            Ready to Collaborate?
+        </h2>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            Connect with Swamy for mentorship, technical collaboration, speaking opportunities,
+            or to contribute to the growing tech innovation collective.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="mailto:contact@shynvtech.com"
+                class="bg-white text-shynv-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                Get in Touch
+            </a>
+            <a href="https://github.com/your-username/aspire-ai-stack"
+                class="border-2 border-white text-white hover:bg-white hover:text-shynv-600 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                View GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-in;
+    }
+
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
