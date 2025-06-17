@@ -1,5 +1,90 @@
 @import "tailwindcss";
 
+/* Custom Color Definitions */
+:root {
+    --shynv-50: #f0f9ff;
+    --shynv-100: #e0f2fe;
+    --shynv-200: #bae6fd;
+    --shynv-300: #7dd3fc;
+    --shynv-400: #38bdf8;
+    --shynv-500: #0ea5e9;
+    --shynv-600: #0284c7;
+    --shynv-700: #0369a1;
+    --shynv-800: #075985;
+    --shynv-900: #0c4a6e;
+}
+
+/* Custom Shynv Colors */
+.text-shynv-600 {
+    color: var(--shynv-600);
+}
+
+.text-shynv-700 {
+    color: var(--shynv-700);
+}
+
+.text-shynv-800 {
+    color: var(--shynv-800);
+}
+
+.bg-shynv-600 {
+    background-color: var(--shynv-600);
+}
+
+.bg-shynv-700 {
+    background-color: var(--shynv-700);
+}
+
+.bg-shynv-800 {
+    background-color: var(--shynv-800);
+}
+
+.from-shynv-600 {
+    --tw-gradient-from: var(--shynv-600);
+}
+
+.via-shynv-700 {
+    --tw-gradient-via: var(--shynv-700);
+}
+
+.to-shynv-800 {
+    --tw-gradient-to: var(--shynv-800);
+}
+
+.border-shynv-600 {
+    border-color: var(--shynv-600);
+}
+
+.hover\:text-shynv-600:hover {
+    color: var(--shynv-600);
+}
+
+.hover\:bg-shynv-600:hover {
+    background-color: var(--shynv-600);
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+
+/* Custom Font Family - Poppins */
+.font-poppins {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 /* Custom components for improved navbar */
 .text-gradient {
     background: linear-gradient(to right, #0284c7, #075985);

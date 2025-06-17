@@ -1,8 +1,8 @@
 ﻿<!-- Modern Glass Navbar with FontAwesome Icons -->
-<nav class="navbar-glass">
+<nav class="navbar-glass fixed top-0 w-full z-50">
     <div class="container-custom px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <!-- Brand Logo with Gradient Text -->
+            <!-- Logo -->
             <div class="flex items-center">
                 <a href="/" class="text-2xl font-bold text-gradient">
                     ShynvTech
@@ -16,42 +16,72 @@
                     Home
                 </a>
 
-                <a class="nav-link-custom" href="/counter">
-                    <i class="fas fa-plus-square mr-2"></i>
-                    Counter
+                <a class="nav-link-custom" href="/magazines">
+                    <i class="fas fa-book-open mr-2"></i>
+                    Magazines
                 </a>
 
-                <a class="nav-link-custom" href="/weather">
-                    <i class="fas fa-cloud-sun mr-2"></i>
-                    Weather
+                <a class="nav-link-custom" href="/events">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Events
+                </a>
+
+                <a class="nav-link-custom" href="/learning">
+                    <i class="fas fa-graduation-cap mr-2"></i>
+                    Learning
+                </a>
+
+                <a class="nav-link-custom" href="/about">
+                    <i class="fas fa-user-circle mr-2"></i>
+                    About
+                </a>
+
+                <a class="nav-link-custom" href="/contact">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Contact
                 </a>
             </div>
 
             <!-- Mobile menu button -->
             <div class="md:hidden">
-                <button @onclick="ToggleMobileMenu" type="button"
+                <button @onclick="ToggleMobileMenu"
                     class="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition duration-200">
-                    <i class="fas fa-bars text-lg"></i>
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="@(mobileMenuOpen ? "block" : "hidden") md:hidden mt-4 pb-4">
+        <div class="@(_mobileMenuOpen ? "block" : "hidden") md:hidden mt-4 pb-4">
             <div class="flex flex-col space-y-2">
                 <a class="mobile-nav-link" href="/" @onclick="CloseMobileMenu">
                     <i class="fas fa-home mr-3"></i>
                     Home
                 </a>
 
-                <a class="mobile-nav-link" href="/counter" @onclick="CloseMobileMenu">
-                    <i class="fas fa-plus-square mr-3"></i>
-                    Counter
+                <a class="mobile-nav-link" href="/magazines" @onclick="CloseMobileMenu">
+                    <i class="fas fa-book-open mr-3"></i>
+                    Magazines
                 </a>
 
-                <a class="mobile-nav-link" href="/weather" @onclick="CloseMobileMenu">
-                    <i class="fas fa-cloud-sun mr-3"></i>
-                    Weather
+                <a class="mobile-nav-link" href="/events" @onclick="CloseMobileMenu">
+                    <i class="fas fa-calendar-alt mr-3"></i>
+                    Events
+                </a>
+
+                <a class="mobile-nav-link" href="/learning" @onclick="CloseMobileMenu">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    Learning
+                </a>
+
+                <a class="mobile-nav-link" href="/about" @onclick="CloseMobileMenu">
+                    <i class="fas fa-user-circle mr-3"></i>
+                    About
+                </a>
+
+                <a class="mobile-nav-link" href="/contact" @onclick="CloseMobileMenu">
+                    <i class="fas fa-envelope mr-3"></i>
+                    Contact
                 </a>
             </div>
         </div>
@@ -59,17 +89,17 @@
 </nav>
 
 @code {
-    private bool mobileMenuOpen = false;
+    private bool _mobileMenuOpen = false;
 
     [Inject] private NavigationManager Navigation { get; set; } = default!;
 
     private void ToggleMobileMenu()
     {
-        mobileMenuOpen = !mobileMenuOpen;
+        _mobileMenuOpen = !_mobileMenuOpen;
     }
 
     private void CloseMobileMenu()
     {
-        mobileMenuOpen = false;
+        _mobileMenuOpen = false;
     }
 }
