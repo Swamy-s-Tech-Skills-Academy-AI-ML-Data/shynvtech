@@ -1,5 +1,11 @@
 /* Custom styles for ShynvTech application */
 
+/* Font Awesome icon color fix */
+.fas.fa-rocket.text-orange-500 {
+    color: #f97316 !important;
+    /* orange-500 */
+}
+
 /* Typography */
 .font-poppins {
     font-family: 'Poppins', sans-serif;
