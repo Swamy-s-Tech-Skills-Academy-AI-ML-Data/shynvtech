@@ -1,20 +1,20 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="min-h-screen">
-    <NavMenu />
-
-    <!-- Add top padding to account for fixed navbar -->
-    <main class="pt-20 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            @* <div class="mb-4">
-                <a href="https://learn.microsoft.com/aspnet/core/" target="_blank"
-                    class="text-blue-600 hover:text-blue-800 underline">About</a>
-            </div> *@
-
-            <div class="bg-white shadow rounded-lg p-6">
-                @Body
+    <NavMenu /> <!-- Add top padding to account for fixed navbar for non-home pages -->
+    <main class="@(IsHomePage ? "" : "pt-20 py-6")">
+        @if (IsHomePage)
+        {
+            @Body
+        }
+        else
+        {
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white shadow rounded-lg p-6">
+                    @Body
+                </div>
             </div>
-        </div>
+        }
     </main>
 </div>
 
@@ -25,3 +25,9 @@
     <button class="ml-4 text-red-200 hover:text-white"
         onclick="document.getElementById('blazor-error-ui').style.display='none'">🗙</button>
 </div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+
+    private bool IsHomePage => Navigation.ToBaseRelativePath(Navigation.Uri) == "";
+}
