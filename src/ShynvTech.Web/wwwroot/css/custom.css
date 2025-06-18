@@ -5,6 +5,38 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Override global link color for specific components */
+.btn-white a,
+.bg-white a,
+.text-white a,
+.hero-section a.btn,
+.carousel-section a.btn,
+a.btn-white,
+a.text-white,
+button a,
+.btn a,
+/* Specific hero section button overrides */
+.hero-section a[href="#focus-areas"],
+.hero-section a[href="#community"],
+section a.bg-white,
+section a.border-white,
+section a.text-white {
+    color: inherit !important;
+}
+
+/* Ensure white text buttons stay white */
+.text-white,
+.btn-white,
+.border-white.text-white {
+    color: white !important;
+}
+
+/* Ensure white background buttons have correct text color */
+.bg-white.text-blue-600,
+a.bg-white.text-blue-600 {
+    color: #2563eb !important;
+}
+
 /* Animations */
 @keyframes fade-in {
     from {
