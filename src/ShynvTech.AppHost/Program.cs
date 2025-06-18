@@ -12,7 +12,7 @@ var lmsApi = builder.AddProject<Projects.ShynvTech_Lms_Api>("lms-api");
 var contentApi = builder.AddProject<Projects.ShynvTech_Content_Api>("content-api");
 
 // Add web frontend with references to all API services
-builder.AddProject<Projects.ShynvTech_Web>("webfrontend")
+builder.AddProject<Projects.ShynvTech_Web>("shynvtech-web")
     .WithExternalHttpEndpoints()
     .WithReference(apiService)
     .WithReference(magazineApi)
