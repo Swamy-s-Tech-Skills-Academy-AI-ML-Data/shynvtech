@@ -41,6 +41,164 @@ This document outlines various approaches for exposing PDFs from the ShynvTech M
 
 ---
 
+## 🔄 **Migration Path: Option A → Option C (Azure Blob)**
+
+### **Why This Migration Strategy Works Perfectly:**
+
+**✅ Zero Breaking Changes**: Same API endpoints, different storage backend  
+**✅ Gradual Migration**: Move PDFs one-by-one or in batches  
+**✅ Rollback Safety**: Keep local files during transition period  
+**✅ Performance Gains**: Better global distribution and caching  
+**✅ Cost Optimization**: Pay only for storage used + bandwidth
+
+### **Phase 1: Current Implementation (Option A)**
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Blazor App    │───▶│  Magazine API    │───▶│  Local Storage  │
+│                 │    │                  │    │  wwwroot/pdfs/  │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+```
+
+**Storage Location**: `src/ShynvTech.Magazine.Api/wwwroot/pdfs/magazine-{id}.pdf`  
+**API Endpoints**: `/api/magazines/{id}/pdf` and `/api/magazines/{id}/pdf/view`  
+**Implementation**: Direct file streaming from local disk
+
+### **Phase 3: Future Implementation (Option C)**
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Blazor App    │───▶│  Magazine API    │───▶│   Azure Blob    │
+│                 │    │                  │    │    Storage      │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+```
+
+**Storage Location**: Azure Blob Storage Container: `magazines`  
+**API Endpoints**: **Same URLs** - `/api/magazines/{id}/pdf` and `/api/magazines/{id}/pdf/view`  
+**Implementation**: Generate SAS URLs or stream from Blob Storage
+
+### **Migration Implementation (Backward Compatible)**
+
+```csharp
+[ApiController]
+[Route("api/[controller]")]
+public class MagazinesController : ControllerBase
+{
+    private readonly IWebHostEnvironment _environment;
+    private readonly IBlobStorageService _blobService; // Added in Phase 3
+    private readonly IConfiguration _config;
+
+    [HttpGet("{id}/pdf")]
+    public async Task<IActionResult> DownloadPdf(int id)
+    {
+        var magazine = await GetMagazineById(id);
+        if (magazine == null) return NotFound();
+
+        // Phase 3: Smart routing - check both storage locations
+        var pdfBytes = await GetPdfFromOptimalSource(id);
+        if (pdfBytes == null) return NotFound("PDF not available");
+
+        return File(pdfBytes, "application/pdf", $"{magazine.Title}.pdf");
+    }
+
+    private async Task<byte[]?> GetPdfFromOptimalSource(int magazineId)
+    {
+        // Try Azure Blob first (Phase 3+)
+        if (_blobService != null && await _blobService.ExistsAsync($"magazines/magazine-{magazineId}.pdf"))
+        {
+            return await _blobService.DownloadBytesAsync($"magazines/magazine-{magazineId}.pdf");
+        }
+
+        // Fallback to local storage (Phase 1 compatibility)
+        var localPath = Path.Combine(_environment.WebRootPath, "pdfs", $"magazine-{magazineId}.pdf");
+        if (System.IO.File.Exists(localPath))
+        {
+            return await System.IO.File.ReadAllBytesAsync(localPath);
+        }
+
+        return null;
+    }
+
+    [HttpGet("{id}/pdf/view")]
+    public async Task<IActionResult> ViewPdf(int id)
+    {
+        // Phase 3: Option to return SAS URL for direct browser access
+        if (_config.GetValue<bool>("UseAzureBlobSas", false))
+        {
+            var sasUrl = await _blobService.GenerateSasUrlAsync(
+                $"magazines/magazine-{id}.pdf",
+                TimeSpan.FromHours(1)
+            );
+            return Redirect(sasUrl);
+        }
+
+        // Phase 1 & 3: Stream through API (works for both storage types)
+        var pdfBytes = await GetPdfFromOptimalSource(id);
+        if (pdfBytes == null) return NotFound();
+
+        return File(pdfBytes, "application/pdf");
+    }
+}
+```
+
+### **Migration Steps (When Ready for Phase 3)**
+
+#### **Step 1: Add Azure Blob Service (No Breaking Changes)**
+
+```csharp
+// In Program.cs
+builder.Services.AddScoped<IBlobStorageService, BlobStorageService>();
+
+// In appsettings.json
+{
+  "AzureStorage": {
+    "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=...",
+    "ContainerName": "magazines"
+  },
+  "UseAzureBlobSas": false  // Start with false for safe migration
+}
+```
+
+#### **Step 2: Upload Existing PDFs to Blob Storage**
+
+```csharp
+// Migration utility (run once)
+public async Task MigrateLocalPdfsToBlob()
+{
+    var localPdfPath = Path.Combine(_environment.WebRootPath, "pdfs");
+    var pdfFiles = Directory.GetFiles(localPdfPath, "*.pdf");
+
+    foreach (var filePath in pdfFiles)
+    {
+        var fileName = Path.GetFileName(filePath);
+        var blobName = $"magazines/{fileName}";
+
+        await _blobService.UploadFileAsync(blobName, filePath);
+        Console.WriteLine($"Migrated: {fileName}");
+    }
+}
+```
+
+#### **Step 3: Test Both Storage Sources Work**
+
+- Verify API still serves PDFs from local storage
+- Verify API can serve PDFs from Blob storage
+- Test fallback mechanism works correctly
+
+#### **Step 4: Gradual Cutover**
+
+```csharp
+// Enable SAS URL mode for better performance
+"UseAzureBlobSas": true
+```
+
+#### **Step 5: Cleanup (Optional)**
+
+- Remove local PDF files after confirming Blob storage is working
+- Remove local storage fallback code if desired
+
+---
+
 ## 🎯 Implementation Options
 
 ### **Option A: Direct File Streaming (⭐ CHOSEN APPROACH)**
