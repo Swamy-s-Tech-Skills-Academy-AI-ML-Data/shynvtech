@@ -7,6 +7,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\ShynvTech.ServiceDefaults\ShynvTech.ServiceDefaults.csproj" />
+		<ProjectReference Include="..\ShyvnTech.ServiceDefaults\ShyvnTech.ServiceDefaults.csproj" />
 	</ItemGroup>
 </Project>
