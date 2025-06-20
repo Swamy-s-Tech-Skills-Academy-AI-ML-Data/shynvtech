@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: shyvntech-apphost
+name: shynvtech-apphost
 services:
   app:
     language: dotnet
-    project: ./ShyvnTech.AppHost.csproj
+    project: ./ShynvTech.AppHost.csproj
     host: containerapp
