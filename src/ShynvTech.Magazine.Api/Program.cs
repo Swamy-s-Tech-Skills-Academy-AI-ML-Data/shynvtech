@@ -48,16 +48,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     // Map OpenAPI endpoint for .NET 9
-    app.MapOpenApi("/openapi/v1.json");
-
-    // Use Scalar UI for interactive API documentation
+    app.MapOpenApi("/openapi/v1.json");    // Use Scalar UI for interactive API documentation
     app.MapScalarApiReference(options =>
     {
         options.WithTitle("ShynvTech Magazine API")
                .WithTheme(ScalarTheme.BluePlanet)
                .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
                .WithPreferredScheme("https")
-               .WithApiKeyAuthentication(x => x.WithApiKeyLocation(ApiKeyLocation.Header))
                .WithOpenApiRoutePattern("/openapi/v1.json");
     });
 }
