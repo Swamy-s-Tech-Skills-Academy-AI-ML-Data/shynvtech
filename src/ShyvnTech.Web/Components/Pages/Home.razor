@@ -1,0 +1,566 @@
+﻿@page "/"
+
+<PageTitle>ShyvnTech - Tech Innovation Collective</PageTitle>
+
+<!-- Mobile Navigation -->
+<nav class="mobile-nav">
+    <div class="mobile-nav-container">
+        <div class="mobile-nav-brand">
+            <h3>ShyvnTech</h3>
+        </div>
+        <button class="mobile-nav-toggle" onclick="toggleMobileMenu()">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+        <a href="#" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+        <a href="#" class="mobile-nav-link" onclick="closeMobileMenu()">Community</a>
+        <a href="#" class="mobile-nav-link" onclick="closeMobileMenu()">Events</a>
+        <a href="#" class="mobile-nav-link" onclick="closeMobileMenu()">Training</a>
+        <a href="#" class="mobile-nav-link" onclick="closeMobileMenu()">Magazines</a>
+        <a href="#" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+    </div>
+</nav>
+
+<!-- Pure JavaScript Slideshow -->
+<section class="hero-slideshow-section">
+    <!-- Slide 0: Main Hero -->
+    <div id="slide-0" class="slide-content slide-main">
+        <div class="hero-content-modern">
+            <div class="hero-left-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket mr-3"></i>
+                    <span>Empowering the Future of Technology</span>
+                </div>
+                <h1 class="hero-title-modern">
+                    Tech Innovation
+                    <span class="hero-title-accent">Collective</span>
+                </h1>
+                <p class="hero-description-modern">
+                    A collaborative platform designed for <strong>students</strong>, <strong>professionals</strong>, and
+                    <strong>tech enthusiasts</strong>
+                </p>
+                <div class="hero-cta-section">
+                    <button class="hero-cta-button">
+                        <i class="fas fa-users mr-2"></i>
+                        Join Community
+                    </button>
+                    <button class="hero-cta-button-outline">
+                        <i class="fas fa-play mr-2"></i>
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero-right-content">
+                <div class="main-cards-container">
+                    <div class="main-card main-card-1">
+                        <div class="main-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community Members</h4>
+                        <p>50+ passionate tech enthusiasts</p>
+                    </div>
+                    <div class="main-card main-card-2">
+                        <div class="main-card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h4>Tech Sessions</h4>
+                        <p>50+ interactive learning sessions</p>
+                    </div>
+                    <div class="main-card main-card-3">
+                        <div class="main-card-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Projects Shared</h4>
+                        <p>100+ collaborative projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 1: Community -->
+    <div id="slide-1" class="slide-content slide-community">
+        <div class="hero-content-modern">
+            <div class="hero-left-content">
+                <div class="hero-badge">
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Join Our Community</span>
+                </div>
+                <h1 class="hero-title-modern">
+                    Thriving
+                    <span class="hero-title-accent">Community</span>
+                </h1>
+                <p class="hero-description-modern">
+                    Connect with like-minded individuals, share knowledge, and grow together in our vibrant tech
+                    community.
+                </p>
+                <div class="hero-cta-section">
+                    <button class="hero-cta-button">
+                        <i class="fas fa-user-plus mr-2"></i>
+                        Join Community
+                    </button>
+                    <button class="hero-cta-button-outline">
+                        <i class="fas fa-comments mr-2"></i>
+                        Start Discussion
+                    </button>
+                </div>
+            </div>
+            <div class="hero-right-content">
+                <div class="community-cards-container">
+                    <div class="community-card community-card-1">
+                        <div class="community-card-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Collaborative Learning</h4>
+                        <p>Pair programming and code reviews</p>
+                    </div>
+                    <div class="community-card community-card-2">
+                        <div class="community-card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Expert Discussions</h4>
+                        <p>Industry experts and thought leaders</p>
+                    </div>
+                    <div class="community-card community-card-3">
+                        <div class="community-card-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Professional Networking</h4>
+                        <p>Build valuable career connections</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Events -->
+    <div id="slide-2" class="slide-content slide-events">
+        <div class="hero-content-modern">
+            <div class="hero-left-content">
+                <div class="hero-badge">
+                    <i class="fas fa-calendar-alt mr-3"></i>
+                    <span>Upcoming Events</span>
+                </div>
+                <h1 class="hero-title-modern">
+                    Amazing
+                    <span class="hero-title-accent">Events</span>
+                </h1>
+                <p class="hero-description-modern">
+                    Join our exciting events designed to enhance your skills and expand your professional network.
+                </p>
+                <div class="hero-cta-section">
+                    <button class="hero-cta-button">
+                        <i class="fas fa-ticket-alt mr-2"></i>
+                        Register Now
+                    </button>
+                    <button class="hero-cta-button-outline">
+                        <i class="fas fa-calendar-plus mr-2"></i>
+                        View Schedule
+                    </button>
+                </div>
+            </div>
+            <div class="hero-right-content">
+                <div class="events-cards-container">
+                    <div class="events-card events-card-1">
+                        <div class="events-card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Coding Bootcamps</h4>
+                        <p>Intensive hands-on coding sessions</p>
+                    </div>
+                    <div class="events-card events-card-2">
+                        <div class="events-card-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h4>Tech Talks</h4>
+                        <p>Inspiring industry leader presentations</p>
+                    </div>
+                    <div class="events-card events-card-3">
+                        <div class="events-card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Hackathons</h4>
+                        <p>Competitive programming challenges</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Training -->
+    <div id="slide-3" class="slide-content slide-training">
+        <div class="hero-content-modern">
+            <div class="hero-left-content">
+                <div class="hero-badge">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    <span>Corporate Training</span>
+                </div>
+                <h1 class="hero-title-modern">
+                    Elevate
+                    <span class="hero-title-accent">Proficiency</span>
+                </h1>
+                <p class="hero-description-modern">
+                    Transform your workforce with our comprehensive training solutions designed for the modern
+                    enterprise.
+                </p>
+                <div class="hero-cta-section">
+                    <button class="hero-cta-button">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Start Training Program
+                    </button>
+                    <button class="hero-cta-button-outline">
+                        <i class="fas fa-calendar mr-2"></i>
+                        Schedule Consultation
+                    </button>
+                </div>
+            </div>
+            <div class="hero-right-content">
+                <div class="training-cards-container">
+                    <div class="training-card training-card-1">
+                        <div class="training-card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI & Machine Learning</h4>
+                        <p>Comprehensive training programs</p>
+                    </div>
+                    <div class="training-card training-card-2">
+                        <div class="training-card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>Cloud Computing</h4>
+                        <p>AWS, Azure, Google Cloud mastery</p>
+                    </div>
+                    <div class="training-card training-card-3">
+                        <div class="training-card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Cybersecurity</h4>
+                        <p>Latest security practices and tools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Magazines -->
+    <div id="slide-4" class="slide-content slide-magazines">
+        <div class="hero-content-modern">
+            <div class="hero-left-content">
+                <div class="hero-badge">
+                    <i class="fas fa-newspaper mr-3"></i>
+                    <span>Tech Magazines</span>
+                </div>
+                <h1 class="hero-title-modern">
+                    Tech
+                    <span class="hero-title-accent">Magazines</span>
+                </h1>
+                <p class="hero-description-modern">
+                    Stay updated with the latest trends, insights, and innovations in the tech industry.
+                </p>
+                <div class="hero-cta-section">
+                    <button class="hero-cta-button">
+                        <i class="fas fa-book-open mr-2"></i>
+                        Read Latest Issue
+                    </button>
+                    <button class="hero-cta-button-outline">
+                        <i class="fas fa-bell mr-2"></i>
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+            <div class="hero-right-content">
+                <div class="magazines-cards-container">
+                    <div class="magazines-card magazines-card-1">
+                        <div class="magazines-card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Industry Insights</h4>
+                        <p>Deep-dive tech trend analysis</p>
+                    </div>
+                    <div class="magazines-card magazines-card-2">
+                        <div class="magazines-card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation Stories</h4>
+                        <p>Breakthrough technological solutions</p>
+                    </div>
+                    <div class="magazines-card magazines-card-3">
+                        <div class="magazines-card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Expert Interviews</h4>
+                        <p>Exclusive tech leader insights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript-Controlled Dots -->
+    <div class="simple-dots">
+        <button id="dot-0" class="dot active" onclick="changeSlide(0)"></button>
+        <button id="dot-1" class="dot" onclick="changeSlide(1)"></button>
+        <button id="dot-2" class="dot" onclick="changeSlide(2)"></button>
+        <button id="dot-3" class="dot" onclick="changeSlide(3)"></button>
+        <button id="dot-4" class="dot" onclick="changeSlide(4)"></button>
+    </div>
+
+
+</section>
+
+<!-- Inline JavaScript Slideshow -->
+<script>
+    // Simple JavaScript Slideshow
+    let currentSlide = 0;
+    const totalSlides = 5;
+    let autoSlideTimer;
+
+    // Initialize slideshow when page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        startAutoSlide();
+        updateDisplay();
+    });
+
+    // Change to specific slide
+    function changeSlide(slideIndex) {
+        if (slideIndex >= 0 && slideIndex < totalSlides) {
+            currentSlide = slideIndex;
+            updateDisplay();
+            restartAutoSlide();
+        }
+    }
+
+    // Go to next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateDisplay();
+        restartAutoSlide();
+    }
+
+    // Update the display
+    function updateDisplay() {
+        // Hide all slides
+        for (let i = 0; i < totalSlides; i++) {
+            const slide = document.getElementById(`slide-${i}`);
+            const dot = document.getElementById(`dot-${i}`);
+
+            if (slide) {
+                slide.style.display = i === currentSlide ? 'block' : 'none';
+            }
+
+            if (dot) {
+                dot.className = i === currentSlide ? 'dot active' : 'dot';
+            }
+        }
+
+
+    }
+
+    // Auto slide functionality
+    function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideTimer = setInterval(() => {
+            nextSlide();
+        }, 4000);
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideTimer) {
+            clearInterval(autoSlideTimer);
+            autoSlideTimer = null;
+        }
+    }
+
+    function restartAutoSlide() {
+        startAutoSlide();
+    }
+
+    // Make functions globally available
+    window.changeSlide = changeSlide;
+    window.nextSlide = nextSlide;
+    window.startAutoSlide = startAutoSlide;
+
+    // Mobile Navigation Functions
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileNavMenu');
+        const toggle = document.querySelector('.mobile-nav-toggle');
+
+        if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            toggle.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            mobileMenu.classList.add('active');
+            toggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeMobileMenu() {
+        const mobileMenu = document.getElementById('mobileNavMenu');
+        const toggle = document.querySelector('.mobile-nav-toggle');
+
+        mobileMenu.classList.remove('active');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileMenu = document.getElementById('mobileNavMenu');
+
+        if (mobileMenu && mobileMenu.classList.contains('active') && !mobileNav.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Make mobile functions globally available
+    window.toggleMobileMenu = toggleMobileMenu;
+    window.closeMobileMenu = closeMobileMenu;
+</script>
+
+<!-- Core Focus Areas Section -->
+<section id="focus-areas" class="focus-areas-section">
+    <div class="focus-areas-container">
+        <div class="focus-areas-header">
+            <h2 class="focus-areas-title">Our Core Focus Areas</h2>
+            <p class="focus-areas-description">
+                Discover the key areas where our tech innovation collective drives change and empowers the community
+            </p>
+        </div>
+
+        <div class="focus-areas-grid">
+            <!-- AI & Generative AI Card -->
+            <div class="focus-card">
+                <i class="focus-card-icon fas fa-robot"></i>
+                <h3 class="focus-card-title">AI & Generative AI</h3>
+                <p class="focus-card-description">Exploring cutting-edge advancements in artificial intelligence and
+                    machine learning technologies</p>
+            </div>
+
+            <!-- Open Source Card -->
+            <div class="focus-card">
+                <i class="focus-card-icon fas fa-code-branch"></i>
+                <h3 class="focus-card-title">Open Source</h3>
+                <p class="focus-card-description">Encouraging contributions to shared projects and community-driven
+                    solutions that benefit everyone</p>
+            </div>
+
+            <!-- Cybersecurity & Ethics Card -->
+            <div class="focus-card">
+                <i class="focus-card-icon fas fa-shield-alt"></i>
+                <h3 class="focus-card-title">Cybersecurity & Ethics</h3>
+                <p class="focus-card-description">Fostering awareness around responsible AI and secure development
+                    practices for a safer digital future</p>
+            </div>
+
+            <!-- Career Growth Card -->
+            <div class="focus-card">
+                <i class="focus-card-icon fas fa-chart-line"></i>
+                <h3 class="focus-card-title">Career Growth</h3>
+                <p class="focus-card-description">Helping students and professionals connect, learn, and advance in
+                    their technology careers</p>
+            </div>
+
+            <!-- Tech for Social Good Card -->
+            <div class="focus-card">
+                <i class="focus-card-icon fas fa-heart"></i>
+                <h3 class="focus-card-title">Tech for Social Good</h3>
+                <p class="focus-card-description">Driving impactful projects that solve real-world problems and create
+                    positive change</p>
+            </div>
+
+            <!-- Hands-on Labs Card -->
+            <div class="focus-card">
+                <i class="focus-card-icon fas fa-flask"></i>
+                <h3 class="focus-card-title">Hands-on Labs</h3>
+                <p class="focus-card-description">Practical learning experiences through interactive sessions and
+                    real-world project implementations</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Company Info -->
+            <div class="footer-brand">
+                <h3 class="footer-brand-title">ShyvnTech</h3>
+                <p class="footer-brand-description">
+                    A collaborative platform designed for students, professionals, and tech enthusiasts.
+                    Empowering the future of technology through innovation and continuous learning.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="footer-section-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">Community</a></li>
+                    <li><a href="#" class="footer-link">Events</a></li>
+                    <li><a href="#" class="footer-link">Training</a></li>
+                    <li><a href="#" class="footer-link">Magazines</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Focus Areas -->
+            <div>
+                <h4 class="footer-section-title">Focus Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="#focus-areas" class="footer-link">AI & Generative AI</a></li>
+                    <li><a href="#focus-areas" class="footer-link">Open Source</a></li>
+                    <li><a href="#focus-areas" class="footer-link">Cybersecurity & Ethics</a></li>
+                    <li><a href="#focus-areas" class="footer-link">Career Growth</a></li>
+                    <li><a href="#focus-areas" class="footer-link">Tech for Social Good</a></li>
+                    <li><a href="#focus-areas" class="footer-link">Hands-on Labs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                © 2025 ShyvnTech. All rights reserved. Built with ❤️ by our tech collective.
+            </p>
+            <div class="footer-legal">
+                <a href="#" class="footer-legal-link">Privacy Policy</a>
+                <a href="#" class="footer-legal-link">Terms of Service</a>
+                <a href="#" class="footer-legal-link">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@* Pure JavaScript slideshow - no C# code needed *@
+
+                   
+                   
+                   
+                   
+                   
+                   

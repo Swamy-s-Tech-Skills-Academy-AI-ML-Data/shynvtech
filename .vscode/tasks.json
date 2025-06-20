@@ -2,13 +2,13 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Run ShynvTech AppHost",
+			"label": "Run ShyvnTech AppHost",
 			"type": "shell",
 			"command": "dotnet",
 			"args": [
 				"run",
 				"--project",
-				"src/ShynvTech.AppHost/ShynvTech.AppHost.csproj"
+				"src/ShyvnTech.AppHost/ShyvnTech.AppHost.csproj"
 			],
 			"group": "build",
 			"isBackground": true,

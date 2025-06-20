@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<IsAspireHost>true</IsAspireHost>
+		<UserSecretsId>0b0285ec-2e9c-4108-9630-b02b42dc1ed1</UserSecretsId>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ShyvnTech.Magazine.Api\ShyvnTech.Magazine.Api.csproj" />
+		<ProjectReference Include="..\ShyvnTech.Events.Api\ShyvnTech.Events.Api.csproj" />
+		<ProjectReference Include="..\ShyvnTech.Lms.Api\ShyvnTech.Lms.Api.csproj" />
+		<ProjectReference Include="..\ShyvnTech.Content.Api\ShyvnTech.Content.Api.csproj" />
+		<ProjectReference Include="..\ShyvnTech.Web\ShyvnTech.Web.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.AppHost" />
+	</ItemGroup>
+</Project>

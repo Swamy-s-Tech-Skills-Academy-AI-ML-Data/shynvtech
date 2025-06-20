@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ShyvnTech.ServiceDefaults\ShyvnTech.ServiceDefaults.csproj" />
+	</ItemGroup>
+
+</Project>
