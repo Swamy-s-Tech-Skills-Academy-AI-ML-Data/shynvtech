@@ -201,7 +201,7 @@ public class MagazinesController : ControllerBase
 
             // Build file path for date-based structure
             var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
-            
+
             if (!System.IO.File.Exists(filePath))
             {
                 _logger.LogWarning("PDF file not found at path {FilePath}", filePath);
@@ -211,9 +211,9 @@ public class MagazinesController : ControllerBase
             // Read and serve file
             var fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
             var fileName = $"Shynvtech_Magazine_{month}_{year}.pdf";
-            
+
             _logger.LogInformation("Successfully served PDF download for {Year}/{Month}", year, month);
-            
+
             return File(fileBytes, "application/pdf", fileName);
         }
         catch (Exception ex)
@@ -221,7 +221,8 @@ public class MagazinesController : ControllerBase
             _logger.LogError(ex, "Error serving PDF download for {Year}/{Month}", year, month);
             return StatusCode(500, "An error occurred while processing your request");
         }
-    }    [HttpGet("{year}/{month}/pdf/view")]
+    }
+    [HttpGet("{year}/{month}/pdf/view")]
     public IActionResult ViewPdfByDate(int year, string month)
     {
         try
@@ -230,7 +231,7 @@ public class MagazinesController : ControllerBase
 
             // Build file path for date-based structure
             var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
-            
+
             if (!System.IO.File.Exists(filePath))
             {
                 return NotFound($"PDF file not available for {month} {year}");
@@ -238,9 +239,9 @@ public class MagazinesController : ControllerBase
 
             // Stream file for inline viewing
             var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-            
+
             _logger.LogInformation("Successfully served PDF view for {Year}/{Month}", year, month);
-            
+
             // Set headers for inline viewing
             Response.Headers["Content-Disposition"] = "inline";
             return File(fileStream, "application/pdf");
@@ -250,7 +251,8 @@ public class MagazinesController : ControllerBase
             _logger.LogError(ex, "Error serving PDF view for {Year}/{Month}", year, month);
             return StatusCode(500, "An error occurred while processing your request");
         }
-    }    [HttpHead("{year}/{month}/pdf")]
+    }
+    [HttpHead("{year}/{month}/pdf")]
     public IActionResult CheckPdfExistsByDate(int year, string month)
     {
         try
@@ -258,7 +260,7 @@ public class MagazinesController : ControllerBase
             // Check if PDF file exists in date structure
             var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
             var pdfExists = System.IO.File.Exists(filePath);
-            
+
             return pdfExists ? Ok() : NotFound();
         }
         catch (Exception ex)
@@ -266,14 +268,15 @@ public class MagazinesController : ControllerBase
             _logger.LogError(ex, "Error checking PDF existence for {Year}/{Month}", year, month);
             return StatusCode(500);
         }
-    }    [HttpGet("archive")]
+    }
+    [HttpGet("archive")]
     public IActionResult GetMagazineArchive()
     {
         try
         {
             var archive = new List<object>();
             var pdfsPath = Path.Combine(_environment.WebRootPath, "pdfs");
-            
+
             // Check for legacy flat structure
             for (int id = 1; id <= 3; id++)
             {
@@ -307,7 +310,7 @@ public class MagazinesController : ControllerBase
                     {
                         var month = Path.GetFileName(monthDir);
                         var pdfPath = Path.Combine(monthDir, "Shynvtech_Magazine.pdf");
-                        
+
                         if (System.IO.File.Exists(pdfPath))
                         {
                             archive.Add(new
