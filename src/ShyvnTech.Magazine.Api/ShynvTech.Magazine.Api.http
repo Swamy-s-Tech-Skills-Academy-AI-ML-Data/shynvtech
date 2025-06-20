@@ -1,0 +1,32 @@
+@ShynvTech.Magazine.Api_HostAddress = http://localhost:5176
+@ShynvTech.Magazine.Api_HostAddress_HTTPS = https://localhost:7035
+
+### Test Magazine Archive Endpoint
+GET {{ShynvTech.Magazine.Api_HostAddress}}/api/magazines/archive
+Accept: application/json
+
+### Test Magazine Archive Endpoint (HTTPS)
+GET {{ShynvTech.Magazine.Api_HostAddress_HTTPS}}/api/magazines/archive
+Accept: application/json
+
+### Test PDF Download - July 2025
+GET {{ShynvTech.Magazine.Api_HostAddress_HTTPS}}/api/magazines/2025/July/pdf
+Accept: application/pdf
+
+### Test PDF View - July 2025
+GET {{ShynvTech.Magazine.Api_HostAddress_HTTPS}}/api/magazines/2025/July/pdf/view
+Accept: application/pdf
+
+### Test PDF Head Request - Check Existence
+HEAD {{ShynvTech.Magazine.Api_HostAddress_HTTPS}}/api/magazines/2025/July/pdf
+
+### Test Non-existent PDF (should return 404)
+GET {{ShynvTech.Magazine.Api_HostAddress_HTTPS}}/api/magazines/2025/December/pdf
+Accept: application/json
+
+### Access Scalar UI
+GET {{ShynvTech.Magazine.Api_HostAddress_HTTPS}}/scalar
+
+### Access OpenAPI Spec
+GET {{ShynvTech.Magazine.Api_HostAddress_HTTPS}}/openapi/v1.json
+Accept: application/json
