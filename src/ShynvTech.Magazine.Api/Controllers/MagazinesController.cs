@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 namespace ShynvTech.Magazine.Api.Controllers;
 
@@ -6,8 +7,16 @@ namespace ShynvTech.Magazine.Api.Controllers;
 [Route("api/[controller]")]
 public class MagazinesController : ControllerBase
 {
+    private readonly IWebHostEnvironment _environment;
+    private readonly ILogger<MagazinesController> _logger;
+
+    public MagazinesController(IWebHostEnvironment environment, ILogger<MagazinesController> logger)
+    {
+        _environment = environment;
+        _logger = logger;
+    }
     [HttpGet]
-    public async Task<IActionResult> GetMagazines()
+    public IActionResult GetMagazines()
     {
         var magazines = new[]
         {
@@ -39,9 +48,8 @@ public class MagazinesController : ControllerBase
 
         return Ok(magazines);
     }
-
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetMagazine(int id)
+    public IActionResult GetMagazine(int id)
     {
         // Mock data - in real app, this would come from database
         if (id == 1)
@@ -66,9 +74,8 @@ public class MagazinesController : ControllerBase
 
         return NotFound();
     }
-
     [HttpGet("latest")]
-    public async Task<IActionResult> GetLatestMagazine()
+    public IActionResult GetLatestMagazine()
     {
         var latestMagazine = new
         {
@@ -81,5 +88,126 @@ public class MagazinesController : ControllerBase
         };
 
         return Ok(latestMagazine);
+    }
+
+    // PDF Streaming Endpoints
+
+    [HttpGet("{id}/pdf")]
+    public async Task<IActionResult> DownloadPdf(int id)
+    {
+        try
+        {
+            _logger.LogInformation("PDF download requested for magazine ID {MagazineId}", id);
+
+            // Validate magazine exists (using existing logic)
+            var magazineExists = await ValidateMagazineExists(id);
+            if (!magazineExists)
+            {
+                _logger.LogWarning("Magazine with ID {MagazineId} not found", id);
+                return NotFound($"Magazine with ID {id} not found");
+            }
+
+            // Build file path
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", $"magazine-{id}.pdf");
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                _logger.LogWarning("PDF file not found for magazine ID {MagazineId} at path {FilePath}", id, filePath);
+                return NotFound("PDF file not available");
+            }
+
+            // Read and serve file
+            var fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
+            var fileName = GetMagazineTitle(id) + ".pdf";
+
+            _logger.LogInformation("Successfully served PDF download for magazine ID {MagazineId}", id);
+
+            return File(fileBytes, "application/pdf", fileName);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error serving PDF download for magazine ID {MagazineId}", id);
+            return StatusCode(500, "An error occurred while processing your request");
+        }
+    }
+
+    [HttpGet("{id}/pdf/view")]
+    public async Task<IActionResult> ViewPdf(int id)
+    {
+        try
+        {
+            _logger.LogInformation("PDF view requested for magazine ID {MagazineId}", id);
+
+            // Validate magazine exists
+            var magazineExists = await ValidateMagazineExists(id);
+            if (!magazineExists)
+            {
+                return NotFound($"Magazine with ID {id} not found");
+            }
+
+            // Build file path
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", $"magazine-{id}.pdf");
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound("PDF file not available");
+            }
+
+            // Stream file for inline viewing
+            var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+
+            _logger.LogInformation("Successfully served PDF view for magazine ID {MagazineId}", id);
+            // Set headers for inline viewing
+            Response.Headers["Content-Disposition"] = "inline";
+            return File(fileStream, "application/pdf");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error serving PDF view for magazine ID {MagazineId}", id);
+            return StatusCode(500, "An error occurred while processing your request");
+        }
+    }
+
+    [HttpHead("{id}/pdf")]
+    public async Task<IActionResult> CheckPdfExists(int id)
+    {
+        try
+        {
+            // Validate magazine exists
+            var magazineExists = await ValidateMagazineExists(id);
+            if (!magazineExists) return NotFound();
+
+            // Check if PDF file exists
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", $"magazine-{id}.pdf");
+            var pdfExists = System.IO.File.Exists(filePath);
+
+            return pdfExists ? Ok() : NotFound();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error checking PDF existence for magazine ID {MagazineId}", id);
+            return StatusCode(500);
+        }
+    }
+
+    // Helper Methods
+
+    private async Task<bool> ValidateMagazineExists(int id)
+    {
+        // Use existing magazine validation logic
+        // For now, check against the hardcoded magazine IDs (1, 2, 3)
+        return await Task.FromResult(id >= 1 && id <= 3);
+    }
+
+    private string GetMagazineTitle(int id)
+    {
+        // Get magazine title for filename
+        return id switch
+        {
+            1 => "Tech_Innovations_2025",
+            2 => "Career_Guidance_Special",
+            3 => "Student_Life_Skills",
+            _ => $"Magazine_{id}"
+        };
     }
 }
