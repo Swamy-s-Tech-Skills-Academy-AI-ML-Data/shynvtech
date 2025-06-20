@@ -1,4 +1,4 @@
-using ShyvnTech.ServiceDefaults;
+using ShynvTech.ServiceDefaults;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
