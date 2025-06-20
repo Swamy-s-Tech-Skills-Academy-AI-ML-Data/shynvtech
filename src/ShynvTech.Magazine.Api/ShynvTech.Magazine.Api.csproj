@@ -9,4 +9,16 @@
 	<ItemGroup>
 		<ProjectReference Include="..\ShynvTech.ServiceDefaults\ShynvTech.ServiceDefaults.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\pdfs\magazine-1.pdf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\pdfs\magazine-2.pdf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\pdfs\magazine-3.pdf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
 </Project>
