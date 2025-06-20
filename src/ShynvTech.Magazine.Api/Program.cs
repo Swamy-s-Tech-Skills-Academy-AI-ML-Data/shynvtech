@@ -1,4 +1,7 @@
 using ShynvTech.ServiceDefaults;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,29 +11,35 @@ builder.AddServiceDefaults();
 // Add services to the container
 builder.Services.AddControllers();
 
-// Add OpenAPI/Swagger services
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+// Add OpenAPI services (.NET 9 native OpenAPI)
+builder.Services.AddOpenApi("v1", options =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    options.AddDocumentTransformer((document, context, cancellationToken) =>
     {
-        Title = "ShynvTech Magazine API",
-        Version = "v1",
-        Description = "API for managing ShynvTech Magazine content and PDF downloads",
-        Contact = new Microsoft.OpenApi.Models.OpenApiContact
+        document.Info = new OpenApiInfo
         {
-            Name = "ShynvTech Team",
-            Email = "support@shynvtech.com"
-        }
-    });
+            Title = "ShynvTech Magazine API",
+            Version = "v1",
+            Description = "API for managing ShynvTech Magazine content and PDF downloads with hierarchical year/month structure",
+            Contact = new OpenApiContact
+            {
+                Name = "ShynvTech Team",
+                Email = "support@shynvtech.com"
+            },
+            License = new OpenApiLicense
+            {
+                Name = "MIT License"
+            }
+        };
 
-    // Include XML comments if available
-    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    if (File.Exists(xmlPath))
-    {
-        c.IncludeXmlComments(xmlPath);
-    }
+        // Add server information
+        document.Servers = new List<OpenApiServer>
+        {
+            new OpenApiServer { Url = "/", Description = "Current server" }
+        };
+
+        return Task.CompletedTask;
+    });
 });
 
 var app = builder.Build();
@@ -38,18 +47,19 @@ var app = builder.Build();
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
-    // Enable Swagger UI
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShynvTech Magazine API v1");
-        c.RoutePrefix = "swagger"; // Swagger UI at /swagger
-        c.DocumentTitle = "ShynvTech Magazine API";
-        c.DefaultModelsExpandDepth(-1); // Hide models section by default
-    });
+    // Map OpenAPI endpoint for .NET 9
+    app.MapOpenApi("/openapi/v1.json");
 
-    // Also map OpenAPI endpoint
-    app.MapOpenApi();
+    // Use Scalar UI for interactive API documentation
+    app.MapScalarApiReference(options =>
+    {
+        options.WithTitle("ShynvTech Magazine API")
+               .WithTheme(ScalarTheme.BluePlanet)
+               .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
+               .WithPreferredScheme("https")
+               .WithApiKeyAuthentication(x => x.WithApiKeyLocation(ApiKeyLocation.Header))
+               .WithOpenApiRoutePattern("/openapi/v1.json");
+    });
 }
 
 app.UseHttpsRedirection();
