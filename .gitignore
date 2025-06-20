@@ -405,4 +405,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# Exclude docs folder but include docs/images
 docs/
+!docs/images/
