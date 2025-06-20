@@ -27,7 +27,7 @@ ShynvTech is a **Tech Innovation Collective** that serves as a hub for:
 
 ## 🏗️ Project Structure
 
-```
+```text
 ShynvTech/
 ├── 📁 docs/                          # Documentation
 │   ├── 📄 api-documentation.md       # API reference and guides
