@@ -1,4 +1,4 @@
-using ShynvTech.Web.Components;
+using ShyvnTech.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

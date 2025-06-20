@@ -1,4 +1,4 @@
-using ShynvTech.ServiceDefaults;
+using ShyvnTech.ServiceDefaults;
 
 var builder = WebApplication.CreateBuilder(args);
 

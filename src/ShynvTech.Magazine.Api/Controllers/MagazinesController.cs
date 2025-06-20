@@ -123,7 +123,8 @@ public class MagazinesController : ControllerBase
     public async Task<IActionResult> DownloadPdfByDate(int year, string month)
     {
         try
-        {            _logger.LogInformation("PDF download requested for {Year}/{Month}", year, month);
+        {
+            _logger.LogInformation("PDF download requested for {Year}/{Month}", year, month);
 
             // Build file path for date-based structure
             var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shyvntech_Magazine.pdf");
@@ -164,7 +165,8 @@ public class MagazinesController : ControllerBase
     public IActionResult ViewPdfByDate(int year, string month)
     {
         try
-        {            _logger.LogInformation("PDF view requested for {Year}/{Month}", year, month);
+        {
+            _logger.LogInformation("PDF view requested for {Year}/{Month}", year, month);
 
             // Build file path for date-based structure
             var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shyvntech_Magazine.pdf");
@@ -204,9 +206,8 @@ public class MagazinesController : ControllerBase
     public IActionResult CheckPdfExistsByDate(int year, string month)
     {
         try
-        {
-            // Check if PDF file exists in date structure
-            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
+        {            // Check if PDF file exists in date structure
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shyvntech_Magazine.pdf");
             var pdfExists = System.IO.File.Exists(filePath);
 
             return pdfExists ? Ok() : NotFound();
@@ -247,7 +248,7 @@ public class MagazinesController : ControllerBase
                     foreach (var monthDir in monthDirs)
                     {
                         var month = Path.GetFileName(monthDir);
-                        var pdfPath = Path.Combine(monthDir, "Shynvtech_Magazine.pdf");
+                        var pdfPath = Path.Combine(monthDir, "Shyvntech_Magazine.pdf");
 
                         if (System.IO.File.Exists(pdfPath))
                         {
@@ -255,7 +256,7 @@ public class MagazinesController : ControllerBase
                             {
                                 Year = int.Parse(year),
                                 Month = month,
-                                Title = $"ShynvTech Magazine - {month} {year}",
+                                Title = $"ShyvnTech Magazine - {month} {year}",
                                 Type = "archived",
                                 DownloadUrl = $"/api/magazines/{year}/{month}/pdf",
                                 ViewUrl = $"/api/magazines/{year}/{month}/pdf/view"

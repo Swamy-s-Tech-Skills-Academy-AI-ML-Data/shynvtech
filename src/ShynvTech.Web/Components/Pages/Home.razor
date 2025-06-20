@@ -1,12 +1,12 @@
 ﻿@page "/"
 
-<PageTitle>ShynvTech - Tech Innovation Collective</PageTitle>
+<PageTitle>ShyvnTech - Tech Innovation Collective</PageTitle>
 
 <!-- Mobile Navigation -->
 <nav class="mobile-nav">
     <div class="mobile-nav-container">
         <div class="mobile-nav-brand">
-            <h3>ShynvTech</h3>
+            <h3>ShyvnTech</h3>
         </div>
         <button class="mobile-nav-toggle" onclick="toggleMobileMenu()">
             <span class="hamburger-line"></span>
@@ -39,7 +39,8 @@
                     <span class="hero-title-accent">Collective</span>
                 </h1>
                 <p class="hero-description-modern">
-                    A collaborative platform designed for <strong>students</strong>, <strong>professionals</strong>, and <strong>tech enthusiasts</strong>
+                    A collaborative platform designed for <strong>students</strong>, <strong>professionals</strong>, and
+                    <strong>tech enthusiasts</strong>
                 </p>
                 <div class="hero-cta-section">
                     <button class="hero-cta-button">
@@ -78,7 +79,7 @@
                 </div>
             </div>
         </div>
-            </div>
+    </div>
 
     <!-- Slide 1: Community -->
     <div id="slide-1" class="slide-content slide-community">
@@ -91,9 +92,10 @@
                 <h1 class="hero-title-modern">
                     Thriving
                     <span class="hero-title-accent">Community</span>
-            </h1>
+                </h1>
                 <p class="hero-description-modern">
-                    Connect with like-minded individuals, share knowledge, and grow together in our vibrant tech community.
+                    Connect with like-minded individuals, share knowledge, and grow together in our vibrant tech
+                    community.
                 </p>
                 <div class="hero-cta-section">
                     <button class="hero-cta-button">
@@ -132,9 +134,9 @@
                 </div>
             </div>
         </div>
-            </div>
+    </div>
 
-        <!-- Slide 2: Events -->
+    <!-- Slide 2: Events -->
     <div id="slide-2" class="slide-content slide-events">
         <div class="hero-content-modern">
             <div class="hero-left-content">
@@ -145,7 +147,7 @@
                 <h1 class="hero-title-modern">
                     Amazing
                     <span class="hero-title-accent">Events</span>
-            </h1>
+                </h1>
                 <p class="hero-description-modern">
                     Join our exciting events designed to enhance your skills and expand your professional network.
                 </p>
@@ -188,20 +190,21 @@
         </div>
     </div>
 
-                <!-- Slide 3: Training -->
+    <!-- Slide 3: Training -->
     <div id="slide-3" class="slide-content slide-training">
         <div class="hero-content-modern">
             <div class="hero-left-content">
                 <div class="hero-badge">
                     <i class="fas fa-graduation-cap mr-3"></i>
                     <span>Corporate Training</span>
-    </div>
+                </div>
                 <h1 class="hero-title-modern">
                     Elevate
                     <span class="hero-title-accent">Proficiency</span>
                 </h1>
                 <p class="hero-description-modern">
-                    Transform your workforce with our comprehensive training solutions designed for the modern enterprise.
+                    Transform your workforce with our comprehensive training solutions designed for the modern
+                    enterprise.
                 </p>
                 <div class="hero-cta-section">
                     <button class="hero-cta-button">
@@ -212,8 +215,8 @@
                         <i class="fas fa-calendar mr-2"></i>
                         Schedule Consultation
                     </button>
-        </div>
-                            </div>
+                </div>
+            </div>
             <div class="hero-right-content">
                 <div class="training-cards-container">
                     <div class="training-card training-card-1">
@@ -238,9 +241,9 @@
                         <p>Latest security practices and tools</p>
                     </div>
                 </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Slide 4: Magazines -->
     <div id="slide-4" class="slide-content slide-magazines">
@@ -267,7 +270,7 @@
                         Subscribe
                     </button>
                 </div>
-                            </div>
+            </div>
             <div class="hero-right-content">
                 <div class="magazines-cards-container">
                     <div class="magazines-card magazines-card-1">
@@ -283,7 +286,7 @@
                         </div>
                         <h4>Innovation Stories</h4>
                         <p>Breakthrough technological solutions</p>
-                            </div>
+                    </div>
                     <div class="magazines-card magazines-card-3">
                         <div class="magazines-card-icon">
                             <i class="fas fa-user-tie"></i>
@@ -310,114 +313,114 @@
 
 <!-- Inline JavaScript Slideshow -->
 <script>
-// Simple JavaScript Slideshow
-let currentSlide = 0;
-const totalSlides = 5;
-let autoSlideTimer;
+    // Simple JavaScript Slideshow
+    let currentSlide = 0;
+    const totalSlides = 5;
+    let autoSlideTimer;
 
-// Initialize slideshow when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    startAutoSlide();
-    updateDisplay();
-});
+    // Initialize slideshow when page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        startAutoSlide();
+        updateDisplay();
+    });
 
-// Change to specific slide
-function changeSlide(slideIndex) {
-    if (slideIndex >= 0 && slideIndex < totalSlides) {
-        currentSlide = slideIndex;
+    // Change to specific slide
+    function changeSlide(slideIndex) {
+        if (slideIndex >= 0 && slideIndex < totalSlides) {
+            currentSlide = slideIndex;
+            updateDisplay();
+            restartAutoSlide();
+        }
+    }
+
+    // Go to next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
         updateDisplay();
         restartAutoSlide();
     }
-}
 
-// Go to next slide
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateDisplay();
-    restartAutoSlide();
-}
+    // Update the display
+    function updateDisplay() {
+        // Hide all slides
+        for (let i = 0; i < totalSlides; i++) {
+            const slide = document.getElementById(`slide-${i}`);
+            const dot = document.getElementById(`dot-${i}`);
 
-// Update the display
-function updateDisplay() {
-    // Hide all slides
-    for (let i = 0; i < totalSlides; i++) {
-        const slide = document.getElementById(`slide-${i}`);
-        const dot = document.getElementById(`dot-${i}`);
-        
-        if (slide) {
-            slide.style.display = i === currentSlide ? 'block' : 'none';
+            if (slide) {
+                slide.style.display = i === currentSlide ? 'block' : 'none';
+            }
+
+            if (dot) {
+                dot.className = i === currentSlide ? 'dot active' : 'dot';
+            }
         }
-        
-        if (dot) {
-            dot.className = i === currentSlide ? 'dot active' : 'dot';
+
+
+    }
+
+    // Auto slide functionality
+    function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideTimer = setInterval(() => {
+            nextSlide();
+        }, 4000);
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideTimer) {
+            clearInterval(autoSlideTimer);
+            autoSlideTimer = null;
         }
     }
-    
 
-}
-
-// Auto slide functionality
-function startAutoSlide() {
-    stopAutoSlide();
-    autoSlideTimer = setInterval(() => {
-        nextSlide();
-    }, 4000);
-}
-
-function stopAutoSlide() {
-    if (autoSlideTimer) {
-        clearInterval(autoSlideTimer);
-        autoSlideTimer = null;
+    function restartAutoSlide() {
+        startAutoSlide();
     }
-}
 
-function restartAutoSlide() {
-    startAutoSlide();
-}
+    // Make functions globally available
+    window.changeSlide = changeSlide;
+    window.nextSlide = nextSlide;
+    window.startAutoSlide = startAutoSlide;
 
-// Make functions globally available
-window.changeSlide = changeSlide;
-window.nextSlide = nextSlide;
-window.startAutoSlide = startAutoSlide;
+    // Mobile Navigation Functions
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileNavMenu');
+        const toggle = document.querySelector('.mobile-nav-toggle');
 
-// Mobile Navigation Functions
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileNavMenu');
-    const toggle = document.querySelector('.mobile-nav-toggle');
-    
-    if (mobileMenu.classList.contains('active')) {
+        if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            toggle.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            mobileMenu.classList.add('active');
+            toggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeMobileMenu() {
+        const mobileMenu = document.getElementById('mobileNavMenu');
+        const toggle = document.querySelector('.mobile-nav-toggle');
+
         mobileMenu.classList.remove('active');
         toggle.classList.remove('active');
         document.body.style.overflow = '';
-    } else {
-        mobileMenu.classList.add('active');
-        toggle.classList.add('active');
-        document.body.style.overflow = 'hidden';
     }
-}
 
-function closeMobileMenu() {
-    const mobileMenu = document.getElementById('mobileNavMenu');
-    const toggle = document.querySelector('.mobile-nav-toggle');
-    
-    mobileMenu.classList.remove('active');
-    toggle.classList.remove('active');
-    document.body.style.overflow = '';
-}
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileMenu = document.getElementById('mobileNavMenu');
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileNav = document.querySelector('.mobile-nav');
-    const mobileMenu = document.getElementById('mobileNavMenu');
-    
-    if (mobileMenu && mobileMenu.classList.contains('active') && !mobileNav.contains(event.target)) {
-        closeMobileMenu();
-    }
-});
+        if (mobileMenu && mobileMenu.classList.contains('active') && !mobileNav.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
 
-// Make mobile functions globally available
-window.toggleMobileMenu = toggleMobileMenu;
-window.closeMobileMenu = closeMobileMenu;
+    // Make mobile functions globally available
+    window.toggleMobileMenu = toggleMobileMenu;
+    window.closeMobileMenu = closeMobileMenu;
 </script>
 
 <!-- Core Focus Areas Section -->
@@ -435,42 +438,48 @@ window.closeMobileMenu = closeMobileMenu;
             <div class="focus-card">
                 <i class="focus-card-icon fas fa-robot"></i>
                 <h3 class="focus-card-title">AI & Generative AI</h3>
-                <p class="focus-card-description">Exploring cutting-edge advancements in artificial intelligence and machine learning technologies</p>
+                <p class="focus-card-description">Exploring cutting-edge advancements in artificial intelligence and
+                    machine learning technologies</p>
             </div>
 
             <!-- Open Source Card -->
             <div class="focus-card">
                 <i class="focus-card-icon fas fa-code-branch"></i>
                 <h3 class="focus-card-title">Open Source</h3>
-                <p class="focus-card-description">Encouraging contributions to shared projects and community-driven solutions that benefit everyone</p>
+                <p class="focus-card-description">Encouraging contributions to shared projects and community-driven
+                    solutions that benefit everyone</p>
             </div>
 
             <!-- Cybersecurity & Ethics Card -->
             <div class="focus-card">
                 <i class="focus-card-icon fas fa-shield-alt"></i>
                 <h3 class="focus-card-title">Cybersecurity & Ethics</h3>
-                <p class="focus-card-description">Fostering awareness around responsible AI and secure development practices for a safer digital future</p>
+                <p class="focus-card-description">Fostering awareness around responsible AI and secure development
+                    practices for a safer digital future</p>
             </div>
 
             <!-- Career Growth Card -->
             <div class="focus-card">
                 <i class="focus-card-icon fas fa-chart-line"></i>
                 <h3 class="focus-card-title">Career Growth</h3>
-                <p class="focus-card-description">Helping students and professionals connect, learn, and advance in their technology careers</p>
+                <p class="focus-card-description">Helping students and professionals connect, learn, and advance in
+                    their technology careers</p>
             </div>
 
             <!-- Tech for Social Good Card -->
             <div class="focus-card">
                 <i class="focus-card-icon fas fa-heart"></i>
                 <h3 class="focus-card-title">Tech for Social Good</h3>
-                <p class="focus-card-description">Driving impactful projects that solve real-world problems and create positive change</p>
+                <p class="focus-card-description">Driving impactful projects that solve real-world problems and create
+                    positive change</p>
             </div>
 
             <!-- Hands-on Labs Card -->
             <div class="focus-card">
                 <i class="focus-card-icon fas fa-flask"></i>
                 <h3 class="focus-card-title">Hands-on Labs</h3>
-                <p class="focus-card-description">Practical learning experiences through interactive sessions and real-world project implementations</p>
+                <p class="focus-card-description">Practical learning experiences through interactive sessions and
+                    real-world project implementations</p>
             </div>
         </div>
     </div>
@@ -482,7 +491,7 @@ window.closeMobileMenu = closeMobileMenu;
         <div class="footer-grid">
             <!-- Company Info -->
             <div class="footer-brand">
-                <h3 class="footer-brand-title">ShynvTech</h3>
+                <h3 class="footer-brand-title">ShyvnTech</h3>
                 <p class="footer-brand-description">
                     A collaborative platform designed for students, professionals, and tech enthusiasts.
                     Empowering the future of technology through innovation and continuous learning.
@@ -536,8 +545,8 @@ window.closeMobileMenu = closeMobileMenu;
         <!-- Bottom Bar -->
         <div class="footer-bottom">
             <p class="footer-copyright">
-                    © 2025 ShynvTech. All rights reserved. Built with ❤️ by our tech collective.
-                </p>
+                © 2025 ShyvnTech. All rights reserved. Built with ❤️ by our tech collective.
+            </p>
             <div class="footer-legal">
                 <a href="#" class="footer-legal-link">Privacy Policy</a>
                 <a href="#" class="footer-legal-link">Terms of Service</a>
@@ -548,3 +557,10 @@ window.closeMobileMenu = closeMobileMenu;
 </footer>
 
 @* Pure JavaScript slideshow - no C# code needed *@
+
+                   
+                   
+                   
+                   
+                   
+                   

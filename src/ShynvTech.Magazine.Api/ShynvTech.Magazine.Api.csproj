@@ -12,10 +12,10 @@
 		<ProjectReference Include="..\ShynvTech.ServiceDefaults\ShynvTech.ServiceDefaults.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-		<Content Update="wwwroot\pdfs\2025\Aug\Shynvtech_Magazine.pdf">
+		<Content Update="wwwroot\pdfs\2025\Aug\Shyvntech_Magazine.pdf">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Update="wwwroot\pdfs\2025\July\Shynvtech_Magazine.pdf">
+		<Content Update="wwwroot\pdfs\2025\July\Shyvntech_Magazine.pdf">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>

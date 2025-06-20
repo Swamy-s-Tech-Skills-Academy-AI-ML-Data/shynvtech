@@ -1,7 +1,7 @@
 {
-    "name": "shynvtech-web",
+    "name": "shyvntech-web",
     "version": "1.0.0",
-    "description": "ShynvTech Web Frontend",
+    "description": "ShyvnTech Web Frontend",
     "scripts": {
         "build-css": "tailwindcss -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --watch",
         "build-css-prod": "tailwindcss -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --minify"
