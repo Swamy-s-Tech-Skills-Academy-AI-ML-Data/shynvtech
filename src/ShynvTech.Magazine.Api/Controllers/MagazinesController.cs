@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.IO;
 
 namespace ShynvTech.Magazine.Api.Controllers;
 

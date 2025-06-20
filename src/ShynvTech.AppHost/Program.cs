@@ -1,7 +1,8 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 // Add API services
-var magazineApi = builder.AddProject<Projects.ShynvTech_Magazine_Api>("magazine-api");
+var magazineApi = builder.AddProject<Projects.ShynvTech_Magazine_Api>("magazine-api")
+    .WithExternalHttpEndpoints();
 
 var eventsApi = builder.AddProject<Projects.ShynvTech_Events_Api>("events-api");
 
