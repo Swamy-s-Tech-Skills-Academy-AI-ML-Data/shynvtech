@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "ShynvTech.AppHost": {
+    "ShyvnTech.AppHost": {
       "applicationUrl": "https://localhost:17150;http://localhost:15123",
       "commandName": "Project",
       "dotnetRunMessages": true,

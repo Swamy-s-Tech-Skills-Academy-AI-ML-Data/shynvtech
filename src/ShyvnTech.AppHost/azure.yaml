@@ -4,5 +4,5 @@ name: shynvtech-apphost
 services:
   app:
     language: dotnet
-    project: ./ShynvTech.AppHost.csproj
+    project: ./ShyvnTech.AppHost.csproj
     host: containerapp
