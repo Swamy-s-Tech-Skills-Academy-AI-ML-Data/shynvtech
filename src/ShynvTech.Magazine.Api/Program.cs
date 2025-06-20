@@ -1,7 +1,6 @@
 using ShynvTech.ServiceDefaults;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,14 +47,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     // Map OpenAPI endpoint for .NET 9
-    app.MapOpenApi("/openapi/v1.json");    // Use Scalar UI for interactive API documentation
-    app.MapScalarApiReference(options =>
+    app.MapOpenApi("/openapi/v1.json");
+
+    // Use Swagger UI for interactive API documentation (temporarily)
+    app.UseSwaggerUI(options =>
     {
-        options.WithTitle("ShynvTech Magazine API")
-               .WithTheme(ScalarTheme.BluePlanet)
-               .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
-               .WithPreferredScheme("https")
-               .WithOpenApiRoutePattern("/openapi/v1.json");
+        options.SwaggerEndpoint("/openapi/v1.json", "ShynvTech Magazine API v1");
+        options.RoutePrefix = "swagger";
     });
 }
 
