@@ -190,6 +190,149 @@ public class MagazinesController : ControllerBase
         }
     }
 
+    // Enhanced PDF endpoints for year/month structure
+
+    [HttpGet("{year}/{month}/pdf")]
+    public async Task<IActionResult> DownloadPdfByDate(int year, string month)
+    {
+        try
+        {
+            _logger.LogInformation("PDF download requested for {Year}/{Month}", year, month);
+
+            // Build file path for date-based structure
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
+            
+            if (!System.IO.File.Exists(filePath))
+            {
+                _logger.LogWarning("PDF file not found at path {FilePath}", filePath);
+                return NotFound($"PDF file not available for {month} {year}");
+            }
+
+            // Read and serve file
+            var fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
+            var fileName = $"Shynvtech_Magazine_{month}_{year}.pdf";
+            
+            _logger.LogInformation("Successfully served PDF download for {Year}/{Month}", year, month);
+            
+            return File(fileBytes, "application/pdf", fileName);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error serving PDF download for {Year}/{Month}", year, month);
+            return StatusCode(500, "An error occurred while processing your request");
+        }
+    }    [HttpGet("{year}/{month}/pdf/view")]
+    public IActionResult ViewPdfByDate(int year, string month)
+    {
+        try
+        {
+            _logger.LogInformation("PDF view requested for {Year}/{Month}", year, month);
+
+            // Build file path for date-based structure
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
+            
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound($"PDF file not available for {month} {year}");
+            }
+
+            // Stream file for inline viewing
+            var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            
+            _logger.LogInformation("Successfully served PDF view for {Year}/{Month}", year, month);
+            
+            // Set headers for inline viewing
+            Response.Headers["Content-Disposition"] = "inline";
+            return File(fileStream, "application/pdf");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error serving PDF view for {Year}/{Month}", year, month);
+            return StatusCode(500, "An error occurred while processing your request");
+        }
+    }    [HttpHead("{year}/{month}/pdf")]
+    public IActionResult CheckPdfExistsByDate(int year, string month)
+    {
+        try
+        {
+            // Check if PDF file exists in date structure
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
+            var pdfExists = System.IO.File.Exists(filePath);
+            
+            return pdfExists ? Ok() : NotFound();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error checking PDF existence for {Year}/{Month}", year, month);
+            return StatusCode(500);
+        }
+    }    [HttpGet("archive")]
+    public IActionResult GetMagazineArchive()
+    {
+        try
+        {
+            var archive = new List<object>();
+            var pdfsPath = Path.Combine(_environment.WebRootPath, "pdfs");
+            
+            // Check for legacy flat structure
+            for (int id = 1; id <= 3; id++)
+            {
+                var legacyPath = Path.Combine(pdfsPath, $"magazine-{id}.pdf");
+                if (System.IO.File.Exists(legacyPath))
+                {
+                    archive.Add(new
+                    {
+                        Id = id,
+                        Title = GetMagazineTitle(id),
+                        Type = "legacy",
+                        DownloadUrl = $"/api/magazines/{id}/pdf",
+                        ViewUrl = $"/api/magazines/{id}/pdf/view"
+                    });
+                }
+            }
+
+            // Check for year/month structure
+            if (Directory.Exists(pdfsPath))
+            {
+                var yearDirs = Directory.GetDirectories(pdfsPath)
+                    .Where(d => int.TryParse(Path.GetFileName(d), out _))
+                    .OrderByDescending(d => d);
+
+                foreach (var yearDir in yearDirs)
+                {
+                    var year = Path.GetFileName(yearDir);
+                    var monthDirs = Directory.GetDirectories(yearDir).OrderByDescending(d => d);
+
+                    foreach (var monthDir in monthDirs)
+                    {
+                        var month = Path.GetFileName(monthDir);
+                        var pdfPath = Path.Combine(monthDir, "Shynvtech_Magazine.pdf");
+                        
+                        if (System.IO.File.Exists(pdfPath))
+                        {
+                            archive.Add(new
+                            {
+                                Year = int.Parse(year),
+                                Month = month,
+                                Title = $"ShynvTech Magazine - {month} {year}",
+                                Type = "archived",
+                                DownloadUrl = $"/api/magazines/{year}/{month}/pdf",
+                                ViewUrl = $"/api/magazines/{year}/{month}/pdf/view"
+                            });
+                        }
+                    }
+                }
+            }
+
+            return Ok(archive);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error retrieving magazine archive");
+            return StatusCode(500, "An error occurred while retrieving the archive");
+        }
+    }
+
     // Helper Methods
 
     private async Task<bool> ValidateMagazineExists(int id)
