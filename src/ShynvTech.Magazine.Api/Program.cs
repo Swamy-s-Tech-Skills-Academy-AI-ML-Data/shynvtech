@@ -48,13 +48,6 @@ if (app.Environment.IsDevelopment())
 {
     // Map OpenAPI endpoint for .NET 9
     app.MapOpenApi("/openapi/v1.json");
-
-    // Use Swagger UI for interactive API documentation (temporarily)
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/openapi/v1.json", "ShynvTech Magazine API v1");
-        options.RoutePrefix = "swagger";
-    });
 }
 
 app.UseHttpsRedirection();
