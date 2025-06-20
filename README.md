@@ -94,6 +94,8 @@ ShyvnTech/
 ![Scalar API Documentation](docs/images/Scalar.PNG)
 _Interactive API documentation powered by Scalar_
 
+[OpenAPI Specification](https://localhost:7035/openapi/v1.json)
+
 ### **Architecture**
 
 - **.NET Aspire** - Cloud-native application orchestration
