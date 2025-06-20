@@ -11,11 +11,10 @@
 		<!-- Missing XML comment for publicly visible type or member -->
 	</PropertyGroup>
 
-	<PropertyGroup>
-		<Authors>ShynvTech Team</Authors>
-		<Company>ShynvTech</Company>
-		<Product>ShynvTech Platform</Product>
-		<Copyright>Copyright © ShynvTech 2025</Copyright>
+	<PropertyGroup>		<Authors>ShyvnTech Team</Authors>
+		<Company>ShyvnTech</Company>
+		<Product>ShyvnTech Platform</Product>
+		<Copyright>Copyright © ShyvnTech 2025</Copyright>
 		<Version>1.0.0</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>

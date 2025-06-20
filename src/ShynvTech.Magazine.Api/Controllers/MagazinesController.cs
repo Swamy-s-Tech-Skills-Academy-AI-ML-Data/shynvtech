@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ShynvTech.Magazine.Api.Controllers;
+namespace ShyvnTech.Magazine.Api.Controllers;
 
 /// <summary>
-/// Controller for managing ShynvTech Magazine content and PDF downloads using hierarchical structure (year/month).
+/// Controller for managing ShyvnTech Magazine content and PDF downloads using hierarchical structure (year/month).
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
@@ -96,10 +96,10 @@ public class MagazinesController : ControllerBase
         {
             Year = 2025,
             Month = "Aug",
-            Title = "ShynvTech Magazine - August 2025",
+            Title = "ShyvnTech Magazine - August 2025",
             IssueDate = "August 2025",
             Description = "Cloud Computing Essentials, Back-to-School Tech Guide, Data Science for Beginners",
-            CoverImageUrl = "/images/shynvtech-aug-2025.jpg",
+            CoverImageUrl = "/images/shyvntech-aug-2025.jpg",
             PdfUrl = "/api/magazines/2025/Aug/pdf"
         };
 
@@ -123,11 +123,10 @@ public class MagazinesController : ControllerBase
     public async Task<IActionResult> DownloadPdfByDate(int year, string month)
     {
         try
-        {
-            _logger.LogInformation("PDF download requested for {Year}/{Month}", year, month);
+        {            _logger.LogInformation("PDF download requested for {Year}/{Month}", year, month);
 
             // Build file path for date-based structure
-            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shyvntech_Magazine.pdf");
 
             if (!System.IO.File.Exists(filePath))
             {
@@ -137,7 +136,7 @@ public class MagazinesController : ControllerBase
 
             // Read and serve file
             var fileBytes = await System.IO.File.ReadAllBytesAsync(filePath);
-            var fileName = $"Shynvtech_Magazine_{month}_{year}.pdf";
+            var fileName = $"Shyvntech_Magazine_{month}_{year}.pdf";
 
             _logger.LogInformation("Successfully served PDF download for {Year}/{Month}", year, month);
 
@@ -165,11 +164,10 @@ public class MagazinesController : ControllerBase
     public IActionResult ViewPdfByDate(int year, string month)
     {
         try
-        {
-            _logger.LogInformation("PDF view requested for {Year}/{Month}", year, month);
+        {            _logger.LogInformation("PDF view requested for {Year}/{Month}", year, month);
 
             // Build file path for date-based structure
-            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shynvtech_Magazine.pdf");
+            var filePath = Path.Combine(_environment.WebRootPath, "pdfs", year.ToString(), month, "Shyvntech_Magazine.pdf");
 
             if (!System.IO.File.Exists(filePath))
             {

@@ -1,4 +1,4 @@
-# ShynvTech - Tech Innovation Collective 🚀
+# ShyvnTech - Tech Innovation Collective 🚀
 
 [![.NET 9.0](https://img.shields.io/badge/.NET-9.0-512BD4?style=flat&logo=dotnet)](https://dotnet.microsoft.com/)
 [![Blazor Server](https://img.shields.io/badge/Blazor-Server-512BD4?style=flat&logo=blazor)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
@@ -7,9 +7,9 @@
 
 A collaborative platform designed for **students**, **professionals**, and **tech enthusiasts** to connect, learn, and innovate together. Our mission is to empower the future of technology through community-driven innovation and continuous learning.
 
-## 🎯 What is ShynvTech?
+## 🎯 What is ShyvnTech?
 
-ShynvTech is a **Tech Innovation Collective** that serves as a hub for:
+ShyvnTech is a **Tech Innovation Collective** that serves as a hub for:
 
 - **🧑‍🎓 Students** seeking hands-on experience and industry connections
 - **👩‍💼 Professionals** looking to stay current with emerging technologies
@@ -28,7 +28,7 @@ ShynvTech is a **Tech Innovation Collective** that serves as a hub for:
 ## 🏗️ Project Structure
 
 ```text
-ShynvTech/
+ShyvnTech/
 ├── 📁 docs/                          # Documentation
 │   ├── 📄 api-documentation.md       # API reference and guides
 │   ├── 📄 architecture.md            # System architecture overview
@@ -40,7 +40,7 @@ ShynvTech/
 │   └── 📁 reviews/                   # Code reviews and assessments
 │
 ├── 📁 src/                           # Source code
-│   ├── 🌐 ShynvTech.Web/            # Main Blazor web application
+│   ├── 🌐 ShyvnTech.Web/            # Main Blazor web application
 │   │   ├── 📁 Components/            # Blazor components
 │   │   │   ├── 📁 Layout/           # Layout components (NavMenu, MainLayout)
 │   │   │   └── 📁 Pages/            # Page components (Home, etc.)
@@ -50,27 +50,27 @@ ShynvTech/
 │   │   │   └── 📁 js/               # JavaScript utilities
 │   │   └── 📁 Styles/               # Tailwind CSS configuration
 │   │
-│   ├── 🚀 ShynvTech.AppHost/        # .NET Aspire orchestration
+│   ├── 🚀 ShyvnTech.AppHost/        # .NET Aspire orchestration
 │   │   ├── 📄 Program.cs            # Application host configuration
 │   │   ├── 📄 azure.yaml            # Azure deployment configuration
 │   │   └── 📄 next-steps.md         # Post-deployment guidance
 │   │
-│   ├── 📚 ShynvTech.Magazine.Api/   # Magazine management API
+│   ├── 📚 ShyvnTech.Magazine.Api/   # Magazine management API
 │   │   ├── 📁 Controllers/          # API controllers
 │   │   ├── 📁 wwwroot/pdfs/        # PDF storage (local files)
 │   │   └── 📄 Program.cs            # API service configuration
 │   │
-│   ├── 📅 ShynvTech.Events.Api/     # Events management API
-│   ├── 🎓 ShynvTech.Lms.Api/        # Learning management system API
-│   ├── 📝 ShynvTech.Content.Api/    # Content management API
-│   ├── ⚙️ ShynvTech.ApiService/     # General API services
+│   ├── 📅 ShyvnTech.Events.Api/     # Events management API
+│   ├── 🎓 ShyvnTech.Lms.Api/        # Learning management system API
+│   ├── 📝 ShyvnTech.Content.Api/    # Content management API
+│   ├── ⚙️ ShyvnTech.ApiService/     # General API services
 │   │
-│   └── 🔧 ShynvTech.ServiceDefaults/ # Shared service configurations
+│   └── 🔧 ShyvnTech.ServiceDefaults/ # Shared service configurations
 │       └── 📄 Extensions.cs          # Common Aspire service defaults
 │
 ├── 📄 Directory.Build.props          # MSBuild shared properties
 ├── 📄 Directory.Packages.props       # Centralized package management
-├── 📄 ShynvTech.sln                 # Visual Studio solution file
+├── 📄 ShyvnTech.sln                 # Visual Studio solution file
 ├── 📄 LICENSE                       # MIT license
 └── 📄 README.md                     # This file
 ```
@@ -89,6 +89,10 @@ ShynvTech/
 - **.NET 9.0** - Latest .NET framework
 - **ASP.NET Core Web API** - RESTful API services
 - **OpenAPI/Swagger** - API documentation
+- **Scalar** - Modern API documentation UI
+
+![Scalar API Documentation](docs/images/Scalar.PNG)
+_Interactive API documentation powered by Scalar_
 
 ### **Architecture**
 
@@ -115,9 +119,8 @@ ShynvTech/
 
 1. **Clone the repository**
 
-   ```bash
-   git clone https://github.com/your-org/shynvtech.git
-   cd shynvtech
+   ```bash git clone https://github.com/your-org/shyvntech.git
+   cd shyvntech
    ```
 
 2. **Restore dependencies**
@@ -128,12 +131,11 @@ ShynvTech/
 
 3. **Run the application**
 
-   ```bash
-   # Option 1: Run the entire solution with Aspire
-   dotnet run --project src/ShynvTech.AppHost/ShynvTech.AppHost.csproj
+   ```bash # Option 1: Run the entire solution with Aspire
+   dotnet run --project src/ShyvnTech.AppHost/ShyvnTech.AppHost.csproj
 
    # Option 2: Run just the web application
-   dotnet run --project src/ShynvTech.Web/ShynvTech.Web.csproj
+   dotnet run --project src/ShyvnTech.Web/ShyvnTech.Web.csproj
    ```
 
 4. **Access the application**
@@ -149,7 +151,7 @@ You can also use the predefined VS Code task:
 
 ```bash
 # Press Ctrl+Shift+P and select "Tasks: Run Task"
-# Then choose "Run ShynvTech AppHost"
+# Then choose "Run ShyvnTech AppHost"
 ```
 
 ## ☁️ Deployment
@@ -220,7 +222,7 @@ We welcome contributions from developers, designers, and tech enthusiasts! Here'
 1. **Fork the repository**
 
    ```bash
-   git fork https://github.com/your-org/shynvtech.git
+   git fork https://github.com/your-org/shyvntech.git
    ```
 
 2. **Create a feature branch**
@@ -239,7 +241,7 @@ We welcome contributions from developers, designers, and tech enthusiasts! Here'
 
    ```bash
    dotnet test
-   dotnet run --project src/ShynvTech.AppHost
+   dotnet run --project src/ShyvnTech.AppHost
    ```
 
 5. **Submit a pull request**
@@ -282,7 +284,7 @@ style(css): improve hero section spacing
 - **Figma designs** are welcome for new features
 - **Accessibility** improvements are highly valued
 - **Mobile-first** approach for responsive design
-- **Brand consistency** with ShynvTech identity
+- **Brand consistency** with ShyvnTech identity
 
 ### **📚 Documentation Contributions**
 
@@ -295,17 +297,17 @@ style(css): improve hero section spacing
 
 ### **🌐 Connect with Us**
 
-- **Website**: [shynvtech.com](https://shynvtech.com)
-- **GitHub Discussions**: [Join conversations](https://github.com/your-org/shynvtech/discussions)
-- **LinkedIn**: [ShynvTech Community](https://linkedin.com/company/shynvtech)
-- **Twitter**: [@shynvtech](https://twitter.com/shynvtech)
+- **Website**: [shyvntech.com](https://shyvntech.com)
+- **GitHub Discussions**: [Join conversations](https://github.com/your-org/shyvntech/discussions)
+- **LinkedIn**: [ShyvnTech Community](https://linkedin.com/company/shyvntech)
+- **Twitter**: [@shyvntech](https://twitter.com/shyvntech)
 
 ### **💬 Getting Help**
 
 - **📖 Documentation**: Check our [docs](docs/) folder
-- **🐛 Issues**: [GitHub Issues](https://github.com/your-org/shynvtech/issues)
-- **💭 Discussions**: [GitHub Discussions](https://github.com/your-org/shynvtech/discussions)
-- **📧 Email**: support@shynvtech.com
+- **🐛 Issues**: [GitHub Issues](https://github.com/your-org/shyvntech/issues)
+- **💭 Discussions**: [GitHub Discussions](https://github.com/your-org/shyvntech/discussions)
+- **📧 Email**: support@shyvntech.com
 
 ### **📋 Development Resources**
 
@@ -327,6 +329,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-**Built with ❤️ by the ShynvTech Tech Innovation Collective**
+**Built with ❤️ by the ShyvnTech Tech Innovation Collective**
 
 _Empowering the future of technology through innovation and continuous learning._

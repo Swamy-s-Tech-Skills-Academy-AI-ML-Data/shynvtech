@@ -1,4 +1,4 @@
-using ShynvTech.ServiceDefaults;
+using ShyvnTech.ServiceDefaults;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -17,13 +17,13 @@ builder.Services.AddOpenApi("v1", options =>
     {
         document.Info = new OpenApiInfo
         {
-            Title = "ShynvTech Magazine API",
+            Title = "ShyvnTech Magazine API",
             Version = "v1",
-            Description = "API for managing ShynvTech Magazine content and PDF downloads with hierarchical year/month structure",
+            Description = "API for managing ShyvnTech Magazine content and PDF downloads with hierarchical year/month structure",
             Contact = new OpenApiContact
             {
-                Name = "ShynvTech Team",
-                Email = "support@shynvtech.com"
+                Name = "ShyvnTech Team",
+                Email = "support@shyvntech.com"
             },
             License = new OpenApiLicense
             {
