@@ -2,48 +2,48 @@
 
 /* Add any custom styles here if they can't be achieved with Tailwind's utility classes */
 
-.text-shynv-700 {
-    color: var(--shynv-700);
+.text-shyvn-700 {
+    color: var(--shyvn-700);
 }
 
-.text-shynv-800 {
-    color: var(--shynv-800);
+.text-shyvn-800 {
+    color: var(--shyvn-800);
 }
 
-.bg-shynv-600 {
-    background-color: var(--shynv-600);
+.bg-shyvn-600 {
+    background-color: var(--shyvn-600);
 }
 
-.bg-shynv-700 {
-    background-color: var(--shynv-700);
+.bg-shyvn-700 {
+    background-color: var(--shyvn-700);
 }
 
-.bg-shynv-800 {
-    background-color: var(--shynv-800);
+.bg-shyvn-800 {
+    background-color: var(--shyvn-800);
 }
 
-.from-shynv-600 {
-    --tw-gradient-from: var(--shynv-600);
+.from-shyvn-600 {
+    --tw-gradient-from: var(--shyvn-600);
 }
 
-.via-shynv-700 {
-    --tw-gradient-via: var(--shynv-700);
+.via-shyvn-700 {
+    --tw-gradient-via: var(--shyvn-700);
 }
 
-.to-shynv-800 {
-    --tw-gradient-to: var(--shynv-800);
+.to-shyvn-800 {
+    --tw-gradient-to: var(--shyvn-800);
 }
 
-.border-shynv-600 {
-    border-color: var(--shynv-600);
+.border-shyvn-600 {
+    border-color: var(--shyvn-600);
 }
 
-.hover\:text-shynv-600:hover {
-    color: var(--shynv-600);
+.hover\:text-shyvn-600:hover {
+    color: var(--shyvn-600);
 }
 
-.hover\:bg-shynv-600:hover {
-    background-color: var(--shynv-600);
+.hover\:bg-shyvn-600:hover {
+    background-color: var(--shyvn-600);
 }
 
 /* Custom Animations */
