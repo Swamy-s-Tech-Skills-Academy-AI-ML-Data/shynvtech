@@ -3,6 +3,11 @@
 
 /* Custom styles for ShyvnTech application */
 
+/* Hero Section Custom Gradient */
+.hero-gradient {
+    background: linear-gradient(135deg, #f9fafb 0%, #dbeafe 100%);
+}
+
 /* Color Palette Variables */
 :root {
     --primary-blue: #2563eb;
