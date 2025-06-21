@@ -1,6 +1,4 @@
-﻿@page "/"
-
-<PageTitle>Home - ShyvnTech</PageTitle>
+@page "/"
 
 <!-- Hero Section -->
 <section class="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 flex items-center">
@@ -69,19 +67,23 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100">
+                                <div
+                                    class="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100">
                                     <i class="fas fa-brain text-2xl text-green-600 mb-2"></i>
                                     <div class="text-sm font-medium text-gray-900">AI & ML</div>
                                 </div>
-                                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-xl border border-purple-100">
+                                <div
+                                    class="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-xl border border-purple-100">
                                     <i class="fas fa-shield-alt text-2xl text-purple-600 mb-2"></i>
                                     <div class="text-sm font-medium text-gray-900">Cybersecurity</div>
                                 </div>
-                                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-xl border border-orange-100">
+                                <div
+                                    class="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-xl border border-orange-100">
                                     <i class="fas fa-code-branch text-2xl text-orange-600 mb-2"></i>
                                     <div class="text-sm font-medium text-gray-900">Open Source</div>
                                 </div>
-                                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-4 rounded-xl border border-cyan-100">
+                                <div
+                                    class="bg-gradient-to-br from-cyan-50 to-blue-50 p-4 rounded-xl border border-cyan-100">
                                     <i class="fas fa-rocket text-2xl text-cyan-600 mb-2"></i>
                                     <div class="text-sm font-medium text-gray-900">Innovation</div>
                                 </div>
@@ -90,286 +92,75 @@
                     </div>
                 </div>
                 <!-- Decorative elements -->
-                <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-20 animate-pulse"></div>
-                <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full opacity-20 animate-pulse"></div>
-            </div>
-        </div>
-    </div>
-</section>
-                                <h4 class="text-white font-semibold text-lg">Open Source</h4>
-                                <p class="text-gray-300 text-sm">Collaborative development</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="flex items-center gap-4">
-                            <div class="p-3 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl">
-                                <i class="fas fa-shield-alt text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-semibold text-lg">Security & Ethics</h4>
-                                <p class="text-gray-300 text-sm">Responsible technology</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Decorative Elements -->
                 <div
-                    class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-20 blur-xl">
+                    class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-20 animate-pulse">
                 </div>
                 <div
-                    class="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 blur-xl">
+                    class="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full opacity-20 animate-pulse">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Features Carousel Section -->
+<!-- Features Section -->
 <section class="py-20 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                What We <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Offer</span>
+                What We <span
+                    class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Offer</span>
             </h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover our comprehensive platform designed to empower tech professionals at every stage of their journey
+                Discover our comprehensive platform designed to empower tech professionals at every stage of their
+                journey
             </p>
         </div>
 
-        <!-- Carousel Container -->
-        <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-            <div class="flex transition-transform duration-500 ease-in-out" id="carouselTrack">
-                <!-- Feature 1: AI & Generative AI -->
-                <div class="w-full flex-shrink-0 bg-gradient-to-br from-blue-50 to-cyan-50 p-12">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="grid lg:grid-cols-2 gap-12 items-center">
-                            <div class="space-y-6">
-                                <div class="flex items-center gap-4">
-                                    <div class="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl">
-                                        <i class="fas fa-brain text-white text-3xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-3xl font-bold text-gray-900">AI & Generative AI</h3>
-                                        <p class="text-blue-600 font-medium">Cutting-Edge Innovation Hub</p>
-                                    </div>
-                                </div>
-                                <p class="text-lg text-gray-700 leading-relaxed">
-                                    Dive deep into the world of Artificial Intelligence and Generative AI. Learn from industry experts,
-                                    work on real-world projects, and stay ahead of the technological curve.
-                                </p>
-                                <ul class="space-y-3">
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Hands-on AI/ML workshops</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Expert-led masterclasses</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Real-world project experience</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Community-driven learning</span>
-                                    </li>
-                                </ul>
-                                <button
-                                    class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                    Explore AI Labs
-                                </button>
-                            </div>
-                            <div class="relative">
-                                <div
-                                    class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                    <i class="fas fa-brain text-6xl text-blue-500"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature 1 -->
+            <div
+                class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-brain text-white text-2xl"></i>
                 </div>
-
-                <!-- Feature 2: Open Source -->
-                <div class="w-full flex-shrink-0 bg-gradient-to-br from-green-50 to-emerald-50 p-12">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="grid lg:grid-cols-2 gap-12 items-center">
-                            <div class="space-y-6">
-                                <div class="flex items-center gap-4">
-                                    <div class="p-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl">
-                                        <i class="fas fa-code-branch text-white text-3xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-3xl font-bold text-gray-900">Open Source</h3>
-                                        <p class="text-green-600 font-medium">Collaborative Development</p>
-                                    </div>
-                                </div>
-                                <p class="text-lg text-gray-700 leading-relaxed">
-                                    Join our thriving open source community where developers collaborate on meaningful projects
-                                    that make a difference. Contribute, learn, and grow together.
-                                </p>
-                                <ul class="space-y-3">
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Active project repositories</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Mentorship programs</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Code review sessions</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Contribution guidelines</span>
-                                    </li>
-                                </ul>
-                                <button
-                                    class="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                    Join Projects
-                                </button>
-                            </div>
-                            <div class="relative">
-                                <div
-                                    class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                    <i class="fas fa-code-branch text-6xl text-green-500"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 3: Cybersecurity & Ethics -->
-                <div class="w-full flex-shrink-0 bg-gradient-to-br from-purple-50 to-violet-50 p-12">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="grid lg:grid-cols-2 gap-12 items-center">
-                            <div class="space-y-6">
-                                <div class="flex items-center gap-4">
-                                    <div class="p-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-2xl">
-                                        <i class="fas fa-shield-alt text-white text-3xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-3xl font-bold text-gray-900">Cybersecurity & Ethics</h3>
-                                        <p class="text-purple-600 font-medium">Secure & Responsible Tech</p>
-                                    </div>
-                                </div>
-                                <p class="text-lg text-gray-700 leading-relaxed">
-                                    Build secure, ethical technology solutions. Learn about cybersecurity best practices,
-                                    privacy protection, and responsible AI development.
-                                </p>
-                                <ul class="space-y-3">
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Security workshops</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Ethics in AI discussions</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Privacy-focused development</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Compliance training</span>
-                                    </li>
-                                </ul>
-                                <button
-                                    class="bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-600 hover:to-violet-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                    Learn Security
-                                </button>
-                            </div>
-                            <div class="relative">
-                                <div
-                                    class="bg-gradient-to-br from-purple-100 to-violet-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                    <i class="fas fa-shield-alt text-6xl text-purple-500"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 4: Career Growth -->
-                <div class="w-full flex-shrink-0 bg-gradient-to-br from-orange-50 to-red-50 p-12">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="grid lg:grid-cols-2 gap-12 items-center">
-                            <div class="space-y-6">
-                                <div class="flex items-center gap-4">
-                                    <div class="p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl">
-                                        <i class="fas fa-chart-line text-white text-3xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-3xl font-bold text-gray-900">Career Growth</h3>
-                                        <p class="text-orange-600 font-medium">Professional Development</p>
-                                    </div>
-                                </div>
-                                <p class="text-lg text-gray-700 leading-relaxed">
-                                    Accelerate your tech career with personalized guidance, industry connections,
-                                    and continuous learning opportunities designed for your success.
-                                </p>
-                                <ul class="space-y-3">
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Personalized career roadmaps</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Industry networking events</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Interview preparation</span>
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <i class="fas fa-check text-green-500"></i>
-                                        <span class="text-gray-700">Job placement support</span>
-                                    </li>
-                                </ul>
-                                <button
-                                    class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                    Grow Career
-                                </button>
-                            </div>
-                            <div class="relative">
-                                <div
-                                    class="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                    <i class="fas fa-chart-line text-6xl text-orange-500"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">AI & Machine Learning</h3>
+                <p class="text-gray-600">Cutting-edge AI workshops and hands-on ML projects</p>
             </div>
 
-            <!-- Carousel Navigation -->
-            <div class="flex items-center justify-center mt-8 gap-4">
-                <button
-                    class="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                    id="prevBtn">
-                    <i class="fas fa-chevron-left text-gray-600"></i>
-                </button>
-                <div class="flex gap-2" id="carouselDots">
-                    <button class="w-3 h-3 rounded-full bg-blue-500 transition-all duration-300"
-                        data-slide="0"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"
-                        data-slide="1"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"
-                        data-slide="2"></button>
-                    <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"
-                        data-slide="3"></button>
+            <!-- Feature 2 -->
+            <div
+                class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-code-branch text-white text-2xl"></i>
                 </div>
-                <button
-                    class="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                    id="nextBtn">
-                    <i class="fas fa-chevron-right text-gray-600"></i>
-                </button>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Open Source</h3>
+                <p class="text-gray-600">Collaborative development and community projects</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+                class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shield-alt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Cybersecurity</h3>
+                <p class="text-gray-600">Security best practices and ethical tech development</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+                class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Career Growth</h3>
+                <p class="text-gray-600">Professional development and industry connections</p>
             </div>
         </div>
     </div>
@@ -383,9 +174,8 @@
                 Ready to Start Your Tech Journey?
             </h2>
             <p class="text-xl text-blue-100 leading-relaxed">
-                ShyvnTech – A Collaborative Hub for Tomorrow's Tech Leaders. Designed for students, professionals,
-                and tech enthusiasts, ShyvnTech empowers the future of technology through innovation, community,
-                and lifelong learning.
+                Join our vibrant community of tech innovators, creators, and changemakers.
+                Together, we're building the future of technology.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
@@ -403,156 +193,26 @@
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-16">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Brand Section -->
-            <div class="lg:col-span-2 space-y-6">
-                <h3 class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                    ShyvnTech
-                </h3>
-                <p class="text-gray-300 max-w-md leading-relaxed">
-                    Empowering the future of technology through innovation and continuous learning.
-                    Join our community of tech innovators, creators, and changemakers.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#" class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-300"
-                        aria-label="GitHub">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-300"
-                        aria-label="LinkedIn">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="#" class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-300"
-                        aria-label="Twitter">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-300"
-                        aria-label="Discord">
-                        <i class="fab fa-discord text-xl"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Platform Links -->
-            <div class="space-y-4">
-                <h4 class="text-lg font-semibold text-white">Platform</h4>
-                <ul class="space-y-2">
-                    <li><a href="/" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
-                    <li><a href="/magazines"
-                            class="text-gray-300 hover:text-white transition-colors duration-300">Magazines</a></li>
-                    <li><a href="/events"
-                            class="text-gray-300 hover:text-white transition-colors duration-300">Events</a></li>
-                    <li><a href="/learning"
-                            class="text-gray-300 hover:text-white transition-colors duration-300">Learning</a></li>
-                    <li><a href="/about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
-                    </li>
-                    <li><a href="/contact"
-                            class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Focus Areas -->
-            <div class="space-y-4">
-                <h4 class="text-lg font-semibold text-white">Focus Areas</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">AI &
-                            Generative AI</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Open
-                            Source</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Cybersecurity
-                            & Ethics</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Career
-                            Growth</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Tech for
-                            Social Good</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Hands-on
-                            Labs</a></li>
-                </ul>
-            </div>
+<!-- Modern Footer with Gradient Design -->
+<footer class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10"></div>
+    <div class="absolute inset-0 opacity-5">
+        <div class="h-full w-full"
+            style="background-image: radial-gradient(circle at 25% 25%, #60a5fa 2px, transparent 2px); background-size: 40px 40px;">
         </div>
+    </div>
 
-        <!-- Footer Bottom -->
-        <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-gray-400 text-sm">
-                © 2025 ShyvnTech Tech Innovation Collective. All rights reserved.
-            </p>
-            <div class="flex gap-6">
-                <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy
-                    Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of
-                    Service</a>
-                <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Cookie
-                    Policy</a>
+    <!-- Main Footer Content -->
+    <div class="relative z-10 py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 <span class="text-cyan-400 font-medium">ShyvnTech</span> Tech Innovation Collective. All
+                    rights reserved.
+                </p>
             </div>
         </div>
     </div>
 </footer>
-
-<script>
-    // Modern Carousel Functionality
-    document.addEventListener('DOMContentLoaded', function () {
-        const track = document.getElementById('carouselTrack');
-        const slides = track.querySelectorAll('.w-full');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dots = document.querySelectorAll('[data-slide]');
-
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-
-        // Update carousel position
-        function updateCarousel() {
-            const translateX = -currentSlide * 100;
-            track.style.transform = `translateX(${translateX}%)`;
-
-            // Update dots
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.remove('bg-gray-300');
-                    dot.classList.add('bg-blue-500');
-                } else {
-                    dot.classList.remove('bg-blue-500');
-                    dot.classList.add('bg-gray-300');
-                }
-            });
-        }
-
-        // Next slide
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }
-
-        // Previous slide
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        // Go to specific slide
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-        }
-
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToSlide(index));
-        });
-
-        // Auto-play carousel
-        setInterval(nextSlide, 5000);
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
-        });
-    });
-</script>
