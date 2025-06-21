@@ -45,6 +45,11 @@
         border-color: theme('colors.shyvn.600');
     }
 
+    /* Custom Gradients */
+    .hero-gradient-bg {
+        background: linear-gradient(135deg, #f8fafc, #bfdbfe);
+    }
+
     /* Navbar Styles */
     .navbar-backdrop {
         backdrop-filter: blur(12px);

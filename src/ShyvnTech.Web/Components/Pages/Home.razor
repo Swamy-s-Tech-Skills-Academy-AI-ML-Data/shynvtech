@@ -1,41 +1,35 @@
 @page "/"
 
-<section id="home" style="background: linear-gradient(135deg, #f8fafc, #e0e7ff); padding: 80px 16px; margin-top: 80px;">
-    <div style="max-width: 1152px; margin: 0 auto;">
-        <div style="text-align: center;">
+<section id="home" class="hero-gradient-bg py-20 px-4 mt-20">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center animate-fade-in">
             <!-- Hero Badge -->
             <div
-                style="display: inline-flex; align-items: center; gap: 8px; background-color: #dbeafe; color: #1d4ed8; padding: 8px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 40px;">
-                <i class="fas fa-rocket" style="color: #2563eb;"></i>
+                class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm mb-10">
+                <i class="fas fa-rocket text-blue-600"></i>
                 Next-Gen Tech Education Platform
             </div>
 
             <!-- Hero Title -->
-            <h1 style="font-size: 3rem; font-weight: bold; color: #111827; line-height: 1.1; margin-bottom: 32px;">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-8">
                 Shape Tomorrow's
-                <span style="color: #2563eb;">Digital Leaders</span>
+                <span class="text-gradient">Digital Leaders</span>
             </h1>
 
             <!-- Hero Description -->
-            <p
-                style="font-size: 1.25rem; color: #6b7280; max-width: 768px; margin: 0 auto 40px auto; line-height: 1.6;">
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
                 Join the most innovative TechEd community where students, professionals, and industry experts
                 collaborate to build cutting-edge solutions and accelerate careers in technology.
             </p>
 
             <!-- Hero Actions -->
-            <div
-                style="display: flex; flex-direction: column; gap: 16px; justify-content: center; align-items: center;">
-                <button
-                    style="background-color: #2563eb; color: white; font-weight: 600; padding: 16px 32px; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s;"
-                    onmouseover="this.style.backgroundColor='#1d4ed8'"
-                    onmouseout="this.style.backgroundColor='#2563eb'">
-                    <i class="fas fa-play"></i>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="btn-gradient px-8 py-4 rounded-lg shadow-lg">
+                    <i class="fas fa-play mr-2"></i>
                     Start Learning
                 </button>
                 <button
-                    style="background-color: white; color: #374151; font-weight: 600; padding: 16px 32px; border-radius: 8px; border: 1px solid #e5e7eb; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: all 0.2s;"
-                    onmouseover="this.style.backgroundColor='#f9fafb'" onmouseout="this.style.backgroundColor='white'">
+                    class="bg-white hover:bg-gray-50 text-gray-700 font-semibold px-8 py-4 rounded-lg border border-gray-200 shadow flex items-center gap-2 transition-all duration-300">
                     <i class="fas fa-calendar"></i>
                     Explore Events
                 </button>
@@ -43,5 +37,3 @@
         </div>
     </div>
 </section>
-
-   
