@@ -1,6 +1,5 @@
-using ShyvnTech.ServiceDefaults;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
+using ShyvnTech.ServiceDefaults;
 
 var builder = WebApplication.CreateBuilder(args);
 

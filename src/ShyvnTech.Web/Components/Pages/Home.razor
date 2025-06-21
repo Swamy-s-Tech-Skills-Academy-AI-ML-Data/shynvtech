@@ -1,103 +1,101 @@
 ﻿@page "/"
 
-<PageTitle>ShyvnTech - Tech Innovation Collective</PageTitle>
+<PageTitle>Home - ShyvnTech</PageTitle>
 
 <!-- Hero Section -->
-<section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
-    <!-- Background Effects -->
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-cyan-600/20"></div>
-    <div class="absolute inset-0 opacity-10">
-        <div class="h-full w-full"
-            style="background-image: radial-gradient(circle at 25% 25%, #60a5fa 2px, transparent 2px); background-size: 60px 60px;">
-        </div>
-    </div>
-
-    <!-- Hero Content -->
-    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-screen">
-        <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
-            <!-- Left Content -->
-            <div class="text-white space-y-8">
-                <!-- Badge -->
-                <div
-                    class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
-                    <i class="fas fa-rocket text-cyan-400"></i>
-                    <span class="text-sm font-medium">Empowering the Future of Technology</span>
-                </div>
-
-                <!-- Main Heading -->
-                <div class="space-y-4">
-                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
-                        Tech Innovation
-                        <span
-                            class="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                            Collective
+<section class="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 flex items-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Content -->
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Welcome to
+                        <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                            ShyvnTech
                         </span>
                     </h1>
-
-                    <!-- Hero Description -->
-                    <p class="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-                        Empowering Tech Innovators, One Connection at a Time. Join ShyvnTech's vibrant collective of
-                        developers, creators, and changemakers. From AI & Generative AI breakthroughs to Cybersecurity &
-                        Ethics,
-                        we foster hands-on learning, open-source collaboration, and career growth.
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                        A Collaborative Hub for Tomorrow's Tech Leaders. Designed for students, professionals,
+                        and tech enthusiasts, ShyvnTech empowers the future of technology through innovation,
+                        community, and lifelong learning.
                     </p>
                 </div>
 
-                <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4">
                     <button
-                        class="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
-                        <i class="fas fa-users mr-3 transition-transform group-hover:scale-110"></i>
-                        Join Community
+                        class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-rocket mr-3"></i>
+                        Explore Our Platform
                     </button>
                     <button
-                        class="group border-2 border-white/30 hover:border-white/50 text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 backdrop-blur-sm">
-                        <i class="fas fa-play mr-3 transition-transform group-hover:scale-110"></i>
-                        Explore Labs
+                        class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-play mr-3"></i>
+                        Watch Demo
                     </button>
                 </div>
 
                 <!-- Stats -->
-                <div class="flex flex-wrap gap-8 pt-8">
+                <div class="grid grid-cols-3 gap-6 pt-8">
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-cyan-400">500+</div>
-                        <div class="text-gray-400 text-sm uppercase tracking-wider">Members</div>
+                        <div class="text-3xl font-bold text-blue-600">10K+</div>
+                        <div class="text-gray-600 text-sm">Active Members</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-400">100+</div>
-                        <div class="text-gray-400 text-sm uppercase tracking-wider">Projects</div>
+                        <div class="text-3xl font-bold text-cyan-600">500+</div>
+                        <div class="text-gray-600 text-sm">Tech Articles</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-purple-400">50+</div>
-                        <div class="text-gray-400 text-sm uppercase tracking-wider">Sessions</div>
+                        <div class="text-3xl font-bold text-indigo-600">50+</div>
+                        <div class="text-gray-600 text-sm">Live Events</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Visual -->
+            <!-- Hero Visual -->
             <div class="relative">
-                <!-- Floating Cards -->
-                <div class="grid grid-cols-1 gap-6 max-w-md mx-auto">
+                <div class="relative z-10">
                     <div
-                        class="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="flex items-center gap-4">
-                            <div class="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl">
-                                <i class="fas fa-brain text-white text-xl"></i>
+                        class="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-2xl p-8 border border-blue-100">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-code text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Latest Tech Insights</h3>
+                                    <p class="text-gray-600 text-sm">Stay updated with cutting-edge trends</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="text-white font-semibold text-lg">AI & GenAI</h4>
-                                <p class="text-gray-300 text-sm">Cutting-edge AI innovations</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100">
+                                    <i class="fas fa-brain text-2xl text-green-600 mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">AI & ML</div>
+                                </div>
+                                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-xl border border-purple-100">
+                                    <i class="fas fa-shield-alt text-2xl text-purple-600 mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">Cybersecurity</div>
+                                </div>
+                                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-xl border border-orange-100">
+                                    <i class="fas fa-code-branch text-2xl text-orange-600 mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">Open Source</div>
+                                </div>
+                                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-4 rounded-xl border border-cyan-100">
+                                    <i class="fas fa-rocket text-2xl text-cyan-600 mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">Innovation</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div
-                        class="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="flex items-center gap-4">
-                            <div class="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl">
-                                <i class="fas fa-code text-white text-xl"></i>
-                            </div>
-                            <div>
+                </div>
+                <!-- Decorative elements -->
+                <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-20 animate-pulse"></div>
+                <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full opacity-20 animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+</section>
                                 <h4 class="text-white font-semibold text-lg">Open Source</h4>
                                 <p class="text-gray-300 text-sm">Collaborative development</p>
                             </div>
@@ -131,191 +129,218 @@
 </section>
 
 <!-- Features Carousel Section -->
-<section class="py-20 bg-gray-50">
+<section class="py-20 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center max-w-4xl mx-auto mb-16">
-            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Where Innovation Meets Impact
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                What We <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Offer</span>
             </h2>
-            <p class="text-xl text-gray-600 leading-relaxed">
-                At ShyvnTech, we spark curiosity and craft meaningful tech experiences. From AI & GenAI,
-                Cloud & DevOps, to Security & Ethics, we empower creators through hands-on labs, community sessions,
-                and real-world projects.
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our comprehensive platform designed to empower tech professionals at every stage of their journey
             </p>
         </div>
 
         <!-- Carousel Container -->
-        <div class="relative max-w-6xl mx-auto">
-            <div class="overflow-hidden rounded-2xl">
-                <div class="flex transition-transform duration-500 ease-in-out" id="carouselTrack">
-                    <!-- Feature 1: Learning Hub -->
-                    <div class="w-full flex-shrink-0">
-                        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg mx-4">
-                            <div class="grid lg:grid-cols-2 gap-8 items-center">
-                                <div class="space-y-6">
-                                    <div
-                                        class="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl w-16 h-16 flex items-center justify-center">
-                                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+        <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div class="flex transition-transform duration-500 ease-in-out" id="carouselTrack">
+                <!-- Feature 1: AI & Generative AI -->
+                <div class="w-full flex-shrink-0 bg-gradient-to-br from-blue-50 to-cyan-50 p-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl">
+                                        <i class="fas fa-brain text-white text-3xl"></i>
                                     </div>
-                                    <h3 class="text-3xl font-bold text-gray-900">Learning Hub</h3>
-                                    <p class="text-gray-600 text-lg leading-relaxed">
-                                        Access comprehensive courses, tutorials, and hands-on labs designed for students
-                                        and professionals at every level.
-                                    </p>
-                                    <ul class="space-y-3">
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Interactive coding labs</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Expert-led workshops</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Certification programs</span>
-                                        </li>
-                                    </ul>
-                                    <button
-                                        class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                        Explore Learning
-                                    </button>
+                                    <div>
+                                        <h3 class="text-3xl font-bold text-gray-900">AI & Generative AI</h3>
+                                        <p class="text-blue-600 font-medium">Cutting-Edge Innovation Hub</p>
+                                    </div>
                                 </div>
-                                <div class="relative">
-                                    <div
-                                        class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                        <i class="fas fa-graduation-cap text-6xl text-blue-500"></i>
-                                    </div>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Dive deep into the world of Artificial Intelligence and Generative AI. Learn from industry experts,
+                                    work on real-world projects, and stay ahead of the technological curve.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Hands-on AI/ML workshops</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Expert-led masterclasses</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Real-world project experience</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Community-driven learning</span>
+                                    </li>
+                                </ul>
+                                <button
+                                    class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+                                    Explore AI Labs
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 h-80 flex items-center justify-center">
+                                    <i class="fas fa-brain text-6xl text-blue-500"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Feature 2: Community Network -->
-                    <div class="w-full flex-shrink-0">
-                        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg mx-4">
-                            <div class="grid lg:grid-cols-2 gap-8 items-center">
-                                <div class="space-y-6">
-                                    <div
-                                        class="p-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl w-16 h-16 flex items-center justify-center">
-                                        <i class="fas fa-users text-white text-2xl"></i>
+                <!-- Feature 2: Open Source -->
+                <div class="w-full flex-shrink-0 bg-gradient-to-br from-green-50 to-emerald-50 p-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="p-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl">
+                                        <i class="fas fa-code-branch text-white text-3xl"></i>
                                     </div>
-                                    <h3 class="text-3xl font-bold text-gray-900">Community Network</h3>
-                                    <p class="text-gray-600 text-lg leading-relaxed">
-                                        Connect with like-minded innovators, mentors, and industry leaders in our
-                                        thriving tech community.
-                                    </p>
-                                    <ul class="space-y-3">
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Peer-to-peer learning</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Mentorship programs</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Industry connections</span>
-                                        </li>
-                                    </ul>
-                                    <button
-                                        class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                        Join Community
-                                    </button>
+                                    <div>
+                                        <h3 class="text-3xl font-bold text-gray-900">Open Source</h3>
+                                        <p class="text-green-600 font-medium">Collaborative Development</p>
+                                    </div>
                                 </div>
-                                <div class="relative">
-                                    <div
-                                        class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                        <i class="fas fa-users text-6xl text-purple-500"></i>
-                                    </div>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Join our thriving open source community where developers collaborate on meaningful projects
+                                    that make a difference. Contribute, learn, and grow together.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Active project repositories</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Mentorship programs</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Code review sessions</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Contribution guidelines</span>
+                                    </li>
+                                </ul>
+                                <button
+                                    class="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+                                    Join Projects
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl p-8 h-80 flex items-center justify-center">
+                                    <i class="fas fa-code-branch text-6xl text-green-500"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Feature 3: Innovation Projects -->
-                    <div class="w-full flex-shrink-0">
-                        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg mx-4">
-                            <div class="grid lg:grid-cols-2 gap-8 items-center">
-                                <div class="space-y-6">
-                                    <div
-                                        class="p-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl w-16 h-16 flex items-center justify-center">
-                                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                <!-- Feature 3: Cybersecurity & Ethics -->
+                <div class="w-full flex-shrink-0 bg-gradient-to-br from-purple-50 to-violet-50 p-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="p-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-2xl">
+                                        <i class="fas fa-shield-alt text-white text-3xl"></i>
                                     </div>
-                                    <h3 class="text-3xl font-bold text-gray-900">Innovation Projects</h3>
-                                    <p class="text-gray-600 text-lg leading-relaxed">
-                                        Collaborate on real-world projects that make a difference, from social good
-                                        initiatives to cutting-edge tech solutions.
-                                    </p>
-                                    <ul class="space-y-3">
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Open source contributions</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Social impact projects</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Startup incubation</span>
-                                        </li>
-                                    </ul>
-                                    <button
-                                        class="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                        View Projects
-                                    </button>
+                                    <div>
+                                        <h3 class="text-3xl font-bold text-gray-900">Cybersecurity & Ethics</h3>
+                                        <p class="text-purple-600 font-medium">Secure & Responsible Tech</p>
+                                    </div>
                                 </div>
-                                <div class="relative">
-                                    <div
-                                        class="bg-gradient-to-br from-green-100 to-teal-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                        <i class="fas fa-lightbulb text-6xl text-green-500"></i>
-                                    </div>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Build secure, ethical technology solutions. Learn about cybersecurity best practices,
+                                    privacy protection, and responsible AI development.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Security workshops</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Ethics in AI discussions</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Privacy-focused development</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Compliance training</span>
+                                    </li>
+                                </ul>
+                                <button
+                                    class="bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-600 hover:to-violet-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+                                    Learn Security
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="bg-gradient-to-br from-purple-100 to-violet-100 rounded-2xl p-8 h-80 flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-6xl text-purple-500"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Feature 4: Career Growth -->
-                    <div class="w-full flex-shrink-0">
-                        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg mx-4">
-                            <div class="grid lg:grid-cols-2 gap-8 items-center">
-                                <div class="space-y-6">
-                                    <div
-                                        class="p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl w-16 h-16 flex items-center justify-center">
-                                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <!-- Feature 4: Career Growth -->
+                <div class="w-full flex-shrink-0 bg-gradient-to-br from-orange-50 to-red-50 p-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl">
+                                        <i class="fas fa-chart-line text-white text-3xl"></i>
                                     </div>
-                                    <h3 class="text-3xl font-bold text-gray-900">Career Growth</h3>
-                                    <p class="text-gray-600 text-lg leading-relaxed">
-                                        Accelerate your career with industry insights, portfolio development, and direct
-                                        connections to opportunities.
-                                    </p>
-                                    <ul class="space-y-3">
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Resume workshops</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Interview preparation</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-check text-green-500"></i>
-                                            <span class="text-gray-700">Job placement support</span>
-                                        </li>
-                                    </ul>
-                                    <button
-                                        class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                                        Grow Career
-                                    </button>
+                                    <div>
+                                        <h3 class="text-3xl font-bold text-gray-900">Career Growth</h3>
+                                        <p class="text-orange-600 font-medium">Professional Development</p>
+                                    </div>
                                 </div>
-                                <div class="relative">
-                                    <div
-                                        class="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl p-8 h-80 flex items-center justify-center">
-                                        <i class="fas fa-chart-line text-6xl text-orange-500"></i>
-                                    </div>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Accelerate your tech career with personalized guidance, industry connections,
+                                    and continuous learning opportunities designed for your success.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Personalized career roadmaps</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Industry networking events</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Interview preparation</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i class="fas fa-check text-green-500"></i>
+                                        <span class="text-gray-700">Job placement support</span>
+                                    </li>
+                                </ul>
+                                <button
+                                    class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+                                    Grow Career
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl p-8 h-80 flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-6xl text-orange-500"></i>
                                 </div>
                             </div>
                         </div>
