@@ -205,6 +205,49 @@
         transform: scale(1.05);
         box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.1), 0 4px 6px -2px rgba(2, 132, 199, 0.05);
     }
+
+    /* 
+    * Alternative Gradient Buttons
+    * 
+    * These classes provide alternative gradient styles for buttons with different
+    * visual effects while maintaining the blue theme. They can be used by adding
+    * the respective class along with .btn-gradient (e.g., class="btn-gradient btn-gradient-sky")
+    */
+
+    /* Deep blue gradient with more contrast */
+    .btn-gradient-deep {
+        background-image: linear-gradient(to right, #1d4ed8, #1e40af, #1e3a8a);
+        /* Tailwind equivalent: from-blue-700 via-blue-800 to-blue-900 */
+    }
+
+    /* Sky/azure gradient - lighter and more vibrant */
+    .btn-gradient-sky {
+        background-image: linear-gradient(to right, #38bdf8, #0ea5e9, #0284c7);
+        /* Tailwind equivalent: from-sky-400 via-sky-500 to-sky-600 */
+    }
+
+    /* Night sky gradient - blue-purple transition */
+    .btn-gradient-night {
+        background-image: linear-gradient(to right, #2563eb, #4f46e5, #4338ca);
+        /* Tailwind equivalent: from-blue-600 via-indigo-600 to-indigo-700 */
+    }
+
+    /* Ocean gradient - blue-green transition */
+    .btn-gradient-ocean {
+        background-image: linear-gradient(to right, #0ea5e9, #0891b2, #0e7490);
+        /* Tailwind equivalent: from-sky-500 via-cyan-600 to-cyan-700 */
+    }
+
+    /* Diagonal gradient variation */
+    .btn-gradient-diagonal {
+        background-image: linear-gradient(135deg, #0ea5e9, #0c4a6e);
+        /* Tailwind equivalent: bg-gradient-to-br from-sky-500 to-blue-900 */
+        background-size: 150% 150%;
+    }
+
+    .btn-gradient-diagonal:hover {
+        background-position: bottom right;
+    }
 }
 
 /* 
