@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add any custom styles here if they can't be achieved with Tailwind's utility classes */
 @layer components {
+
+    /* Brand Colors */
     .text-shyvn-700 {
         color: theme('colors.shyvn.700');
     }
@@ -19,34 +20,174 @@
     .bg-shyvn-700 {
         background-color: theme('colors.shyvn.700');
     }
+
+    .bg-shyvn-800 {
+        background-color: theme('colors.shyvn.800');
+    }
+
+    /* Gradient Classes */
+    .from-shyvn-600 {
+        --tw-gradient-from: theme('colors.shyvn.600') var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+
+    .via-shyvn-700 {
+        --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), theme('colors.shyvn.700') var(--tw-gradient-via-position), var(--tw-gradient-to);
+    }
+
+    .to-shyvn-800 {
+        --tw-gradient-to: theme('colors.shyvn.800') var(--tw-gradient-to-position);
+    }
+
+    .border-shyvn-600 {
+        border-color: theme('colors.shyvn.600');
+    }
+
+    /* Navbar Styles */
+    .navbar-backdrop {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        color: #374151;
+        /* text-gray-700 */
+        transition-property: all;
+        transition-duration: 300ms;
+    }
+
+    .nav-link:hover {
+        color: #2563eb;
+        /* text-blue-600 */
+        background-color: #eff6ff;
+        /* bg-blue-50 */
+    }
+
+    .nav-link.active {
+        color: #2563eb;
+        /* text-blue-600 */
+        font-weight: 600;
+        /* font-semibold */
+        background-color: #eff6ff;
+        /* bg-blue-50 */
+        border-bottom-width: 2px;
+        border-color: #2563eb;
+        /* border-blue-600 */
+    }
+
+    /* Mobile Nav Styles */
+    .mobile-nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        font-size: 1rem;
+        /* text-base */
+        color: #374151;
+        /* text-gray-700 */
+        transition-property: all;
+        transition-duration: 200ms;
+    }
+
+    .mobile-nav-link:hover {
+        color: #2563eb;
+        /* text-blue-600 */
+        background-color: #eff6ff;
+        /* bg-blue-50 */
+    }
+
+    .mobile-nav-link.active {
+        color: #2563eb;
+        /* text-blue-600 */
+        font-weight: 600;
+        /* font-semibold */
+        background-color: #eff6ff;
+        /* bg-blue-50 */
+    }
+
+    /* Button Styles */
+    .btn-primary {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: #2563eb;
+        /* bg-blue-600 */
+        color: white;
+        font-weight: 600;
+        /* font-semibold */
+        padding: 0.5rem 1.25rem;
+        border-radius: 0.375rem;
+        transition-property: all;
+        transition-duration: 300ms;
+        transform: scale(1);
+    }
+
+    .btn-primary:hover {
+        background-color: #1d4ed8;
+        /* bg-blue-700 */
+        transform: scale(1.05);
+    }
 }
 
-.bg-shyvn-800 {
-    background-color: var(--shyvn-800);
+/* Custom Animations - Outside the components layer */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.from-shyvn-600 {
-    --tw-gradient-from: var(--shyvn-600);
-}
+@layer utilities {
 
-.via-shyvn-700 {
-    --tw-gradient-via: var(--shyvn-700);
-}
+    /* Animation Utilities */
+    .animate-fade-in {
+        animation: fade-in 1s ease-out;
+    }
 
-.to-shyvn-800 {
-    --tw-gradient-to: var(--shyvn-800);
-}
+    /* Font Family */
+    .font-poppins {
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
 
-.border-shyvn-600 {
-    border-color: var(--shyvn-600);
-}
+    .hover\:text-shyvn-600:hover {
+        color: theme('colors.shyvn.600');
+    }
 
-.hover\:text-shyvn-600:hover {
-    color: var(--shyvn-600);
-}
+    .hover\:bg-shyvn-600:hover {
+        background-color: theme('colors.shyvn.600');
+    }
 
-.hover\:bg-shyvn-600:hover {
-    background-color: var(--shyvn-600);
+    /* Layout utilities */
+    .container-custom {
+        max-width: 80rem;
+        /* max-w-7xl */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Text effects */
+    .text-gradient {
+        background-image: linear-gradient(to right, #2563eb, #1e40af);
+        /* from-blue-600 to-blue-800 */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 }
 
 /* Custom Animations */
@@ -60,86 +201,4 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.animate-fade-in {
-    animation: fade-in 1s ease-out;
-}
-
-/* Custom Font Family - Poppins */
-.font-poppins {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Custom components for improved navbar */
-.text-gradient {
-    background: linear-gradient(to right, #0284c7, #075985);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.navbar-glass {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-}
-
-.nav-link-custom {
-    color: #4b5563;
-    transition: all 0.2s ease-in-out;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-}
-
-.nav-link-custom:hover {
-    color: #0284c7;
-    background-color: #f3f4f6;
-}
-
-.mobile-nav-link {
-    color: #4b5563;
-    transition: all 0.2s ease-in-out;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    display: block;
-}
-
-.mobile-nav-link:hover {
-    color: #0284c7;
-    background-color: #f3f4f6;
-}
-
-.btn-primary {
-    background-color: #0284c7;
-    color: white;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease-in-out;
-    transform: scale(1);
-}
-
-.btn-primary:hover {
-    background-color: #0369a1;
-    transform: scale(1.05);
-}
-
-.container-custom {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
 }

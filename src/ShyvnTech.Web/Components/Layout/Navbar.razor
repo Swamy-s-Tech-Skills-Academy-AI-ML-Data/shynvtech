@@ -94,7 +94,7 @@
 
     private bool IsMobileMenuOpen => _isMobileMenuOpen;
 
-    private string MobileMenuClass => $"md:hidden transition-all duration-300 ease-in-out {(IsMobileMenuOpen ? "block" : "hidden")} bg-white border-t border-gray-200"; private string GetActiveClass(string path)
+    private string MobileMenuClass => $"md:hidden transition-all duration-300 ease-in-out {(IsMobileMenuOpen ? "block" : "hidden")} bg-white border-t border-gray-200";    private string GetActiveClass(string path)
     {
         var currentPath = Navigation.ToBaseRelativePath(Navigation.Uri);
         if (path == "/" && string.IsNullOrEmpty(currentPath))
