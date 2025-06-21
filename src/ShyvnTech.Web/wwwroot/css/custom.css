@@ -42,11 +42,21 @@ body {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
 }
 
 .nav-link:hover {
     color: var(--primary-blue);
-    transition: colors;
+    background-color: var(--blue-50);
+    transition: all 0.3s ease;
+}
+
+.nav-link.active {
+    color: var(--primary-blue);
+    font-weight: 600;
+    background-color: var(--blue-50);
+    border-bottom: 2px solid var(--primary-blue);
 }
 
 .mobile-nav-link {
@@ -62,7 +72,16 @@ body {
 
 .mobile-nav-link:hover {
     color: var(--primary-blue);
-    transition: colors;
+    background-color: var(--blue-50);
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link.active {
+    color: var(--primary-blue);
+    font-weight: 600;
+    background-color: var(--blue-50);
+    border-radius: 0.375rem;
 }
 
 /* Button Primary Style */
