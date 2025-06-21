@@ -1,10 +1,11 @@
-﻿@using ShyvnTech.Web.Components.Layout
-@inherits LayoutComponentBase
+﻿@inherits LayoutComponentBase
 
 <div class="min-h-screen flex flex-col">
-    <NavMenu />
+    <header>
+        <Navbar />
+    </header>
 
-    <main class="@(IsHomePage ? "flex-1" : "flex-1 pt-20 py-6")">
+    <main class="pt-16 flex-1 @(IsHomePage ? "" : "py-6")">
         @if (IsHomePage)
         {
             @Body
@@ -18,6 +19,10 @@
             </div>
         }
     </main>
+
+    <footer>
+        <Footer />
+    </footer>
 </div>
 
 <div id="blazor-error-ui" data-nosnippet
