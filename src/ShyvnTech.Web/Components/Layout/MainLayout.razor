@@ -1,8 +1,9 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="min-h-screen">
-    <NavMenu /> <!-- Add top padding to account for fixed navbar for non-home pages -->
-    <main class="@(IsHomePage ? "" : "pt-20 py-6")">
+<div class="min-h-screen flex flex-col">
+    <Navbar />
+    
+    <main class="@(IsHomePage ? "flex-1" : "flex-1 pt-20 py-6")">
         @if (IsHomePage)
         {
             @Body
@@ -16,6 +17,11 @@
             </div>
         }
     </main>
+    
+    @if (!IsHomePage)
+    {
+        <Footer />
+    }
 </div>
 
 <div id="blazor-error-ui" data-nosnippet
