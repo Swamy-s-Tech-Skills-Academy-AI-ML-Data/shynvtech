@@ -60,11 +60,13 @@ This approach:
 Our brand color palette is defined as `shyvn-{50-900}` following Tailwind's shade numbering convention. These colors can be used either:
 
 1. Directly in HTML with Tailwind classes:
+
    ```html
    <div class="text-shyvn-700 bg-shyvn-100">Content</div>
    ```
 
 2. In custom CSS components using `theme()`:
+
    ```css
    .my-component {
      color: theme('colors.shyvn.700');
