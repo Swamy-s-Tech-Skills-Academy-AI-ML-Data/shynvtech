@@ -1,45 +1,55 @@
 @* Ultra-Clean Minimal Footer with Tailwind CSS *@
-<footer class="bg-gray-900 text-white">
-    <div class="container mx-auto px-4 py-6">
-        <!-- Single Row Layout -->
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Brand & Links -->
-            <div class="flex flex-col sm:flex-row items-center gap-6">
-                <!-- Brand -->
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-code text-blue-500 text-lg"></i>
-                    <span class="text-lg font-bold text-blue-500">ShyvnTech</span>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="flex space-x-6 text-sm">
-                    <a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a>
-                    <a href="/magazines" class="text-gray-400 hover:text-white transition-colors">Magazines</a>
-                    <a href="/events" class="text-gray-400 hover:text-white transition-colors">Events</a>
-                    <a href="/learning" class="text-gray-400 hover:text-white transition-colors">Learning</a>
-                </div>
-            </div>
-
-            <!-- Social & Legal -->
-            <div class="flex flex-col sm:flex-row items-center gap-6">
-                <!-- Social Icons -->
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-
-                <!-- Copyright -->
-                <p class="text-gray-400 text-sm">
-                    © 2025 <span class="text-blue-500">ShyvnTech</span>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Shyvn Tech</h3>
+                <p>
+                    Empowering the next generation of tech leaders through innovative education, community building, and
+                    cutting-edge training programs.
                 </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
+
+            <div class="footer-section">
+                <h4>Learning</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Bootcamps</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Free Resources</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Meetups</a></li>
+                    <li><a href="#">Speakers</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Career Services</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shyvn Tech. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </div>
 </footer>
