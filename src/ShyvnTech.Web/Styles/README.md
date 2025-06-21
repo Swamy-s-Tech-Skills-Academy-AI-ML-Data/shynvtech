@@ -45,7 +45,7 @@ In our custom CSS, we use the `theme()` function to access values from our Tailw
 
 ```css
 .text-shyvn-700 {
-    color: theme('colors.shyvn.700');
+  color: theme("colors.shyvn.700");
 }
 ```
 
@@ -69,7 +69,7 @@ Our brand color palette is defined as `shyvn-{50-900}` following Tailwind's shad
 
    ```css
    .my-component {
-     color: theme('colors.shyvn.700');
+     color: theme("colors.shyvn.700");
    }
    ```
 
@@ -87,7 +87,7 @@ Our brand color palette is defined as `shyvn-{50-900}` following Tailwind's shad
 - **`/Styles/input.css`**: Source CSS with all custom components and utilities
 - **`/wwwroot/css/tailwind.css`**: Generated CSS (do not edit)
 - **`/wwwroot/css/app.css`**: Blazor-specific styles that can't be replaced with Tailwind
-- **`/Components/**/*.razor`**: Blazor components using Tailwind classes
+- **`/Components/**/\*.razor`\*\*: Blazor components using Tailwind classes
 
 ## Build Commands
 
