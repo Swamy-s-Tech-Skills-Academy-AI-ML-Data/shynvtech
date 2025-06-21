@@ -4,7 +4,16 @@
 
 @layer components {
 
-    /* Brand Colors */
+    /* 
+    * Brand Colors
+    *
+    * These classes use the theme() function to access custom colors defined in tailwind.config.js.
+    * Using theme() ensures consistency with your configuration and allows for centralized color management.
+    * 
+    * When to use these classes vs. native Tailwind utilities:
+    * - Use these custom classes in your CSS when creating complex components that need brand colors
+    * - Use native utilities (e.g., text-shyvn-700) directly in HTML for simple styling
+    */
     .text-shyvn-700 {
         color: theme('colors.shyvn.700');
     }
@@ -25,7 +34,13 @@
         background-color: theme('colors.shyvn.800');
     }
 
-    /* Gradient Classes */
+    /* 
+    * Gradient Classes
+    *
+    * These classes implement gradient utilities using the theme() function to ensure
+    * color consistency with your brand palette. They're used to create consistent
+    * gradient effects across the application.
+    */
     .from-shyvn-600 {
         --tw-gradient-from: theme('colors.shyvn.600') var(--tw-gradient-from-position);
         --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
@@ -56,6 +71,13 @@
         -webkit-backdrop-filter: blur(12px);
     }
 
+    /* 
+    * Navigation Components
+    *
+    * These classes define the styling for navigation links in different states.
+    * Each class includes comments showing the equivalent Tailwind utilities.
+    * We use custom classes here to ensure consistent navigation styling throughout the app.
+    */
     .nav-link {
         display: flex;
         align-items: center;
@@ -120,7 +142,15 @@
         /* bg-blue-50 */
     }
 
-    /* Button Styles */
+    /* 
+    * Button Components
+    *
+    * These classes define reusable button styles with consistent branding,
+    * animations, and hover states. Using component classes for buttons ensures:
+    * 1. Consistent styling across the application
+    * 2. Easier updates to button styling in one place
+    * 3. More semantic HTML with less markup
+    */
     .btn-primary {
         display: flex;
         align-items: center;
@@ -143,6 +173,15 @@
         transform: scale(1.05);
     }
 
+    /* 
+    * Gradient Button
+    * 
+    * This special button style uses a linear gradient with the ShyvnTech brand colors.
+    * We're using hardcoded color values here that match our theme colors
+    * (shyvn-600, shyvn-700, shyvn-800) for the gradient.
+    * 
+    * The hover animation slides the gradient and adds a subtle shadow for depth.
+    */
     .btn-gradient {
         display: flex;
         align-items: center;
@@ -168,7 +207,12 @@
     }
 }
 
-/* Custom Animations - Outside the components layer */
+/* 
+* Custom Animations
+* 
+* This animation is defined outside of any @layer to ensure it's globally available.
+* It creates a subtle fade-in effect with a small vertical movement.
+*/
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -183,16 +227,34 @@
 
 @layer utilities {
 
+    /* 
+    * Custom Utility Classes
+    * 
+    * These extend Tailwind's utility classes with project-specific needs.
+    * By placing them in the utilities layer, they maintain the same precedence
+    * as Tailwind's native utilities.
+    */
+
     /* Animation Utilities */
     .animate-fade-in {
         animation: fade-in 1s ease-out;
     }
 
-    /* Font Family */
+    /* 
+    * Font Family Extensions
+    *
+    * This adds support for the Poppins font with appropriate fallbacks.
+    */
     .font-poppins {
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
+    /* 
+    * Hover State Utilities for Brand Colors
+    *
+    * These use the theme() function to access colors defined in the Tailwind config.
+    * This ensures consistency with your color palette.
+    */
     .hover\:text-shyvn-600:hover {
         color: theme('colors.shyvn.600');
     }
@@ -201,7 +263,13 @@
         background-color: theme('colors.shyvn.600');
     }
 
-    /* Layout utilities */
+    /* 
+    * Layout Utilities
+    *
+    * This provides a consistent container size that matches
+    * the max-w-7xl Tailwind utility but can be used in contexts
+    * where direct Tailwind classes aren't available.
+    */
     .container-custom {
         max-width: 80rem;
         /* max-w-7xl */
@@ -209,7 +277,12 @@
         margin-right: auto;
     }
 
-    /* Text effects */
+    /* 
+    * Text Effects
+    *
+    * This creates a gradient text effect for highlights and headings.
+    * Using web standards for gradient text that works across modern browsers.
+    */
     .text-gradient {
         background-image: linear-gradient(to right, #2563eb, #1e40af);
         /* from-blue-600 to-blue-800 */
@@ -218,5 +291,3 @@
         color: transparent;
     }
 }
-
-/* Note: Duplicate @keyframes fade-in removed - already defined above */
