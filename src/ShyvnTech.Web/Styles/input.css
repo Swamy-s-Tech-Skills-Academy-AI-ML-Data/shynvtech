@@ -1,23 +1,6 @@
 @import "tailwindcss";
 
-/* Custom Color Definitions */
-:root {
-    --shynv-50: #f0f9ff;
-    --shynv-100: #e0f2fe;
-    --shynv-200: #bae6fd;
-    --shynv-300: #7dd3fc;
-    --shynv-400: #38bdf8;
-    --shynv-500: #0ea5e9;
-    --shynv-600: #0284c7;
-    --shynv-700: #0369a1;
-    --shynv-800: #075985;
-    --shynv-900: #0c4a6e;
-}
-
-/* Custom Shynv Colors */
-.text-shynv-600 {
-    color: var(--shynv-600);
-}
+/* Add any custom styles here if they can't be achieved with Tailwind's utility classes */
 
 .text-shynv-700 {
     color: var(--shynv-700);
