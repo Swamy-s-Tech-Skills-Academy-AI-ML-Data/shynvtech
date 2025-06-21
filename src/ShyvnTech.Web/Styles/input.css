@@ -1,21 +1,24 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Add any custom styles here if they can't be achieved with Tailwind's utility classes */
+@layer components {
+    .text-shyvn-700 {
+        color: theme('colors.shyvn.700');
+    }
 
-.text-shyvn-700 {
-    color: var(--shyvn-700);
-}
+    .text-shyvn-800 {
+        color: theme('colors.shyvn.800');
+    }
 
-.text-shyvn-800 {
-    color: var(--shyvn-800);
-}
+    .bg-shyvn-600 {
+        background-color: theme('colors.shyvn.600');
+    }
 
-.bg-shyvn-600 {
-    background-color: var(--shyvn-600);
-}
-
-.bg-shyvn-700 {
-    background-color: var(--shyvn-700);
+    .bg-shyvn-700 {
+        background-color: theme('colors.shyvn.700');
+    }
 }
 
 .bg-shyvn-800 {
