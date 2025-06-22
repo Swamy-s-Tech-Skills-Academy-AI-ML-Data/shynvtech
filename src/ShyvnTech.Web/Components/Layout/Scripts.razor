@@ -9,9 +9,9 @@
             await LoadScriptsAsync();
         }
     }
-
     private async Task LoadScriptsAsync()
     {
-        await JSRuntime.InvokeVoidAsync("import", "/_content/ShyvnTech.Web/js/carousel.js");
+        // Use direct path to wwwroot/js folder
+        await JSRuntime.InvokeVoidAsync("import", "/js/carousel.js");
     }
 }

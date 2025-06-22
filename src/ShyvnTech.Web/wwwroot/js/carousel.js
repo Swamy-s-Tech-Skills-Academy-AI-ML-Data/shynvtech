@@ -1,4 +1,6 @@
-function initCarousel() {
+// Make the function available globally for both import and direct script usage
+window.initCarousel = function initCarousel() {
+    console.log("Initializing carousel...");
     const track = document.getElementById('carousel-track');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -106,9 +108,18 @@ function initCarousel() {
         setTimeout(() => {
             track.style.transition = 'transform 0.5s ease-in-out';
         }, 50);
-    });
-
-    // Initial setup
+    });    // Initial setup
     updateCarousel();
     resetAutoSlide();
+    console.log("Carousel initialized successfully");
 }
+
+// Auto-initialize when loaded directly as a script
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(initCarousel, 1);
+} else {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+}
+
+// Export for ES modules
+export { initCarousel };
