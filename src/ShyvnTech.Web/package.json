@@ -6,7 +6,7 @@
         "build-css": "tailwindcss -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --watch",
         "build-css-prod": "tailwindcss -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --minify"
     },
-    "dependencies": {
+    "devDependencies": {
         "tailwindcss": "^3.4.17"
     }
 }

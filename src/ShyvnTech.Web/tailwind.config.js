@@ -23,6 +23,7 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                'poppins': ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
             },
             backgroundImage: {
                 'hero-gradient': 'linear-gradient(135deg, #f8fafc, #e0e7ff)',
