@@ -11,11 +11,10 @@ function initCarousel() {
 
     let currentIndex = 0;
     let autoSlideInterval;
-    const slideCount = track.children.length;
-
-    function getSlideWidth() {
+    const slideCount = track.children.length; function getSlideWidth() {
         if (track.children.length === 0) return 0;
-        return track.children[0].offsetWidth;
+        // Use container width instead of child width to ensure full width slides
+        return track.parentElement.offsetWidth;
     }
 
     function updateCarousel() {
@@ -26,12 +25,10 @@ function initCarousel() {
 
         // Update track position with smooth animation
         track.style.transition = 'transform 0.5s ease-in-out';
-        track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-
-        // Update indicators
+        track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;        // Update indicators
         indicators.forEach((dot, index) => {
-            dot.classList.toggle('bg-blue-600', index === currentIndex);
-            dot.classList.toggle('bg-gray-300', index !== currentIndex);
+            dot.classList.toggle('bg-black', index === currentIndex);
+            dot.classList.toggle('bg-gray-400', index !== currentIndex);
         });
     }
 
