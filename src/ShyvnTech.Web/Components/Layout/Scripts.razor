@@ -1,0 +1,17 @@
+@namespace ShyvnTech.Web.Components.Layout
+@inject IJSRuntime JSRuntime
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await LoadScriptsAsync();
+        }
+    }
+
+    private async Task LoadScriptsAsync()
+    {
+        await JSRuntime.InvokeVoidAsync("import", "/_content/ShyvnTech.Web/js/carousel.js");
+    }
+}
