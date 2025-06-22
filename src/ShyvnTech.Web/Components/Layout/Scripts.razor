@@ -1,3 +1,4 @@
+@using Microsoft.JSInterop
 @namespace ShyvnTech.Web.Components.Layout
 @inject IJSRuntime JSRuntime
 @implements IAsyncDisposable
@@ -17,9 +18,8 @@
     private async Task LoadScriptsAsync()
     {
         try
-        {
-            // First try modern ES modules approach
-            carouselModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/carousel.js");
+        { // First try modern ES modules approach
+            carouselModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/carousel_new.js");
             scriptsLoaded = true;
             Console.WriteLine("Scripts loaded successfully using ES modules");
         }
@@ -35,7 +35,7 @@ if (!window.carouselScriptLoaded) {
 window.carouselScriptLoaded = true;
 console.log('Loading carousel script via script tag');
 const script = document.createElement('script');
-script.src = '/js/carousel.js';
+script.src = '/js/carousel_new.js';
 script.onload = function() {
 console.log('Carousel script loaded');
 if (typeof initCarousel === 'function') {

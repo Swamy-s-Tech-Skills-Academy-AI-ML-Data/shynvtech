@@ -27,9 +27,10 @@ window.initCarousel = function initCarousel() {
         // Get the current slide width (it may change on resize)
         const slideWidth = getSlideWidth();
 
-        // Update track position with smooth animation
-        track.style.transition = 'transform 0.5s ease-in-out';
-        track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;        // Update indicators
+        // Update track position with smooth animation        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+
+        // Update indicators
         indicators.forEach((dot, index) => {
             dot.classList.toggle('bg-black', index === currentIndex);
             dot.classList.toggle('bg-gray-400', index !== currentIndex);
@@ -110,7 +111,9 @@ window.initCarousel = function initCarousel() {
         setTimeout(() => {
             track.style.transition = 'transform 0.5s ease-in-out';
         }, 50);
-    });    // Initial setup
+    });
+
+    // Initial setup
     updateCarousel();
     resetAutoSlide();
     console.log("Carousel initialized successfully");
