@@ -1,261 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer components {
-
-    /* 
-    * Brand Colors
-    *
-    * These classes use the theme() function to access custom colors defined in tailwind.config.js.
-    * Using theme() ensures consistency with your configuration and allows for centralized color management.
-    * 
-    * When to use these classes vs. native Tailwind utilities:
-    * - Use these custom classes in your CSS when creating complex components that need brand colors
-    * - Use native utilities (e.g., text-shyvn-700) directly in HTML for simple styling
-    */
-    .text-shyvn-700 {
-        color: theme('colors.shyvn.700');
-    }
-
-    .text-shyvn-800 {
-        color: theme('colors.shyvn.800');
-    }
-
-    .bg-shyvn-600 {
-        background-color: theme('colors.shyvn.600');
-    }
-
-    .bg-shyvn-700 {
-        background-color: theme('colors.shyvn.700');
-    }
-
-    .bg-shyvn-800 {
-        background-color: theme('colors.shyvn.800');
-    }
-
-    /* 
-    * Gradient Classes
-    *
-    * These classes implement gradient utilities using the theme() function to ensure
-    * color consistency with your brand palette. They're used to create consistent
-    * gradient effects across the application.
-    */
-    .from-shyvn-600 {
-        --tw-gradient-from: theme('colors.shyvn.600') var(--tw-gradient-from-position);
-        --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    }
-
-    .via-shyvn-700 {
-        --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-        --tw-gradient-stops: var(--tw-gradient-from), theme('colors.shyvn.700') var(--tw-gradient-via-position), var(--tw-gradient-to);
-    }
-
-    .to-shyvn-800 {
-        --tw-gradient-to: theme('colors.shyvn.800') var(--tw-gradient-to-position);
-    }
-
-    .border-shyvn-600 {
-        border-color: theme('colors.shyvn.600');
-    }
-
-    /* Custom Gradients */
-    .hero-gradient-bg {
-        background: linear-gradient(135deg, #f8fafc, #bfdbfe);
-    }
-
-    /* Navbar Styles */
-    .navbar-backdrop {
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
-
-    /* 
-    * Navigation Components
-    *
-    * These classes define the styling for navigation links in different states.
-    * Each class includes comments showing the equivalent Tailwind utilities.
-    * We use custom classes here to ensure consistent navigation styling throughout the app.
-    */
-    .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        border-radius: 0.375rem;
-        font-weight: 500;
-        color: #374151;
-        /* text-gray-700 */
-        transition-property: all;
-        transition-duration: 300ms;
-    }
-
-    .nav-link:hover {
-        color: #2563eb;
-        /* text-blue-600 */
-        background-color: #eff6ff;
-        /* bg-blue-50 */
-    }
-
-    .nav-link.active {
-        color: #2563eb;
-        /* text-blue-600 */
-        font-weight: 600;
-        /* font-semibold */
-        background-color: #eff6ff;
-        /* bg-blue-50 */
-        border-bottom-width: 2px;
-        border-color: #2563eb;
-        /* border-blue-600 */
-    }
-
-    /* Mobile Nav Styles */
-    .mobile-nav-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        border-radius: 0.375rem;
-        font-weight: 500;
-        font-size: 1rem;
-        /* text-base */
-        color: #374151;
-        /* text-gray-700 */
-        transition-property: all;
-        transition-duration: 200ms;
-    }
-
-    .mobile-nav-link:hover {
-        color: #2563eb;
-        /* text-blue-600 */
-        background-color: #eff6ff;
-        /* bg-blue-50 */
-    }
-
-    .mobile-nav-link.active {
-        color: #2563eb;
-        /* text-blue-600 */
-        font-weight: 600;
-        /* font-semibold */
-        background-color: #eff6ff;
-        /* bg-blue-50 */
-    }
-
-    /* 
-    * Button Components
-    *
-    * These classes define reusable button styles with consistent branding,
-    * animations, and hover states. Using component classes for buttons ensures:
-    * 1. Consistent styling across the application
-    * 2. Easier updates to button styling in one place
-    * 3. More semantic HTML with less markup
-    */
-    .btn-primary {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background-color: #2563eb;
-        /* bg-blue-600 */
-        color: white;
-        font-weight: 600;
-        /* font-semibold */
-        padding: 0.5rem 1.25rem;
-        border-radius: 0.375rem;
-        transition-property: all;
-        transition-duration: 300ms;
-        transform: scale(1);
-    }
-
-    .btn-primary:hover {
-        background-color: #1d4ed8;
-        /* bg-blue-700 */
-        transform: scale(1.05);
-    }
-
-    /* 
-    * Gradient Button
-    * 
-    * This special button style uses a linear gradient with the ShyvnTech brand colors.
-    * We're using hardcoded color values here that match our theme colors
-    * (shyvn-600, shyvn-700, shyvn-800) for the gradient.
-    * 
-    * The hover animation slides the gradient and adds a subtle shadow for depth.
-    */
-    .btn-gradient {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background-image: linear-gradient(to right, #0284c7, #0369a1, #075985);
-        /* from-shyvn-600 via-shyvn-700 to-shyvn-800 */
-        color: white;
-        font-weight: 600;
-        /* font-semibold */
-        padding: 0.5rem 1.25rem;
-        border-radius: 0.375rem;
-        transition-property: all;
-        transition-duration: 300ms;
-        transform: scale(1);
-        background-size: 200% auto;
-        background-position: left center;
-    }
-
-    .btn-gradient:hover {
-        background-position: right center;
-        transform: scale(1.05);
-        box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.1), 0 4px 6px -2px rgba(2, 132, 199, 0.05);
-    }
-
-    /* 
-    * Alternative Gradient Buttons
-    * 
-    * These classes provide alternative gradient styles for buttons with different
-    * visual effects while maintaining the blue theme. They can be used by adding
-    * the respective class along with .btn-gradient (e.g., class="btn-gradient btn-gradient-sky")
-    */
-
-    /* Deep blue gradient with more contrast */
-    .btn-gradient-deep {
-        background-image: linear-gradient(to right, #1d4ed8, #1e40af, #1e3a8a);
-        /* Tailwind equivalent: from-blue-700 via-blue-800 to-blue-900 */
-    }
-
-    /* Sky/azure gradient - lighter and more vibrant */
-    .btn-gradient-sky {
-        background-image: linear-gradient(to right, #38bdf8, #0ea5e9, #0284c7);
-        /* Tailwind equivalent: from-sky-400 via-sky-500 to-sky-600 */
-    }
-
-    /* Night sky gradient - blue-purple transition */
-    .btn-gradient-night {
-        background-image: linear-gradient(to right, #2563eb, #4f46e5, #4338ca);
-        /* Tailwind equivalent: from-blue-600 via-indigo-600 to-indigo-700 */
-    }
-
-    /* Ocean gradient - blue-green transition */
-    .btn-gradient-ocean {
-        background-image: linear-gradient(to right, #0ea5e9, #0891b2, #0e7490);
-        /* Tailwind equivalent: from-sky-500 via-cyan-600 to-cyan-700 */
-    }
-
-    /* Diagonal gradient variation */
-    .btn-gradient-diagonal {
-        background-image: linear-gradient(135deg, #0ea5e9, #0c4a6e);
-        /* Tailwind equivalent: bg-gradient-to-br from-sky-500 to-blue-900 */
-        background-size: 150% 150%;
-    }
-
-    .btn-gradient-diagonal:hover {
-        background-position: bottom right;
-    }
+/* Custom Color Definitions */
+:root {
+    --shynv-50: #f0f9ff;
+    --shynv-100: #e0f2fe;
+    --shynv-200: #bae6fd;
+    --shynv-300: #7dd3fc;
+    --shynv-400: #38bdf8;
+    --shynv-500: #0ea5e9;
+    --shynv-600: #0284c7;
+    --shynv-700: #0369a1;
+    --shynv-800: #075985;
+    --shynv-900: #0c4a6e;
 }
 
-/* 
-* Custom Animations
-* 
-* This animation is defined outside of any @layer to ensure it's globally available.
-* It creates a subtle fade-in effect with a small vertical movement.
-*/
+/* Custom Shynv Colors */
+.text-shynv-600 {
+    color: var(--shynv-600);
+}
+
+.text-shynv-700 {
+    color: var(--shynv-700);
+}
+
+.text-shynv-800 {
+    color: var(--shynv-800);
+}
+
+.bg-shynv-600 {
+    background-color: var(--shynv-600);
+}
+
+.bg-shynv-700 {
+    background-color: var(--shynv-700);
+}
+
+.bg-shynv-800 {
+    background-color: var(--shynv-800);
+}
+
+.from-shynv-600 {
+    --tw-gradient-from: var(--shynv-600);
+}
+
+.via-shynv-700 {
+    --tw-gradient-via: var(--shynv-700);
+}
+
+.to-shynv-800 {
+    --tw-gradient-to: var(--shynv-800);
+}
+
+.border-shynv-600 {
+    border-color: var(--shynv-600);
+}
+
+.hover\:text-shynv-600:hover {
+    color: var(--shynv-600);
+}
+
+.hover\:bg-shynv-600:hover {
+    background-color: var(--shynv-600);
+}
+
+/* Custom Animations */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -268,69 +76,84 @@
     }
 }
 
-@layer utilities {
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
 
-    /* 
-    * Custom Utility Classes
-    * 
-    * These extend Tailwind's utility classes with project-specific needs.
-    * By placing them in the utilities layer, they maintain the same precedence
-    * as Tailwind's native utilities.
-    */
+/* Custom Font Family - Poppins */
+.font-poppins {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
-    /* Animation Utilities */
-    .animate-fade-in {
-        animation: fade-in 1s ease-out;
-    }
+/* Custom components for improved navbar */
+.text-gradient {
+    background: linear-gradient(to right, #0284c7, #075985);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
-    /* 
-    * Font Family Extensions
-    *
-    * This adds support for the Poppins font with appropriate fallbacks.
-    */
-    .font-poppins {
-        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
+.navbar-glass {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
 
-    /* 
-    * Hover State Utilities for Brand Colors
-    *
-    * These use the theme() function to access colors defined in the Tailwind config.
-    * This ensures consistency with your color palette.
-    */
-    .hover\:text-shyvn-600:hover {
-        color: theme('colors.shyvn.600');
-    }
+.nav-link-custom {
+    color: #4b5563;
+    transition: all 0.2s ease-in-out;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
 
-    .hover\:bg-shyvn-600:hover {
-        background-color: theme('colors.shyvn.600');
-    }
+.nav-link-custom:hover {
+    color: #0284c7;
+    background-color: #f3f4f6;
+}
 
-    /* 
-    * Layout Utilities
-    *
-    * This provides a consistent container size that matches
-    * the max-w-7xl Tailwind utility but can be used in contexts
-    * where direct Tailwind classes aren't available.
-    */
-    .container-custom {
-        max-width: 80rem;
-        /* max-w-7xl */
-        margin-left: auto;
-        margin-right: auto;
-    }
+.mobile-nav-link {
+    color: #4b5563;
+    transition: all 0.2s ease-in-out;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    display: block;
+}
 
-    /* 
-    * Text Effects
-    *
-    * This creates a gradient text effect for highlights and headings.
-    * Using web standards for gradient text that works across modern browsers.
-    */
-    .text-gradient {
-        background-image: linear-gradient(to right, #2563eb, #1e40af);
-        /* from-blue-600 to-blue-800 */
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
+.mobile-nav-link:hover {
+    color: #0284c7;
+    background-color: #f3f4f6;
+}
+
+.btn-primary {
+    background-color: #0284c7;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    background-color: #0369a1;
+    transform: scale(1.05);
+}
+
+.container-custom {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
 }
