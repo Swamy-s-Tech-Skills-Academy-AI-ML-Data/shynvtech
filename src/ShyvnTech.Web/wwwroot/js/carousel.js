@@ -13,7 +13,9 @@ window.initCarousel = function initCarousel() {
 
     let currentIndex = 0;
     let autoSlideInterval;
-    const slideCount = track.children.length; function getSlideWidth() {
+    const slideCount = track.children.length;
+
+    function getSlideWidth() {
         if (track.children.length === 0) return 0;
         // Use container width instead of child width to ensure full width slides
         return track.parentElement.offsetWidth;
