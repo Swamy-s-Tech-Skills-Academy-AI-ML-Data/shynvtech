@@ -13,21 +13,21 @@
         @apply bg-white/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-gray-200/50;
     }
 
-    /* Navigation styles */
+    /* Navigation styles - Updated with blue/sky-blue theme */
     .nav-link {
-        @apply flex items-center gap-2 py-2 px-3 rounded-md text-gray-700 font-medium hover:text-shyvn-600 hover:bg-blue-50 transition-all duration-300;
+        @apply flex items-center gap-2 py-2 px-3 rounded-md text-gray-700 font-medium hover:text-blue-600 hover:bg-blue-50/70 transition-all duration-300;
     }
 
     .nav-link.active {
-        @apply text-shyvn-600 font-semibold bg-blue-50 border-b-2 border-shyvn-600;
+        @apply text-blue-600 font-semibold bg-blue-50 border-b-2 border-blue-500;
     }
 
     .nav-link-custom {
-        @apply text-gray-600 transition-all duration-200 py-2 px-3 rounded-md text-sm font-medium flex items-center hover:text-shyvn-600 hover:bg-gray-100;
+        @apply text-gray-700 transition-all duration-200 py-2 px-3 rounded-md text-sm font-medium flex items-center hover:text-blue-600 hover:bg-sky-50;
     }
 
     .mobile-nav-link {
-        @apply text-gray-600 transition-all duration-200 py-2 px-3 rounded-md text-base font-medium block hover:text-shyvn-600 hover:bg-gray-100;
+        @apply text-gray-700 transition-all duration-200 py-2 px-3 rounded-md text-base font-medium block hover:text-blue-600 hover:bg-blue-50;
     }
 
     /* Button styles */
@@ -47,6 +47,10 @@
 
     .btn-gradient-sky {
         @apply bg-gradient-to-r from-sky-500 via-blue-600 to-blue-700;
+    }
+
+    .btn-gradient-blue-sky {
+        @apply bg-gradient-to-r from-blue-600 to-sky-400 hover:shadow-blue-200;
     }
 
     .btn-gradient-night {
