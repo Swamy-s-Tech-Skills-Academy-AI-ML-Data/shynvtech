@@ -1,4 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+
+/**
+ * ShyvnTech Tailwind CSS Configuration
+ * 
+ * COLOR PALETTE CONFIGURATION:
+ * While Tailwind CSS provides default colors, we explicitly define colors in this config for the following reasons:
+ * 
+ * 1. Custom Brand Colors: The 'shyvn' palette provides our brand-specific colors that aren't in Tailwind's defaults
+ * 2. Single Source of Truth: Explicit definition creates a centralized reference for our design system
+ * 3. Consistency: Ensures all colors have the same shade range (50-950) for predictable design patterns
+ * 4. Precision Control: Allows fine-tuning of specific color values when needed
+ * 5. Custom Gradients: Powers our gradient definitions with consistent color references
+ * 
+ * Some colors match Tailwind defaults, but explicit definition gives us complete control
+ * over our color system and makes color management more maintainable for the team.
+ */
 module.exports = {
     content: [
         "./Components/**/*.{razor,html,cshtml}",
@@ -8,6 +24,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                // Custom brand colors - Unique to ShyvnTech
                 shyvn: {
                     50: '#f0f9ff',
                     100: '#e0f2fe',
@@ -20,7 +37,8 @@ module.exports = {
                     800: '#075985',
                     900: '#0c4a6e',
                 },
-                // Extended color palettes
+                // Extended color palettes - Explicitly defined for consistency and control
+                // These values match Tailwind defaults but are defined here for a complete design system
                 cyan: {
                     50: '#ecfeff',
                     100: '#cffafe',
@@ -118,6 +136,9 @@ module.exports = {
                 'poppins': ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
             },
             backgroundImage: {
+                // Custom gradients using our defined color system
+                // These create consistent gradient patterns across the application
+                // Each uses a lighter shade (300/400) to a darker shade (600/700) of the same color
                 'hero-gradient': 'linear-gradient(135deg, #f8fafc, #e0e7ff)',
                 'cyan-gradient': 'linear-gradient(135deg, #67e8f9, #0891b2)',
                 'sky-gradient': 'linear-gradient(135deg, #7dd3fc, #0284c7)',
