@@ -2,10 +2,38 @@
 
 <div class="py-12 bg-gray-50">
     <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center text-gray-800">Carousel</h1>
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Featured Content</h2>
+
+        <div class="relative">
+            <!-- Carousel Container -->
+            <div class="overflow-hidden touch-pan-x">
+                <div id="carousel-track" class="flex w-full">
+                    <!-- Single Carousel Item -->
+                    <div class="w-full px-4">
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                            <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                            <div class="p-6">
+                                <div class="text-blue-600 text-sm font-semibold mb-1">COURSE</div>
+                                <h3 class="font-bold text-xl mb-2">Introduction to AI Development</h3>
+                                <p class="text-gray-600 mb-4">Learn the fundamentals of AI development with hands-on
+                                    projects and expert guidance.</p>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-500 mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-500">8 weeks • Beginner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 @code {
-    // Empty code block, no JavaScript needed
+    // No JavaScript needed for a static single item
 }
