@@ -1,7 +1,11 @@
 @namespace ShyvnTech.Web.Components.Layout
 @inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
 
 @code {
+    private IJSObjectReference? carouselModule;
+    private bool scriptsLoaded = false;
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -9,9 +13,69 @@
             await LoadScriptsAsync();
         }
     }
+
     private async Task LoadScriptsAsync()
     {
-        // Use direct path to wwwroot/js folder
-        await JSRuntime.InvokeVoidAsync("import", "/js/carousel.js");
+        try
+        {
+            // First try modern ES modules approach
+            carouselModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/carousel.js");
+            scriptsLoaded = true;
+            Console.WriteLine("Scripts loaded successfully using ES modules");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ES modules import failed: {ex.Message}. Falling back to script tag method");
+            
+            // Fallback to traditional script loading
+            try
+            {
+                await JSRuntime.InvokeVoidAsync("eval", @"
+                    if (!window.carouselScriptLoaded) {
+                        window.carouselScriptLoaded = true;
+                        console.log('Loading carousel script via script tag');
+                        const script = document.createElement('script');
+                        script.src = '/js/carousel.js';
+                        script.onload = function() {
+                            console.log('Carousel script loaded');
+                            if (typeof initCarousel === 'function') {
+                                console.log('Initializing carousel');
+                                initCarousel();
+                            } else {
+                                console.error('initCarousel is not a function');
+                            }
+                        };
+                        script.onerror = function(e) {
+                            console.error('Error loading carousel script', e);
+                        };
+                        document.head.appendChild(script);
+                    } else if (typeof initCarousel === 'function') {
+                        console.log('Re-initializing carousel');
+                        initCarousel();
+                    }
+                ");
+                scriptsLoaded = true;
+                Console.WriteLine("Scripts loaded successfully using script tag method");
+            }
+            catch (Exception ex2)
+            {
+                Console.Error.WriteLine($"All script loading methods failed: {ex2.Message}");
+            }
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (carouselModule is not null)
+        {
+            try
+            {
+                await carouselModule.DisposeAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error disposing module: {ex.Message}");
+            }
+        }
     }
 }

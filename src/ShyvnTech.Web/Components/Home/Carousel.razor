@@ -171,40 +171,9 @@
     </div>
 </div>
 
-@code { protected override async Task OnAfterRenderAsync(bool firstRender)
-{
-if (firstRender)
-{
-try
-{
-// Import the script directly with the correct path
-await JSRuntime.InvokeVoidAsync("import", "/js/carousel.js");
-
-    // Initialize the carousel
-    await JSRuntime.InvokeVoidAsync("initCarousel");
-}
-catch (Exception ex)
-{
-Console.WriteLine($"Error loading carousel: {ex.Message}");
-
-// Fallback method using eval and script tag creation
-await JSRuntime.InvokeVoidAsync("eval", @"
-if (!window.carouselScriptLoaded) {
-window.carouselScriptLoaded = true;
-const script = document.createElement('script');
-script.src = '/js/carousel.js';
-script.onload = function() {
-if (typeof initCarousel === 'function') {
-initCarousel();
-}
-};
-document.head.appendChild(script);
-} else if (typeof initCarousel === 'function') {
-initCarousel();
-}
-");
-}
-}
+@code {
+    // No need to load the script here anymore since Scripts.razor handles it
+    // This ensures we don't have duplicate initialization logic
 }
 }
 
