@@ -4,12 +4,28 @@ function initCarousel() {
     const nextBtn = document.getElementById('next-btn');
     const indicators = document.querySelectorAll('.flex.justify-center.mt-6 button');
 
+    if (!track || !prevBtn || !nextBtn) {
+        console.error('Carousel elements not found.');
+        return;
+    }
+
     let currentIndex = 0;
-    const slideWidth = track.children[0].offsetWidth;
+    let autoSlideInterval;
     const slideCount = track.children.length;
 
+    function getSlideWidth() {
+        if (track.children.length === 0) return 0;
+        return track.children[0].offsetWidth;
+    }
+
     function updateCarousel() {
-        // Update track position
+        if (!track) return;
+
+        // Get the current slide width (it may change on resize)
+        const slideWidth = getSlideWidth();
+
+        // Update track position with smooth animation
+        track.style.transition = 'transform 0.5s ease-in-out';
         track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 
         // Update indicators
@@ -19,15 +35,30 @@ function initCarousel() {
         });
     }
 
-    // Event listeners
+    function resetAutoSlide() {
+        // Clear existing interval
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Set new interval
+        autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarousel();
+        }, 5000);
+    }
+
+    // Event listeners for navigation
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + slideCount) % slideCount;
         updateCarousel();
+        resetAutoSlide(); // Reset auto slide timer on manual navigation
     });
 
     nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % slideCount;
         updateCarousel();
+        resetAutoSlide(); // Reset auto slide timer on manual navigation
     });
 
     // Add click listeners to indicators
@@ -35,18 +66,52 @@ function initCarousel() {
         dot.addEventListener('click', () => {
             currentIndex = index;
             updateCarousel();
+            resetAutoSlide(); // Reset auto slide timer on manual navigation
         });
     });
 
-    // Auto slide every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % slideCount;
-        updateCarousel();
-    }, 5000);
+    // Handle touch events for mobile swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance to trigger a swipe
+
+        if (touchStartX - touchEndX > swipeThreshold) {
+            // Swipe left -> next slide
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarousel();
+            resetAutoSlide();
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            // Swipe right -> previous slide
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateCarousel();
+            resetAutoSlide();
+        }
+    }
 
     // Handle window resize
     window.addEventListener('resize', () => {
-        const newSlideWidth = track.children[0].offsetWidth;
-        track.style.transform = `translateX(${-currentIndex * newSlideWidth}px)`;
+        // Remove transition temporarily for instant repositioning
+        track.style.transition = 'none';
+        updateCarousel();
+
+        // Re-enable transition after a small delay
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
     });
+
+    // Initial setup
+    updateCarousel();
+    resetAutoSlide();
 }
