@@ -1,71 +1,81 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
-/* Custom Color Definitions */
-:root {
-    --shynv-50: #f0f9ff;
-    --shynv-100: #e0f2fe;
-    --shynv-200: #bae6fd;
-    --shynv-300: #7dd3fc;
-    --shynv-400: #38bdf8;
-    --shynv-500: #0ea5e9;
-    --shynv-600: #0284c7;
-    --shynv-700: #0369a1;
-    --shynv-800: #075985;
-    --shynv-900: #0c4a6e;
+@layer components {
+
+    /* Text gradient effect for headings */
+    .text-gradient {
+        @apply bg-gradient-to-r from-shyvn-600 to-shyvn-800 bg-clip-text text-transparent;
+    }
+
+    /* Navbar with glass effect */
+    .navbar-glass {
+        @apply bg-white/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-gray-200/50;
+    }
+
+    /* Navigation styles */
+    .nav-link-custom {
+        @apply text-gray-600 transition-all duration-200 py-2 px-3 rounded-md text-sm font-medium flex items-center hover:text-shyvn-600 hover:bg-gray-100;
+    }
+
+    .mobile-nav-link {
+        @apply text-gray-600 transition-all duration-200 py-2 px-3 rounded-md text-base font-medium block hover:text-shyvn-600 hover:bg-gray-100;
+    }
+
+    /* Button styles */
+    .btn-primary {
+        @apply bg-shyvn-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:bg-shyvn-700 hover:scale-105;
+    }
+
+    /* Gradient button styles */
+    .btn-gradient {
+        @apply text-white font-semibold py-2 px-5 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2 bg-gradient-to-r from-shyvn-600 via-shyvn-700 to-shyvn-800 bg-[length:200%_auto] bg-left hover:bg-right;
+    }
+
+    /* Gradient button variations */
+    .btn-gradient-deep {
+        @apply bg-gradient-to-r from-blue-800 via-blue-700 to-blue-900;
+    }
+
+    .btn-gradient-sky {
+        @apply bg-gradient-to-r from-sky-500 via-blue-600 to-blue-700;
+    }
+
+    .btn-gradient-night {
+        @apply bg-gradient-to-r from-blue-600 via-blue-700 to-purple-800;
+    }
+
+    .btn-gradient-ocean {
+        @apply bg-gradient-to-r from-blue-600 to-teal-500;
+    }
+
+    .btn-gradient-diagonal {
+        @apply bg-gradient-to-br from-blue-500 to-blue-800;
+    }
+
+    /* Hero gradient background */
+    .hero-gradient-bg {
+        @apply bg-gradient-to-br from-gray-50 to-blue-100;
+    }
+
+    /* Container helper */
+    .container-custom {
+        @apply max-w-7xl mx-auto;
+    }
 }
 
-/* Custom Shynv Colors */
-.text-shynv-600 {
-    color: var(--shynv-600);
+@layer utilities {
+    .animate-fade-in {
+        animation: fade-in 1s ease-out;
+    }
+
+    /* Font Family Extensions */
+    .font-poppins {
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
 }
 
-.text-shynv-700 {
-    color: var(--shynv-700);
-}
-
-.text-shynv-800 {
-    color: var(--shynv-800);
-}
-
-.bg-shynv-600 {
-    background-color: var(--shynv-600);
-}
-
-.bg-shynv-700 {
-    background-color: var(--shynv-700);
-}
-
-.bg-shynv-800 {
-    background-color: var(--shynv-800);
-}
-
-.from-shynv-600 {
-    --tw-gradient-from: var(--shynv-600);
-}
-
-.via-shynv-700 {
-    --tw-gradient-via: var(--shynv-700);
-}
-
-.to-shynv-800 {
-    --tw-gradient-to: var(--shynv-800);
-}
-
-.border-shynv-600 {
-    border-color: var(--shynv-600);
-}
-
-.hover\:text-shynv-600:hover {
-    color: var(--shynv-600);
-}
-
-.hover\:bg-shynv-600:hover {
-    background-color: var(--shynv-600);
-}
-
-/* Custom Animations */
+/* Custom animations */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -78,84 +88,4 @@
     }
 }
 
-.animate-fade-in {
-    animation: fade-in 1s ease-out;
-}
-
-/* Custom Font Family - Poppins */
-.font-poppins {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Custom components for improved navbar */
-.text-gradient {
-    background: linear-gradient(to right, #0284c7, #075985);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.navbar-glass {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-}
-
-.nav-link-custom {
-    color: #4b5563;
-    transition: all 0.2s ease-in-out;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-}
-
-.nav-link-custom:hover {
-    color: #0284c7;
-    background-color: #f3f4f6;
-}
-
-.mobile-nav-link {
-    color: #4b5563;
-    transition: all 0.2s ease-in-out;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    display: block;
-}
-
-.mobile-nav-link:hover {
-    color: #0284c7;
-    background-color: #f3f4f6;
-}
-
-.btn-primary {
-    background-color: #0284c7;
-    color: white;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease-in-out;
-    transform: scale(1);
-}
-
-.btn-primary:hover {
-    background-color: #0369a1;
-    transform: scale(1.05);
-}
-
-.container-custom {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-}
+@tailwind utilities;
