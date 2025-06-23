@@ -1,0 +1,130 @@
+// Make the function available globally for both import and direct script usage
+window.initCarousel = function initCarousel() {
+    console.log("Initializing carousel...");
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const indicators = document.querySelectorAll('.flex.justify-center.mt-6 button');
+
+    if (!track || !prevBtn || !nextBtn) {
+        console.error('Carousel elements not found.');
+        return;
+    }
+
+    let currentIndex = 0;
+    let autoSlideInterval;
+    const slideCount = track.children.length;
+
+    function getSlideWidth() {
+        if (track.children.length === 0) return 0;
+        // Use container width instead of child width to ensure full width slides
+        return track.parentElement.offsetWidth;
+    }
+
+    function updateCarousel() {
+        if (!track) return;
+
+        // Get the current slide width (it may change on resize)
+        const slideWidth = getSlideWidth();
+
+        // Update track position with smooth animation        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+
+        // Update indicators
+        indicators.forEach((dot, index) => {
+            dot.classList.toggle('bg-black', index === currentIndex);
+            dot.classList.toggle('bg-gray-400', index !== currentIndex);
+        });
+    }
+
+    function resetAutoSlide() {
+        // Clear existing interval
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Set new interval
+        autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarousel();
+        }, 5000);
+    }
+
+    // Event listeners for navigation
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        updateCarousel();
+        resetAutoSlide(); // Reset auto slide timer on manual navigation
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateCarousel();
+        resetAutoSlide(); // Reset auto slide timer on manual navigation
+    });
+
+    // Add click listeners to indicators
+    indicators.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+            resetAutoSlide(); // Reset auto slide timer on manual navigation
+        });
+    });
+
+    // Handle touch events for mobile swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance to trigger a swipe
+
+        if (touchStartX - touchEndX > swipeThreshold) {
+            // Swipe left -> next slide
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarousel();
+            resetAutoSlide();
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            // Swipe right -> previous slide
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateCarousel();
+            resetAutoSlide();
+        }
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        // Remove transition temporarily for instant repositioning
+        track.style.transition = 'none';
+        updateCarousel();
+
+        // Re-enable transition after a small delay
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
+    });
+
+    // Initial setup
+    updateCarousel();
+    resetAutoSlide();
+    console.log("Carousel initialized successfully");
+}
+
+// Auto-initialize when loaded directly as a script
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(initCarousel, 1);
+} else {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+}
+
+// Export for ES modules
+export { initCarousel };

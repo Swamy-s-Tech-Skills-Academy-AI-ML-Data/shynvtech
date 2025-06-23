@@ -13,21 +13,21 @@
         @apply bg-white/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-gray-200/50;
     }
 
-    /* Navigation styles */
+    /* Navigation styles - Updated with blue/sky-blue theme */
     .nav-link {
-        @apply flex items-center gap-2 py-2 px-3 rounded-md text-gray-700 font-medium hover:text-shyvn-600 hover:bg-blue-50 transition-all duration-300;
+        @apply flex items-center gap-2 py-2 px-3 rounded-md text-gray-700 font-medium hover:text-blue-600 hover:bg-blue-50/70 transition-all duration-300;
     }
 
     .nav-link.active {
-        @apply text-shyvn-600 font-semibold bg-blue-50 border-b-2 border-shyvn-600;
+        @apply text-blue-600 font-semibold bg-blue-50 border-b-2 border-blue-500;
     }
 
     .nav-link-custom {
-        @apply text-gray-600 transition-all duration-200 py-2 px-3 rounded-md text-sm font-medium flex items-center hover:text-shyvn-600 hover:bg-gray-100;
+        @apply text-gray-700 transition-all duration-200 py-2 px-3 rounded-md text-sm font-medium flex items-center hover:text-blue-600 hover:bg-sky-50;
     }
 
     .mobile-nav-link {
-        @apply text-gray-600 transition-all duration-200 py-2 px-3 rounded-md text-base font-medium block hover:text-shyvn-600 hover:bg-gray-100;
+        @apply text-gray-700 transition-all duration-200 py-2 px-3 rounded-md text-base font-medium block hover:text-blue-600 hover:bg-blue-50;
     }
 
     /* Button styles */
@@ -49,6 +49,10 @@
         @apply bg-gradient-to-r from-sky-500 via-blue-600 to-blue-700;
     }
 
+    .btn-gradient-blue-sky {
+        @apply bg-gradient-to-r from-blue-600 to-sky-400 hover:shadow-blue-200;
+    }
+
     .btn-gradient-night {
         @apply bg-gradient-to-r from-blue-600 via-blue-700 to-purple-800;
     }
@@ -61,9 +65,101 @@
         @apply bg-gradient-to-br from-blue-500 to-blue-800;
     }
 
+    /* New themed gradient buttons */
+    .btn-gradient-cyan {
+        @apply bg-gradient-to-r from-cyan-500 to-cyan-700 hover:shadow-cyan-100;
+    }
+
+    .btn-gradient-sky {
+        @apply bg-gradient-to-r from-sky-500 to-sky-700 hover:shadow-sky-100;
+    }
+
+    .btn-gradient-blue {
+        @apply bg-gradient-to-r from-blue-500 to-blue-700 hover:shadow-blue-100;
+    }
+
+    .btn-gradient-indigo {
+        @apply bg-gradient-to-r from-indigo-500 to-indigo-700 hover:shadow-indigo-100;
+    }
+
+    .btn-gradient-violet {
+        @apply bg-gradient-to-r from-violet-500 to-violet-700 hover:shadow-violet-100;
+    }
+
+    .btn-gradient-purple {
+        @apply bg-gradient-to-r from-purple-500 to-purple-700 hover:shadow-purple-100;
+    }
+
+    .btn-gradient-fuchsia {
+        @apply bg-gradient-to-r from-fuchsia-500 to-fuchsia-700 hover:shadow-fuchsia-100;
+    }
+
+    /* Outline button style */
+    .btn-outline {
+        @apply text-gray-700 border-2 border-gray-300 font-semibold py-2 px-5 rounded-md transition-all duration-300 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 hover:shadow-sm;
+    }
+
     /* Hero gradient background */
     .hero-gradient-bg {
         @apply bg-gradient-to-br from-gray-50 to-blue-100;
+    }
+
+    /* Theme background gradients */
+    .bg-gradient-cyan {
+        @apply bg-cyan-gradient;
+    }
+
+    .bg-gradient-sky {
+        @apply bg-sky-gradient;
+    }
+
+    .bg-gradient-blue {
+        @apply bg-blue-gradient;
+    }
+
+    .bg-gradient-indigo {
+        @apply bg-indigo-gradient;
+    }
+
+    .bg-gradient-violet {
+        @apply bg-violet-gradient;
+    }
+
+    .bg-gradient-purple {
+        @apply bg-purple-gradient;
+    }
+
+    .bg-gradient-fuchsia {
+        @apply bg-fuchsia-gradient;
+    }
+
+    /* Text gradient themes */
+    .text-gradient-cyan {
+        @apply bg-gradient-to-r from-cyan-600 to-cyan-800 bg-clip-text text-transparent;
+    }
+
+    .text-gradient-sky {
+        @apply bg-gradient-to-r from-sky-600 to-sky-800 bg-clip-text text-transparent;
+    }
+
+    .text-gradient-blue {
+        @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
+    }
+
+    .text-gradient-indigo {
+        @apply bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent;
+    }
+
+    .text-gradient-violet {
+        @apply bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent;
+    }
+
+    .text-gradient-purple {
+        @apply bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent;
+    }
+
+    .text-gradient-fuchsia {
+        @apply bg-gradient-to-r from-fuchsia-600 to-fuchsia-800 bg-clip-text text-transparent;
     }
 
     /* Container helper */
