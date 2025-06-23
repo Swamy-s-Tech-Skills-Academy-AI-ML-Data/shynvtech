@@ -14,6 +14,7 @@ window.initCarousel = function initCarousel() {
     let currentIndex = 0;
     let autoSlideInterval;
     const slideCount = track.children.length;
+    console.log(`Carousel initialized with ${slideCount} slides`);
 
     function getSlideWidth() {
         if (track.children.length === 0) return 0;
@@ -27,7 +28,8 @@ window.initCarousel = function initCarousel() {
         // Get the current slide width (it may change on resize)
         const slideWidth = getSlideWidth();
 
-        // Update track position with smooth animation        track.style.transition = 'transform 0.5s ease-in-out';
+        // Update track position with smooth animation
+        track.style.transition = 'transform 0.5s ease-in-out';
         track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 
         // Update indicators
@@ -125,6 +127,3 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 } else {
     document.addEventListener('DOMContentLoaded', initCarousel);
 }
-
-// Export for ES modules
-export { initCarousel };
