@@ -27,7 +27,7 @@ window.initCarousel = function initCarousel() {
 
         // Get the current slide width (it may change on resize)
         const slideWidth = getSlideWidth();
-
+        
         // Update track position with smooth animation
         track.style.transition = 'transform 0.5s ease-in-out';
         track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
@@ -102,25 +102,23 @@ window.initCarousel = function initCarousel() {
             resetAutoSlide();
         }
     }
-}
-    }
 
-// Handle window resize
-window.addEventListener('resize', () => {
-    // Remove transition temporarily for instant repositioning
-    track.style.transition = 'none';
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        // Remove transition temporarily for instant repositioning
+        track.style.transition = 'none';
+        updateCarousel();
+
+        // Re-enable transition after a small delay
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
+    });
+
+    // Initial setup
     updateCarousel();
-
-    // Re-enable transition after a small delay
-    setTimeout(() => {
-        track.style.transition = 'transform 0.5s ease-in-out';
-    }, 50);
-});
-
-// Initial setup
-updateCarousel();
-resetAutoSlide();
-console.log("Carousel initialized successfully");
+    resetAutoSlide();
+    console.log("Carousel initialized successfully");
 }
 
 // Auto-initialize when loaded directly as a script
@@ -129,6 +127,3 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 } else {
     document.addEventListener('DOMContentLoaded', initCarousel);
 }
-
-// Export for ES modules
-export { initCarousel };

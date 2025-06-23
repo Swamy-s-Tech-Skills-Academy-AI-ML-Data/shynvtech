@@ -6,10 +6,12 @@
         <div class="relative" style="position: relative; width: 100%; max-width: 100%; overflow: visible;">
             <!-- Carousel Container -->
             <div class="overflow-hidden touch-pan-x" style="position: relative;">
-                <div id="carousel-track" class="flex w-full"> <!-- Single Carousel Item -->
-                    <div class="w-full px-4 py-2">
+                <div id="carousel-track" class="flex w-full">
+                    <!-- Carousel Item 1 -->
+                    <div class="w-full flex-shrink-0 px-4 py-2">
                         <div class="rounded-xl overflow-hidden h-full"
-                            style="background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); max-width: 100%;">                            <div class="h-20"
+                            style="background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); max-width: 100%;">
+                            <div class="h-20"
                                 style="background: linear-gradient(135deg, #3b82f6, #4f46e5); height: 80px; display: flex; align-items: center;">
                                 <div class="ml-6 text-white font-bold text-xl">Featured Course</div>
                             </div>
@@ -30,8 +32,66 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Carousel Item 2 -->
+                    <div class="w-full flex-shrink-0 px-4 py-2">
+                        <div class="rounded-xl overflow-hidden h-full"
+                            style="background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); max-width: 100%;">
+                            <div class="h-20"
+                                style="background: linear-gradient(135deg, #6366f1, #8b5cf6); height: 80px; display: flex; align-items: center;">
+                                <div class="ml-6 text-white font-bold text-xl">Featured Workshop</div>
+                            </div>
+                            <div class="p-6">
+                                <div class="text-indigo-600 text-sm font-semibold mb-1" style="color: #4f46e5;">WORKSHOP
+                                </div>
+                                <h3 class="font-bold text-xl mb-2">Building Cloud-Native Applications</h3>
+                                <p class="text-gray-600 mb-4">Learn modern cloud architecture and deployment practices
+                                    with
+                                    Azure and containerization.</p>
+                                <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 mr-1" style="color: #4f46e5;">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-500">3 weeks • Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Item 3 -->
+                    <div class="w-full flex-shrink-0 px-4 py-2">
+                        <div class="rounded-xl overflow-hidden h-full"
+                            style="background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); max-width: 100%;">
+                            <div class="h-20"
+                                style="background: linear-gradient(135deg, #0ea5e9, #06b6d4); height: 80px; display: flex; align-items: center;">
+                                <div class="ml-6 text-white font-bold text-xl">Featured Certification</div>
+                            </div>
+                            <div class="p-6">
+                                <div class="text-sky-600 text-sm font-semibold mb-1" style="color: #0284c7;">
+                                    CERTIFICATION
+                                </div>
+                                <h3 class="font-bold text-xl mb-2">Advanced Data Engineering</h3>
+                                <p class="text-gray-600 mb-4">Master data pipelines, ETL processes, and big data
+                                    analytics
+                                    with industry-standard tools.</p>
+                                <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 mr-1" style="color: #0284c7;">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-500">12 weeks • Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> <!-- Navigation Arrows --> <button id="prev-btn"
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button id="prev-btn"
                 style="position: absolute; left: 20px; top: 100px; background-color: rgba(0,0,0,0.7); color: white; border-radius: 50%; padding: 10px; z-index: 100; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" width="24" height="24" style="color: white;">
@@ -45,10 +105,31 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
             </button>
+
+            <!-- Indicator Dots -->
+            <div class="flex justify-center mt-6">
+                <button class="h-3 w-3 rounded-full bg-black mx-1" aria-label="Go to slide 1"></button>
+                <button class="h-3 w-3 rounded-full bg-gray-400 mx-1" aria-label="Go to slide 2"></button>
+                <button class="h-3 w-3 rounded-full bg-gray-400 mx-1" aria-label="Go to slide 3"></button>
+            </div>
         </div>
     </div>
 </div>
 
 @code {
-    // No JavaScript needed for a static single item
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Initialize carousel when component is first rendered
+            await JSRuntime.InvokeVoidAsync("initCarousel");
+        }
+    }
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; } = default!;
 }
+viewBox="002424"
+
+       
+       
