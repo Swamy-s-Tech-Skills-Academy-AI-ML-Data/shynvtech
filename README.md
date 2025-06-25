@@ -29,25 +29,30 @@ ShyvnTech is a **Tech Innovation Collective** that serves as a hub for:
 
 ```text
 ShyvnTech/
-├── 📁 docs/                          # Documentation
-│   ├── 📄 api-documentation.md       # API reference and guides
-│   ├── 📄 architecture.md            # System architecture overview
-│   ├── 📄 component-architecture.md  # Modern component architecture guide
-│   ├── 📄 deployment-guide.md        # Deployment instructions
-│   ├── 📄 development-guide.md       # Development setup guide
+├── 📁 docs/                          # Comprehensive documentation
+│   ├── 📄 README.md                  # Documentation overview
 │   ├── 📄 getting-started.md         # Quick start guide
-│   ├── 📄 project-structure.md       # Detailed project structure
-│   ├── 📄 pdf-download.md           # PDF delivery implementation guide
+│   ├── 📄 architecture.md            # System architecture overview
+│   ├── 📄 development-guide.md       # Development setup and guidelines
+│   ├── 📄 component-architecture.md  # Modern UI component patterns
+│   ├── 📄 ui-styling-guide.md        # Tailwind CSS and design system
+│   ├── 📄 project-structure.md       # Detailed project organization
+│   ├── 📄 quick-reference.md         # Developer quick reference
+│   ├── 📄 api-documentation.md       # API reference and guides
+│   ├── 📄 deployment-guide.md        # Deployment instructions
 │   └── 📁 reviews/                   # Code reviews and assessments
 │
 ├── 📁 src/                           # Source code
 │   ├── 🌐 ShyvnTech.Web/            # Modern Blazor web application
-│   │   ├── 📁 Components/            # Modular Blazor components
-│   │   │   ├── 📁 Layout/           # Layout components (NavMenu, MainLayout, Scripts)
-│   │   │   ├── 📁 Home/             # Home page components (Hero, Carousel, FeatureGrid)
-│   │   │   ├── 📁 Shared/           # Reusable components (GradientButton)
-│   │   │   └── 📁 Pages/            # Page components (Home, Magazines, etc.)
-│   │   ├── 📁 Styles/               # Tailwind CSS source files
+│   │   ├── 📁 Components/            # Modular component architecture
+│   │   │   ├── 📁 Layout/           # Layout components (Navbar, Footer, MainLayout)
+│   │   │   ├── 📁 Home/             # Landing page components (Hero, Carousel, FeatureGrid)
+│   │   │   ├── 📁 Shared/           # Reusable components (GradientButton, utilities)
+│   │   │   └── 📁 Pages/            # Routable page components
+│   │   ├── 📁 Styles/               # Tailwind CSS source with custom components
+│   │   ├── 📁 wwwroot/              # Static assets and compiled CSS
+│   │   ├── 📄 tailwind.config.js    # Custom design system configuration
+│   │   └── 📄 package.json          # Frontend build dependencies
 │   │   │   └── 📄 input.css         # Component classes and custom styles
 │   │   ├── 📁 wwwroot/              # Static web assets
 │   │   │   ├── 📁 css/              # Compiled Tailwind CSS
@@ -84,14 +89,24 @@ ShyvnTech/
 
 ## 🛠️ Technology Stack
 
-### **Frontend**
+### **Frontend Architecture**
 
-- **Blazor Server** - Interactive web UI framework
-- **Tailwind CSS** - Utility-first CSS framework
-- **Font Awesome** - Icon library
-- **Custom CSS** - Enhanced styling and animations
+- **Blazor Server** - Interactive server-side web UI with real-time updates
+- **Tailwind CSS** - Modern utility-first CSS framework with custom design system
+- **Component-Based Design** - Modular, reusable UI components
+- **TypeScript/JavaScript** - Enhanced interactivity and carousel functionality
+- **Google Fonts (Inter)** - Modern typography and responsive text scaling
+- **Heroicons** - Beautiful SVG icon library
 
-### **Backend**
+### **Design System Features**
+
+- **🎨 Custom Color Palettes** - Blue, Cyan, Sky, Indigo, Violet, Purple, and Fuchsia scales
+- **🔧 Component Classes** - Reusable styling patterns with `@layer components`
+- **📱 Mobile-First Design** - Responsive layouts with glass-effect navigation
+- **⚡ Performance Optimized** - Purged CSS builds and minimal custom styles
+- **🌈 Gradient Theming** - Modern gradient buttons and visual elements
+
+### **Backend Services**
 
 - **.NET 9.0** - Latest .NET framework
 - **ASP.NET Core Web API** - RESTful API services
@@ -132,15 +147,23 @@ _Interactive API documentation powered by Scalar_
    cd shyvntech
    ```
 
-2. **Restore dependencies**
+2. **Restore dependencies and set up frontend**
 
    ```bash
+   # Restore .NET packages
    dotnet restore
+
+   # Set up Tailwind CSS (for UI development)
+   cd src/ShyvnTech.Web
+   npm install
+   npm run build-css
+   cd ../..
    ```
 
 3. **Run the application**
 
-   ```bash # Option 1: Run the entire solution with Aspire
+   ```bash
+   # Option 1: Run the entire solution with Aspire
    dotnet run --project src/ShyvnTech.AppHost/ShyvnTech.AppHost.csproj
 
    # Option 2: Run just the web application
@@ -153,6 +176,21 @@ _Interactive API documentation powered by Scalar_
    - Events API: `https://localhost:7159/swagger`
    - Content API: `https://localhost:7134/swagger`
    - LMS API: `https://localhost:7298/swagger`
+
+### **Frontend Development Workflow**
+
+For UI and component development:
+
+```bash
+# Navigate to web project
+cd src/ShyvnTech.Web
+
+# Start development with CSS watching
+npm run build-css
+
+# Or use watch mode for continuous CSS building
+npx tailwindcss -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --watch
+```
 
 ### **Using VS Code Tasks**
 
