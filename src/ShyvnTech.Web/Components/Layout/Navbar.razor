@@ -99,10 +99,21 @@
     private string GetActiveClass(string path)
     {
         var currentPath = Navigation.ToBaseRelativePath(Navigation.Uri);
-        if (path == "/" && string.IsNullOrEmpty(currentPath))
-            return "active";
-        if (!string.IsNullOrEmpty(currentPath) && currentPath.StartsWith(path.TrimStart('/')))
-            return "active";
+        
+        // Handle root path specifically
+        if (path == "/")
+        {
+            return string.IsNullOrEmpty(currentPath) ? "active" : "";
+        }
+        
+        // For other paths, ensure exact match or proper path hierarchy
+        var pathToCheck = path.TrimStart('/');
+        if (!string.IsNullOrEmpty(currentPath))
+        {
+            // Check for exact match or if current path starts with the nav path followed by a delimiter
+            return currentPath == pathToCheck || currentPath.StartsWith(pathToCheck + "/") ? "active" : "";
+        }
+        
         return "";
     }
 

@@ -94,13 +94,15 @@ public class MagazinesController : ControllerBase
     {
         var latestMagazine = new
         {
-            Year = 2025,
-            Month = "Aug",
+            Id = 999,
             Title = "ShyvnTech Magazine - August 2025",
             IssueDate = "August 2025",
-            Description = "Cloud Computing Essentials, Back-to-School Tech Guide, Data Science for Beginners",
+            Description = "🚀 Discover the future of entrepreneurship! This special startup edition features breakthrough innovations, successful founder stories, and essential business strategies for the next generation of tech entrepreneurs.",
             CoverImageUrl = "/images/shyvntech-aug-2025.jpg",
-            PdfUrl = "/api/magazines/2025/Aug/pdf"
+            PdfUrl = "/api/magazines/2025/Aug/pdf",
+            Year = 2025,
+            Month = "Aug",
+            Category = "Startup"
         };
 
         return Ok(latestMagazine);
@@ -252,14 +254,21 @@ public class MagazinesController : ControllerBase
 
                         if (System.IO.File.Exists(pdfPath))
                         {
+                            var id = archive.Count + 1;
+                            var issueDate = $"{month} {year}";
+                            var category = GetCategoryByMonth(month);
+                            
                             archive.Add(new
                             {
+                                Id = id,
+                                Title = $"ShyvnTech Magazine - {month} {year}",
+                                IssueDate = issueDate,
+                                Description = GetDescriptionByMonth(month, year),
+                                CoverImageUrl = $"/images/shyvntech-{month.ToLower()}-{year}.jpg",
+                                PdfUrl = $"/api/magazines/{year}/{month}/pdf",
                                 Year = int.Parse(year),
                                 Month = month,
-                                Title = $"ShyvnTech Magazine - {month} {year}",
-                                Type = "archived",
-                                DownloadUrl = $"/api/magazines/{year}/{month}/pdf",
-                                ViewUrl = $"/api/magazines/{year}/{month}/pdf/view"
+                                Category = category
                             });
                         }
                     }
@@ -273,5 +282,45 @@ public class MagazinesController : ControllerBase
             _logger.LogError(ex, "Error retrieving magazine archive");
             return StatusCode(500, "An error occurred while retrieving the archive");
         }
+    }
+
+    /// <summary>
+    /// Gets a category based on the month for variety in magazine content.
+    /// </summary>
+    private static string GetCategoryByMonth(string month)
+    {
+        return month.ToLowerInvariant() switch
+        {
+            "january" or "jan" => "AI",
+            "february" or "feb" => "Blockchain",
+            "march" or "mar" => "Cloud",
+            "april" or "apr" => "Cybersecurity",
+            "may" => "Startup",
+            "june" or "jun" => "AI",
+            "july" or "jul" => "Cloud",
+            "august" or "aug" => "Startup",
+            "september" or "sep" => "Blockchain",
+            "october" or "oct" => "Cybersecurity",
+            "november" or "nov" => "AI",
+            "december" or "dec" => "Cloud",
+            _ => "Technology"
+        };
+    }
+
+    /// <summary>
+    /// Gets a description based on the month and year for magazine content.
+    /// </summary>
+    private static string GetDescriptionByMonth(string month, string year)
+    {
+        var category = GetCategoryByMonth(month);
+        return category switch
+        {
+            "AI" => $"Explore the latest in Artificial Intelligence, machine learning trends, and AI applications in {month} {year}. Perfect for students and professionals looking to stay ahead in the AI revolution.",
+            "Blockchain" => $"Discover blockchain technology, cryptocurrency insights, and decentralized solutions in this comprehensive {month} {year} issue. Learn how blockchain is transforming industries.",
+            "Cloud" => $"Master cloud computing essentials, AWS, Azure, and modern DevOps practices in our {month} {year} edition. Essential reading for cloud enthusiasts and IT professionals.",
+            "Cybersecurity" => $"Stay protected with the latest cybersecurity trends, threat analysis, and security best practices in {month} {year}. Your guide to digital safety and security.",
+            "Startup" => $"Entrepreneurship insights, startup stories, and business innovation strategies in our {month} {year} startup special. From idea to IPO - your startup journey guide.",
+            _ => $"Comprehensive technology insights and innovations covering multiple domains in {month} {year}. Stay updated with the latest tech trends and industry developments."
+        };
     }
 }
