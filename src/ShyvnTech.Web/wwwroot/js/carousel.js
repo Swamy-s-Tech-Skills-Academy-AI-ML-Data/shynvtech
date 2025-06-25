@@ -4,7 +4,7 @@ window.initCarousel = function initCarousel() {
     const track = document.getElementById('carousel-track');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    const indicators = document.querySelectorAll('.flex.justify-center.mt-6 button');
+    const indicators = document.querySelectorAll('.carousel-indicator');
 
     if (!track || !prevBtn || !nextBtn) {
         console.error('Carousel elements not found.');
@@ -32,10 +32,15 @@ window.initCarousel = function initCarousel() {
         track.style.transition = 'transform 0.5s ease-in-out';
         track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 
-        // Update indicators
-        indicators.forEach((dot, index) => {
-            dot.classList.toggle('bg-black', index === currentIndex);
-            dot.classList.toggle('bg-gray-400', index !== currentIndex);
+        // Update indicators with proper class-based styling
+        indicators.forEach((indicator, index) => {
+            if (index === currentIndex) {
+                indicator.classList.add('active');
+                indicator.classList.remove('inactive');
+            } else {
+                indicator.classList.remove('active');
+                indicator.classList.add('inactive');
+            }
         });
     }
 
@@ -65,10 +70,12 @@ window.initCarousel = function initCarousel() {
         resetAutoSlide(); // Reset auto slide timer on manual navigation
     });
 
-    // Add click listeners to indicators
-    indicators.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
+    // Add click listeners to indicators with data-slide support
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            // Support both data-slide attribute and index-based navigation
+            const targetSlide = indicator.dataset.slide ? parseInt(indicator.dataset.slide) : index;
+            currentIndex = targetSlide;
             updateCarousel();
             resetAutoSlide(); // Reset auto slide timer on manual navigation
         });
