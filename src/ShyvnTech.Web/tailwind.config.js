@@ -152,7 +152,6 @@ module.exports = {
     },
     safelist: [
         { pattern: /btn-gradient-.*/ },
-        { pattern: /text-gradient-.*/ },
         { pattern: /bg-gradient-.*/ },
         { pattern: /navbar-glass/ },
         { pattern: /nav-link.*/ },
