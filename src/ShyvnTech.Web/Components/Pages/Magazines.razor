@@ -1,6 +1,6 @@
 @page "/magazines"
 @using System.Text.Json
-@inject HttpClient Http
+@inject IHttpClientFactory HttpClientFactory
 @inject IJSRuntime JSRuntime
 
 <PageTitle>Magazines - ShyvnTech</PageTitle>
@@ -151,7 +151,8 @@
     {
         try
         {
-            var response = await Http.GetStringAsync("/api/magazines/archive");
+            var httpClient = HttpClientFactory.CreateClient("MagazineApi");
+            var response = await httpClient.GetStringAsync("api/magazines");
             magazines = JsonSerializer.Deserialize<List<MagazineItem>>(response, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -173,7 +174,8 @@
     {
         try
         {
-            var response = await Http.GetStringAsync("/api/magazines/latest");
+            var httpClient = HttpClientFactory.CreateClient("MagazineApi");
+            var response = await httpClient.GetStringAsync("api/magazines/latest");
             latestMagazine = JsonSerializer.Deserialize<MagazineItem>(response, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
