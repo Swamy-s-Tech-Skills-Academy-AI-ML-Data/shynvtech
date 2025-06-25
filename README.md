@@ -32,6 +32,7 @@ ShyvnTech/
 ├── 📁 docs/                          # Documentation
 │   ├── 📄 api-documentation.md       # API reference and guides
 │   ├── 📄 architecture.md            # System architecture overview
+│   ├── 📄 component-architecture.md  # Modern component architecture guide
 │   ├── 📄 deployment-guide.md        # Deployment instructions
 │   ├── 📄 development-guide.md       # Development setup guide
 │   ├── 📄 getting-started.md         # Quick start guide
@@ -40,14 +41,20 @@ ShyvnTech/
 │   └── 📁 reviews/                   # Code reviews and assessments
 │
 ├── 📁 src/                           # Source code
-│   ├── 🌐 ShyvnTech.Web/            # Main Blazor web application
-│   │   ├── 📁 Components/            # Blazor components
-│   │   │   ├── 📁 Layout/           # Layout components (NavMenu, MainLayout)
-│   │   │   └── 📁 Pages/            # Page components (Home, etc.)
+│   ├── 🌐 ShyvnTech.Web/            # Modern Blazor web application
+│   │   ├── 📁 Components/            # Modular Blazor components
+│   │   │   ├── 📁 Layout/           # Layout components (NavMenu, MainLayout, Scripts)
+│   │   │   ├── 📁 Home/             # Home page components (Hero, Carousel, FeatureGrid)
+│   │   │   ├── 📁 Shared/           # Reusable components (GradientButton)
+│   │   │   └── 📁 Pages/            # Page components (Home, Magazines, etc.)
+│   │   ├── 📁 Styles/               # Tailwind CSS source files
+│   │   │   └── 📄 input.css         # Component classes and custom styles
 │   │   ├── 📁 wwwroot/              # Static web assets
-│   │   │   ├── 📁 css/              # Stylesheets (Tailwind, custom CSS)
-│   │   │   ├── 📁 images/           # Images and media files
-│   │   │   └── 📁 js/               # JavaScript utilities
+│   │   │   ├── 📁 css/              # Compiled Tailwind CSS
+│   │   │   ├── 📁 js/               # Enhanced JavaScript (carousel, interactions)
+│   │   │   └── 📁 images/           # Optimized images and media
+│   │   ├── 📄 tailwind.config.js    # Tailwind configuration with custom colors
+│   │   └── � package.json          # NPM dependencies for Tailwind
 │   │   └── 📁 Styles/               # Tailwind CSS configuration
 │   │
 │   ├── 🚀 ShyvnTech.AppHost/        # .NET Aspire orchestration
