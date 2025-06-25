@@ -104,62 +104,27 @@
         @apply bg-gradient-to-br from-gray-50 to-blue-100;
     }
 
-    /* Theme background gradients */
-    .bg-gradient-cyan {
-        @apply bg-cyan-gradient;
+    /* Hero Component Styles */
+    .hero-banner {
+        @apply mt-16 py-8 px-4 shadow-lg mx-4 md:mx-8 lg:mx-12 rounded-2xl;
+        background: linear-gradient(135deg, #e0f2fe, #dbeafe, #e0e7ff);
     }
 
-    .bg-gradient-sky {
-        @apply bg-sky-gradient;
+    /* Reusable Button Components */
+    .btn-gradient-blue {
+        @apply bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold py-2 px-5 rounded-md transition-all duration-300 hover:shadow-lg hover:shadow-blue-200/50 flex items-center justify-center transform hover:scale-105;
     }
 
-    .bg-gradient-blue {
-        @apply bg-blue-gradient;
+    .btn-outline-blue {
+        @apply border-2 border-sky-300 text-blue-700 bg-white/50 hover:bg-sky-50 font-semibold py-2 px-5 rounded-md transition-all duration-300 hover:border-blue-500 flex items-center justify-center transform hover:scale-105;
     }
 
-    .bg-gradient-indigo {
-        @apply bg-indigo-gradient;
+    .btn-gradient-indigo {
+        @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-2 px-5 rounded-md transition-all duration-300 hover:shadow-lg hover:shadow-indigo-200/50 flex items-center justify-center transform hover:scale-105;
     }
 
-    .bg-gradient-violet {
-        @apply bg-violet-gradient;
-    }
-
-    .bg-gradient-purple {
-        @apply bg-purple-gradient;
-    }
-
-    .bg-gradient-fuchsia {
-        @apply bg-fuchsia-gradient;
-    }
-
-    /* Text gradient themes */
-    .text-gradient-cyan {
-        @apply bg-gradient-to-r from-cyan-600 to-cyan-800 bg-clip-text text-transparent;
-    }
-
-    .text-gradient-sky {
-        @apply bg-gradient-to-r from-sky-600 to-sky-800 bg-clip-text text-transparent;
-    }
-
-    .text-gradient-blue {
-        @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
-    }
-
-    .text-gradient-indigo {
-        @apply bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent;
-    }
-
-    .text-gradient-violet {
-        @apply bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent;
-    }
-
-    .text-gradient-purple {
-        @apply bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent;
-    }
-
-    .text-gradient-fuchsia {
-        @apply bg-gradient-to-r from-fuchsia-600 to-fuchsia-800 bg-clip-text text-transparent;
+    .btn-gradient-cyan {
+        @apply bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-2 px-5 rounded-md transition-all duration-300 hover:shadow-lg hover:shadow-cyan-200/50 flex items-center justify-center transform hover:scale-105;
     }
 
     /* Container helper */
