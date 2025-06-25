@@ -150,5 +150,16 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    safelist: [
+        { pattern: /btn-gradient-.*/ },
+        { pattern: /text-gradient-.*/ },
+        { pattern: /bg-gradient-.*/ },
+        { pattern: /navbar-glass/ },
+        { pattern: /nav-link.*/ },
+    ],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/typography'),
+    ],
 }
