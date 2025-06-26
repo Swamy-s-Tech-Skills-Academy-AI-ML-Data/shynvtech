@@ -1,4 +1,6 @@
-﻿<Router AppAssembly="typeof(Program).Assembly">
+﻿@using ShyvnTech.Web.Components.Pages
+
+<Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
         <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
         <FocusOnNavigate RouteData="routeData" Selector="h1" />
@@ -6,7 +8,7 @@
     <NotFound>
         <PageTitle>Page Not Found - ShyvnTech</PageTitle>
         <LayoutView Layout="typeof(Layout.MainLayout)">
-            <ShyvnTech.Web.Components.Pages.NotFound />
+            <NotFound />
         </LayoutView>
     </NotFound>
 </Router>
