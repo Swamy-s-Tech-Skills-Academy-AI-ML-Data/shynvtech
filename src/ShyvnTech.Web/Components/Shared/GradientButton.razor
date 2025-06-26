@@ -1,0 +1,41 @@
+@namespace ShyvnTech.Web.Components.Shared
+
+<a href="@Href" class="@GetButtonClass()">
+    @if (!string.IsNullOrWhiteSpace(IconPath))
+    {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-5 h-5 mr-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="@IconPath" />
+        </svg>
+    }
+    @ChildContent
+</a>
+
+@code {
+    [Parameter] public string Href { get; set; } = "/";
+    [Parameter] public string IconPath { get; set; } = "";
+    [Parameter] public ButtonVariant Variant { get; set; } = ButtonVariant.Blue;
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    private string GetButtonClass()
+    {
+        return Variant switch
+        {
+            ButtonVariant.Blue => "btn-gradient-blue",
+            ButtonVariant.Indigo => "btn-gradient-indigo",
+            ButtonVariant.Cyan => "btn-gradient-cyan",
+            ButtonVariant.Outline => "btn-outline-blue",
+            _ => "btn-gradient-blue"
+        };
+    }
+
+    public enum ButtonVariant
+    {
+        Blue,
+        Indigo,
+        Cyan,
+        Outline
+    }
+}
+
+           
