@@ -98,11 +98,16 @@
 
     private string GetActiveClass(string path)
     {
-        var currentPath = Navigation.ToBaseRelativePath(Navigation.Uri);
-        if (path == "/" && string.IsNullOrEmpty(currentPath))
+        var currentPath = "/" + Navigation.ToBaseRelativePath(Navigation.Uri);
+
+        // Handle exact match for home page
+        if (path == "/" && (string.IsNullOrEmpty(Navigation.ToBaseRelativePath(Navigation.Uri)) || currentPath == "/"))
             return "active";
-        if (!string.IsNullOrEmpty(currentPath) && currentPath.StartsWith(path.TrimStart('/')))
+
+        // Handle other pages - check if current path starts with the target path
+        if (path != "/" && currentPath.StartsWith(path, StringComparison.OrdinalIgnoreCase))
             return "active";
+
         return "";
     }
 
