@@ -1,125 +1,64 @@
 @namespace ShyvnTech.Web.Components.Home
 
-<div class="py-16 bg-gray-50" style="background-color: #f9fafb; padding-top: 4rem; padding-bottom: 4rem;">
+<div class="carousel-container">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" style="color: #1f2937;">Featured Content</h2>
-        <div class="relative" style="position: relative; width: 100%; max-width: 100%; overflow: visible;">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Featured Content</h2>
+        <div class="relative max-w-full overflow-visible">
             <!-- Carousel Container -->
-            <div class="overflow-hidden touch-pan-x" style="position: relative; width: 100%;">
-                <div id="carousel-track" class="flex w-full" style="width: 300%;">
-                    <!-- Carousel Item 1 -->
-                    <div class="w-full flex-shrink-0 px-4 py-2" style="width: 33.333%;">
-                        <div class="rounded-xl overflow-hidden h-full"
-                            style="background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); max-width: 100%;">
-                            <div class="h-20"
-                                style="background: linear-gradient(135deg, #3b82f6, #4f46e5); height: 80px; display: flex; align-items: center;">
-                                <div class="ml-6 text-white font-bold text-xl">Featured Course</div>
-                            </div>
-                            <div class="p-6">
-                                <div class="text-blue-600 text-sm font-semibold mb-1" style="color: #2563eb;">COURSE
-                                </div>
-                                <h3 class="font-bold text-xl mb-2">Introduction to AI Development</h3>
-                                <p class="text-gray-600 mb-4">Learn the fundamentals of AI development with hands-on
-                                    projects and expert guidance.</p>
-                                <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                        class="w-5 h-5 mr-1" style="color: #3b82f6;">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                    <span class="text-sm text-gray-500">8 weeks • Beginner</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- Carousel Item 2 -->
-                    <div class="w-full flex-shrink-0 px-4 py-2" style="width: 33.333%;">
-                        <div class="rounded-xl overflow-hidden h-full"
-                            style="background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); max-width: 100%;">
-                            <div class="h-20"
-                                style="background: linear-gradient(135deg, #6366f1, #8b5cf6); height: 80px; display: flex; align-items: center;">
-                                <div class="ml-6 text-white font-bold text-xl">Featured Workshop</div>
-                            </div>
-                            <div class="p-6">
-                                <div class="text-indigo-600 text-sm font-semibold mb-1" style="color: #4f46e5;">WORKSHOP
-                                </div>
-                                <h3 class="font-bold text-xl mb-2">Building Cloud-Native Applications</h3>
-                                <p class="text-gray-600 mb-4">Learn modern cloud architecture and deployment practices
-                                    with
-                                    Azure and containerization.</p>
-                                <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                        class="w-5 h-5 mr-1" style="color: #4f46e5;">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                    <span class="text-sm text-gray-500">3 weeks • Intermediate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- Carousel Item 3 -->
-                    <div class="w-full flex-shrink-0 px-4 py-2" style="width: 33.333%;">
-                        <div class="rounded-xl overflow-hidden h-full"
-                            style="background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); max-width: 100%;">
-                            <div class="h-20"
-                                style="background: linear-gradient(135deg, #0ea5e9, #06b6d4); height: 80px; display: flex; align-items: center;">
-                                <div class="ml-6 text-white font-bold text-xl">Featured Certification</div>
-                            </div>
-                            <div class="p-6">
-                                <div class="text-sky-600 text-sm font-semibold mb-1" style="color: #0284c7;">
-                                    CERTIFICATION
-                                </div>
-                                <h3 class="font-bold text-xl mb-2">Advanced Data Engineering</h3>
-                                <p class="text-gray-600 mb-4">Master data pipelines, ETL processes, and big data
-                                    analytics
-                                    with industry-standard tools.</p>
-                                <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                        class="w-5 h-5 mr-1" style="color: #0284c7;">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                    <span class="text-sm text-gray-500">12 weeks • Advanced</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="overflow-hidden touch-pan-x relative w-full">
+                <div id="carousel-track" class="carousel-track">
+                    <!-- Carousel Items using CarouselItem component -->
+                    <CarouselItem Title="Featured Course" Label="COURSE" Heading="Introduction to AI Development"
+                        Description="Learn the fundamentals of AI development with hands-on projects and expert guidance."
+                        Duration="8 weeks" Level="Beginner"
+                        ActionText="Explore Course" HeaderGradient="bg-gradient-to-r from-blue-600 to-indigo-600"
+                        LabelColor="text-blue-600"
+                        IconColor="text-blue-600" />
+ ouselItem  Title="Featured Workshop"
+                        Label="WORKSHOP"
+                        Heading="Building Cloud-Native Applications"
+                        Description="Learn Duration="3 weeks"
+                        Level="Intermediate" ActionText="Join Workshop"
+                        HeaderGradient="bg-gradient-to-r from-indigo-600 to-purple-600"
+                        LabelColor="text-indigo-600"
+                        IconColor ouselItem 
+                        Title="Featured Certification"
+                        Label="CERTIFICATION"
+                        Heading="Advanced D Description="Mas Duration="12 weeks"
+                        Level="Advanced" ActionText="Get Certified"
+                        HeaderGradient="bg-gradient-to-r from-sky-500 to-cyan-500"
+                        LabelColor="text-sky-600"
+                        IconColor="text-sky-600" />
                 </div>
-            </div> <!-- Navigation Arrows -->
-            <button id="prev-btn"
-                style="position: absolute; left: -15px; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.8); color: white; border-radius: 50%; padding: 12px; z-index: 100; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+            </div>
+
+            <!-- Navgation Arrows -->
+            <button id="prev-btn" class="carousel-nav-btn carousel-nav-prev" aria-label="Previous slide">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                    stroke="currentColor" width="24" height="24" style="color: white;">
+                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
-            </button>
-            <button id="next-btn"
-                style="position: absolute; right: -15px; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.8); color: white; border-radius: 50%; padding: 12px; z-index: 100; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+           </button>
+            <button id="next-btn" class="carousel-nav-btn carousel-nav-next" aria-label="Next slide">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                    stroke="currentColor" width="24" height="24" style="color: white;">
+                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
             </button>
 
+                   
             <!-- Indicator Dots -->
-            <div class="flex justify-center mt-6">
-                <button class="h-3 w-3 rounded-full bg-black mx-1" aria-label="Go to slide 1"></button>
-                <button class="h-3 w-3 rounded-full bg-gray-400 mx-1" aria-label="Go to slide 2"></button>
-                <button class="h-3 w-3 rounded-full bg-gray-400 mx-1" aria-label="Go to slide 3"></button>
+                   
+            <div class="flex justify-center mt-8">
+                   
+                <button class="carousel-indicator carousel-indicator-active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button class="carousel-indicator carousel-indicator-inactive" data-slide="1" aria-label="Go to slide 2"></button>
+                <button class="carousel-indicator carousel-indicator-inactive" data-slide="2" aria-label="Go to slide 3"></button>
             </div>
         </div>
     </div>
 </div>
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            // Initialize carousel when component is first rendered
-            await JSRuntime.InvokeVoidAsync("initCarousel");
-        }
-    }
-
-    [Inject]
-    private IJSRuntime JSRuntime { get; set; } = default!;
+    // Carousel is automatically initialized by carousel.js
 }

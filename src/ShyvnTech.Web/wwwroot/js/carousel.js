@@ -10,7 +10,7 @@ function initCarousel() {
     const track = document.getElementById('carousel-track');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    const indicators = document.querySelectorAll('.h-3.w-3.rounded-full');
+    const indicators = document.querySelectorAll('.carousel-indicator');
 
     if (!track || !prevBtn || !nextBtn) {
         console.log('Carousel elements not found, retrying...');
@@ -107,7 +107,7 @@ function handleSwipe() {
 
 function updateCarousel() {
     const track = document.getElementById('carousel-track');
-    const indicators = document.querySelectorAll('.h-3.w-3.rounded-full');
+    const indicators = document.querySelectorAll('.carousel-indicator');
 
     if (!track) return;
 
@@ -119,11 +119,11 @@ function updateCarousel() {
     // Update indicators
     indicators.forEach((indicator, index) => {
         if (index === currentSlide) {
-            indicator.classList.remove('bg-gray-400');
-            indicator.classList.add('bg-black');
+            indicator.classList.remove('carousel-indicator-inactive');
+            indicator.classList.add('carousel-indicator-active');
         } else {
-            indicator.classList.remove('bg-black');
-            indicator.classList.add('bg-gray-400');
+            indicator.classList.remove('carousel-indicator-active');
+            indicator.classList.add('carousel-indicator-inactive');
         }
     });
 
