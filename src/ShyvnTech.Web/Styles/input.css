@@ -96,7 +96,7 @@
 
     /* Carousel Component Styles */
     .carousel-container {
-        @apply py-16 bg-gradient-to-b from-gray-50 to-white;
+        @apply py-12 bg-gradient-to-b from-gray-50 to-white;
     }
 
     .carousel-track {
