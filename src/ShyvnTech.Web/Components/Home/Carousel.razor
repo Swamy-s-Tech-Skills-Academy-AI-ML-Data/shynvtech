@@ -1,4 +1,5 @@
 @namespace ShyvnTech.Web.Components.Home
+@using ShyvnTech.Web.Components.Home
 
 <div class="carousel-container">
     <div class="container mx-auto px-4">
@@ -7,38 +8,25 @@
             <!-- Carousel Container -->
             <div class="overflow-hidden touch-pan-x relative w-full">
                 <div id="carousel-track" class="carousel-track">
-                    <!-- Carousel Items using CarouselItem component -->
-                    <CarouselItem Title="Featured Course" 
-                        Label="COURSE" 
-                        Heading="Introduction to AI Development"
+                    <!-- Carousel Items using CarouselCard component -->
+                    <CarouselCard Title="Featured Course" Label="COURSE" Heading="Introduction to AI Development"
                         Description="Learn the fundamentals of AI development with hands-on projects and expert guidance."
-                        Duration="8 weeks" 
-                        Level="Beginner"
-                        ActionText="Explore Course" 
-                        HeaderGradient="bg-gradient-to-r from-blue-600 to-indigo-600"
-                        LabelColor="text-blue-600"
+                        Duration="8 weeks" Level="Beginner" ActionText="Explore Course"
+                        HeaderGradient="bg-gradient-to-r from-blue-600 to-indigo-600" LabelColor="text-blue-600"
                         IconColor="text-blue-600" />
 
-                    <CarouselItem Title="Featured Workshop"
-                        Label="WORKSHOP"
+                    <CarouselCard Title="Featured Workshop" Label="WORKSHOP"
                         Heading="Building Cloud-Native Applications"
                         Description="Learn modern cloud architecture and deployment practices with Azure and containerization."
-                        Duration="3 weeks"
-                        Level="Intermediate" 
-                        ActionText="Join Workshop"
-                        HeaderGradient="bg-gradient-to-r from-indigo-600 to-purple-600"
-                        LabelColor="text-indigo-600"
+                        Duration="3 weeks" Level="Intermediate" ActionText="Join Workshop"
+                        HeaderGradient="bg-gradient-to-r from-indigo-600 to-purple-600" LabelColor="text-indigo-600"
                         IconColor="text-indigo-600" />
 
-                    <CarouselItem Title="Featured Certification"
-                        Label="CERTIFICATION"
+                    <CarouselCard Title="Featured Certification" Label="CERTIFICATION"
                         Heading="Advanced Data Engineering"
                         Description="Master data pipelines, ETL processes, and big data analytics with industry-standard tools."
-                        Duration="12 weeks"
-                        Level="Advanced" 
-                        ActionText="Get Certified"
-                        HeaderGradient="bg-gradient-to-r from-sky-500 to-cyan-500"
-                        LabelColor="text-sky-600"
+                        Duration="12 weeks" Level="Advanced" ActionText="Get Certified"
+                        HeaderGradient="bg-gradient-to-r from-sky-500 to-cyan-500" LabelColor="text-sky-600"
                         IconColor="text-sky-600" />
                 </div>
             </div>
@@ -46,25 +34,28 @@
             <!-- Navgation Arrows -->
             <button id="prev-btn" class="carousel-nav-btn carousel-nav-prev" aria-label="Previous slide">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                     stroke="currentColor" class="w-6 h-6">
+                    stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
-           </button>
+            </button>
             <button id="next-btn" class="carousel-nav-btn carousel-nav-next" aria-label="Next slide">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                     stroke="currentColor" class="w-6 h-6">
+                    stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
             </button>
 
-                   
+
             <!-- Indicator Dots -->
-                   
+
             <div class="flex justify-center mt-8">
-                   
-                <button class="carousel-indicator carousel-indicator-active" data-slide="0" aria-label="Go to slide 1"></button>
-                <button class="carousel-indicator carousel-indicator-inactive" data-slide="1" aria-label="Go to slide 2"></button>
-                <button class="carousel-indicator carousel-indicator-inactive" data-slide="2" aria-label="Go to slide 3"></button>
+
+                <button class="carousel-indicator carousel-indicator-active" data-slide="0"
+                    aria-label="Go to slide 1"></button>
+                <button class="carousel-indicator carousel-indicator-inactive" data-slide="1"
+                    aria-label="Go to slide 2"></button>
+                <button class="carousel-indicator carousel-indicator-inactive" data-slide="2"
+                    aria-label="Go to slide 3"></button>
             </div>
         </div>
     </div>
