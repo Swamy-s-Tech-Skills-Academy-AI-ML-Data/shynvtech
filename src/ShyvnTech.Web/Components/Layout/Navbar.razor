@@ -12,30 +12,30 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-1 lg:gap-4">
-            <a href="/" class="nav-link @GetActiveClass("/")">
+            <NavLink href="/" class="nav-link" ActiveClass="active" Match="NavLinkMatch.All">
                 <i class="fas fa-home text-base"></i>
                 <span class="ml-1">Home</span>
-            </a>
-            <a href="/magazines" class="nav-link @GetActiveClass("/magazines")">
+            </NavLink>
+            <NavLink href="/magazines" class="nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-book-open text-base"></i>
                 <span class="ml-1">Magazines</span>
-            </a>
-            <a href="/events" class="nav-link @GetActiveClass("/events")">
+            </NavLink>
+            <NavLink href="/events" class="nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-calendar text-base"></i>
                 <span class="ml-1">Events</span>
-            </a>
-            <a href="/learning" class="nav-link @GetActiveClass("/learning")">
+            </NavLink>
+            <NavLink href="/learning" class="nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-graduation-cap text-base"></i>
                 <span class="ml-1">Learning</span>
-            </a>
-            <a href="/about" class="nav-link @GetActiveClass("/about")">
+            </NavLink>
+            <NavLink href="/about" class="nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-info-circle text-base"></i>
                 <span class="ml-1">About</span>
-            </a>
-            <a href="/contact" class="nav-link @GetActiveClass("/contact")">
+            </NavLink>
+            <NavLink href="/contact" class="nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-envelope text-base"></i>
                 <span class="ml-1">Contact</span>
-            </a>
+            </NavLink>
             <div class="pl-4 flex items-center h-full">
                 <button
                     class="bg-gradient-to-r from-blue-600 to-sky-400 px-7 py-3 rounded-full font-bold text-base shadow-lg flex items-center gap-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all hover:shadow-blue-200 hover:shadow-xl hover:scale-105">
@@ -57,30 +57,30 @@
     <div
         class="md:hidden w-full bg-white border-t border-blue-50 shadow-sm transition-all duration-300 ease-in-out @(IsMobileMenuOpen ? "block" : "hidden")">
         <div class="flex flex-col gap-1 py-4 px-4">
-            <a href="/" class="mobile-nav-link @GetActiveClass("/")">
+            <NavLink href="/" class="mobile-nav-link" ActiveClass="active" Match="NavLinkMatch.All">
                 <i class="fas fa-home text-base"></i>
                 <span class="ml-1">Home</span>
-            </a>
-            <a href="/magazines" class="mobile-nav-link @GetActiveClass("/magazines")">
+            </NavLink>
+            <NavLink href="/magazines" class="mobile-nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-book-open text-base"></i>
                 <span class="ml-1">Magazines</span>
-            </a>
-            <a href="/events" class="mobile-nav-link @GetActiveClass("/events")">
+            </NavLink>
+            <NavLink href="/events" class="mobile-nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-calendar text-base"></i>
                 <span class="ml-1">Events</span>
-            </a>
-            <a href="/learning" class="mobile-nav-link @GetActiveClass("/learning")">
+            </NavLink>
+            <NavLink href="/learning" class="mobile-nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-graduation-cap text-base"></i>
                 <span class="ml-1">Learning</span>
-            </a>
-            <a href="/about" class="mobile-nav-link @GetActiveClass("/about")">
+            </NavLink>
+            <NavLink href="/about" class="mobile-nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-info-circle text-base"></i>
                 <span class="ml-1">About</span>
-            </a>
-            <a href="/contact" class="mobile-nav-link @GetActiveClass("/contact")">
+            </NavLink>
+            <NavLink href="/contact" class="mobile-nav-link" ActiveClass="active" Match="NavLinkMatch.Prefix">
                 <i class="fas fa-envelope text-base"></i>
                 <span class="ml-1">Contact</span>
-            </a>
+            </NavLink>
             <button
                 class="bg-gradient-to-r from-blue-600 to-sky-400 w-full px-7 py-3 rounded-full font-bold text-base shadow-lg mt-2 flex items-center gap-2 justify-center text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all hover:shadow-blue-200">
                 <i class="fas fa-users"></i>
@@ -91,25 +91,8 @@
 </nav>
 
 @code {
-    [Inject] private NavigationManager Navigation { get; set; } = default!;
-
     private bool _isMobileMenuOpen = false;
     private bool IsMobileMenuOpen => _isMobileMenuOpen;
-
-    private string GetActiveClass(string path)
-    {
-        var currentPath = "/" + Navigation.ToBaseRelativePath(Navigation.Uri);
-
-        // Handle exact match for home page
-        if (path == "/" && (string.IsNullOrEmpty(Navigation.ToBaseRelativePath(Navigation.Uri)) || currentPath == "/"))
-            return "active";
-
-        // Handle other pages - check if current path starts with the target path
-        if (path != "/" && currentPath.StartsWith(path, StringComparison.OrdinalIgnoreCase))
-            return "active";
-
-        return "";
-    }
 
     private void ToggleMobileMenu()
     {
