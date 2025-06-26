@@ -29,27 +29,24 @@
                         HeaderGradient="bg-gradient-to-r from-sky-500 to-cyan-500" LabelColor="text-sky-600"
                         IconColor="text-sky-600" />
                 </div>
+
+                <!-- Navigation Arrows (moved inside carousel container) -->
+                <button id="prev-btn" class="carousel-nav-btn carousel-nav-prev" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button id="next-btn" class="carousel-nav-btn carousel-nav-next" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
             </div>
 
-            <!-- Navgation Arrows -->
-            <button id="prev-btn" class="carousel-nav-btn carousel-nav-prev" aria-label="Previous slide">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
-            </button>
-            <button id="next-btn" class="carousel-nav-btn carousel-nav-next" aria-label="Next slide">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-            </button>
-
-
-            <!-- Indicator Dots -->
-
-            <div class="flex justify-center mt-8">
-
+            <!-- Indicator Dots (moved inside container) -->
+            <div class="flex justify-center mt-6 pb-4">
                 <button class="carousel-indicator carousel-indicator-active" data-slide="0"
                     aria-label="Go to slide 1"></button>
                 <button class="carousel-indicator carousel-indicator-inactive" data-slide="1"
@@ -64,3 +61,4 @@
 @code {
     // Carousel is automatically initialized by carousel.js
 }
+        
