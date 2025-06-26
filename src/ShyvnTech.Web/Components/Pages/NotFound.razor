@@ -1,0 +1,107 @@
+@page "/404"
+@page "/not-found"
+@using ShyvnTech.Web.Components.Shared
+
+<PageTitle>Page Not Found - ShyvnTech</PageTitle>
+
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center px-4">
+    <div class="max-w-lg w-full text-center">
+        
+        <!-- 404 Animation/Icon -->
+        <div class="mb-8">
+            <div class="text-8xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text animate-pulse">
+                404
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Oops! Page Not Found
+            </h1>
+            <p class="text-lg text-gray-600 mb-6">
+                The page you're looking for seems to have wandered off into the digital void. 
+                Don't worry, even the best explorers sometimes take a wrong turn!
+            </p>
+        </div>
+
+        <!-- Illustration/Icon -->
+        <div class="mb-8 flex justify-center">
+            <div class="bg-white rounded-full p-6 shadow-lg">
+                <svg class="w-16 h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-3-3v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+            <GradientButton 
+                Text="Go Home" 
+                Href="/" 
+                Gradient="btn-gradient-blue" 
+                Icon="fas fa-home" />
+            
+            <GradientButton 
+                Text="Browse Courses" 
+                Href="/courses" 
+                Gradient="btn-outline-blue" 
+                Icon="fas fa-book" />
+        </div>
+
+        <!-- Help Text -->
+        <div class="mt-8 text-sm text-gray-500">
+            <p>
+                If you believe this is an error, please 
+                <a href="/contact" class="text-blue-600 hover:text-blue-800 underline font-medium">
+                    contact our support team
+                </a>
+            </p>
+        </div>
+
+        <!-- Search Suggestion -->
+        <div class="mt-6">
+            <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">Looking for something specific?</h3>
+                <div class="flex gap-2">
+                    <input 
+                        type="text" 
+                        placeholder="Search courses, events, or content..." 
+                        class="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        @onkeypress="@((e) => HandleSearchKeyPress(e))"
+                        @bind="searchQuery" />
+                    <button 
+                        @onclick="HandleSearch"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@code {
+    private string searchQuery = "";
+
+    private void HandleSearch()
+    {
+        if (!string.IsNullOrWhiteSpace(searchQuery))
+        {
+            // Navigate to search results page with query
+            Navigation.NavigateTo($"/search?q={Uri.EscapeDataString(searchQuery)}");
+        }
+    }
+
+    private void HandleSearchKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            HandleSearch();
+        }
+    }
+
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+}
