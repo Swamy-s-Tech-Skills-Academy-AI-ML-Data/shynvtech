@@ -96,7 +96,7 @@
 
     /* Carousel Component Styles */
     .carousel-container {
-        @apply py-16 bg-gradient-to-b from-gray-50 to-white;
+        @apply py-12 bg-gradient-to-b from-gray-50 to-white;
     }
 
     .carousel-track {
@@ -106,15 +106,15 @@
     }
 
     .carousel-nav-btn {
-        @apply absolute top-1/2 transform -translate-y-1/2 bg-black/80 text-white rounded-full p-3 z-50 border-2 border-white shadow-lg hover:bg-black/90 transition-all duration-300 hover:scale-110;
+        @apply absolute top-1/2 transform -translate-y-1/2 bg-black/20 text-white/80 rounded-full p-2 z-50 border border-white/30 shadow-sm hover:bg-black/40 hover:text-white transition-all duration-300 hover:scale-105 backdrop-blur-sm;
     }
 
     .carousel-nav-prev {
-        @apply -left-4 md:-left-6;
+        @apply left-0 translate-x-0;
     }
 
     .carousel-nav-next {
-        @apply -right-4 md:-right-6;
+        @apply right-0 -translate-x-0;
     }
 
     .carousel-indicator {
@@ -190,6 +190,47 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* 404 Page Styles */
+.error-404 {
+    @apply text-8xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.floating-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Search input enhancement */
+.search-input-focus {
+    @apply focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
 }
 
 @tailwind utilities;
